@@ -5,11 +5,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
 }
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -59,6 +62,13 @@ nav .nav-bar--item__fill {
   color: #2980FF;
   background: #fff;
   border-radius: 3px;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: inherit;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -198,24 +208,6 @@ nav .nav-bar--item__fill {
     margin-top: 250px;
   }
   .hero-type--heading {
-    font-size: 45px;
-    line-height: 55px;
-  }
-  .hero-type--heading span {
-    font-size: 55px;
-  }
-  .hero-img--laptop {
-    width: 600px;
-    height: 600px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .hero-type {
-    width: 50%;
-    margin-top: 250px;
-  }
-  .hero-type--heading {
     font-size: 40px;
     line-height: 50px;
   }
@@ -226,18 +218,15 @@ nav .nav-bar--item__fill {
     width: 600px;
     height: 600px;
   }
-  .hero-img--laptop::after {
-    right: -20%;
-  }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   nav #logo {
     background-image: url("../img/logo-white.png");
   }
   .hero-type {
     width: calc(100% - 40px);
-    margin-top: 200px;
+    margin-top: 210px;
   }
   .hero-type--heading {
     color: #fff;
@@ -262,12 +251,12 @@ nav .nav-bar--item__fill {
     background: none;
     width: 100%;
     height: 100%;
-    bottom: -7px;
-    left: -7px;
+    bottom: -6px;
+    left: -6px;
     border: 2px solid #fff;
   }
   .hero-img {
-    top: 60px;
+    top: 70px;
     left: 0px;
   }
   .hero-img--laptop {
@@ -276,9 +265,166 @@ nav .nav-bar--item__fill {
     left: -80px;
   }
   .hero-img--laptop::after {
-    width: 1100px;
-    height: 1100px;
-    top: -70%;
-    right: -70%;
+    width: 1150px;
+    height: 1150px;
+    top: -75%;
+    right: -79%;
+  }
+}
+
+@media (max-width: 825px) {
+  .hero-type {
+    width: calc(100% - 30px);
+    margin-top: 150px;
+  }
+  .hero-type--heading {
+    font-size: 35px;
+    line-height: 45px;
+    color: #fff;
+  }
+  .hero-type--heading span {
+    font-size: 45px;
+  }
+  .hero-img--laptop {
+    width: 550px;
+    height: 550px;
+  }
+  .hero-img--laptop::after {
+    width: 1000px;
+    height: 1000px;
+    top: -90%;
+    right: -85%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-type {
+    width: calc(100% - 20px);
+    margin-top: 150px;
+  }
+  .hero-type--heading {
+    font-size: 32px;
+    line-height: 42px;
+    color: #fff;
+  }
+  .hero-type--heading span {
+    font-size: 42px;
+  }
+  .hero-img--laptop {
+    width: 550px;
+    height: 550px;
+    left: -130px;
+  }
+  .hero-img--laptop::after {
+    width: 1000px;
+    height: 1000px;
+    top: -90%;
+    right: -85%;
+  }
+}
+
+@media (max-width: 600px) {
+  nav #logo {
+    padding-left: 25px;
+  }
+  nav .nav-bar {
+    padding-right: 25px;
+  }
+  nav .nav-bar--item {
+    margin-left: 10px;
+  }
+  .hero-type {
+    width: calc(100% - 20px);
+    margin-top: 40px;
+  }
+  .hero-type--heading {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  .hero-img {
+    top: 180px;
+    left: 0px;
+  }
+  .hero-img--laptop {
+    left: -115px;
+  }
+  .hero-img--laptop::after {
+    top: -120%;
+    right: -50%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-type {
+    width: calc(100% - 20px);
+    margin-top: 40px;
+  }
+  .hero-type--heading {
+    font-size: 27px;
+    line-height: 37px;
+    color: #fff;
+  }
+  .hero-type--heading span {
+    font-size: 37px;
+  }
+  .hero-type .btn {
+    font-size: 17px;
+  }
+  .hero-img {
+    top: 170px;
+    left: 0px;
+  }
+  .hero-img--laptop {
+    width: 470px;
+    height: 470px;
+    left: -115px;
+  }
+  .hero-img--laptop::after {
+    width: 600px;
+    height: 600px;
+    top: -60%;
+    right: -30%;
+  }
+}
+
+@media (max-width: 370px) {
+  nav #logo {
+    width: 25px;
+    height: 25px;
+    padding-left: 25px;
+  }
+  nav .nav-bar {
+    padding-right: 15px;
+  }
+  nav .nav-bar--item {
+    margin-left: 5px;
+  }
+  .hero-type {
+    width: calc(100% - 15px);
+    margin-top: 30px;
+  }
+  .hero-type--heading {
+    font-size: 25px;
+    line-height: 33px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .hero-type--heading span {
+    font-size: 30px;
+  }
+  .hero-img {
+    top: 150px;
+    left: 0px;
+  }
+  .hero-img--laptop {
+    width: 360px;
+    height: 360px;
+    left: -75px;
+  }
+  .hero-img--laptop::after {
+    width: 600px;
+    height: 600px;
+    top: -95%;
+    right: -40%;
   }
 }
