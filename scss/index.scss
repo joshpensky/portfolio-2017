@@ -161,19 +161,19 @@ nav {
         border-radius: 4px;
         z-index: -1;
     }
-    &--right::after {
+    &__right::after {
         left: 3px;
     }
-    &--left::after {
+    &__left::after {
         right: 3px;
     }
-    &--top::after {
+    &__top::after {
         bottom: 3px;
     }
-    &--bot::after {
+    &__bot::after {
         top: 3px;
     }
-    &--sm {
+    &__sm {
         font-size: 18px;
         padding: 10px 20px;
     }

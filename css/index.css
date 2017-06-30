@@ -170,23 +170,23 @@ nav .nav-bar--item__fill {
   z-index: -1;
 }
 
-.btn--right::after {
+.btn__right::after {
   left: 3px;
 }
 
-.btn--left::after {
+.btn__left::after {
   right: 3px;
 }
 
-.btn--top::after {
+.btn__top::after {
   bottom: 3px;
 }
 
-.btn--bot::after {
+.btn__bot::after {
   top: 3px;
 }
 
-.btn--sm {
+.btn__sm {
   font-size: 18px;
   padding: 10px 20px;
 }
