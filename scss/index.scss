@@ -2,6 +2,7 @@ $blue: #2980FF;
 $white: #fff;
 $black: #000;
 $red: #f00;
+$maxwidth: 1500px;
 
 body {
     position: relative;
@@ -26,7 +27,7 @@ nav {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 1500px;
+    max-width: $maxwidth;
     z-index: 5;
     left: 50%;
     transform: translateX(-50%);
@@ -75,10 +76,10 @@ nav {
 .hero {
     position: relative;
     width: 100%;
-    max-width: 1500px;
+    max-width: $maxwidth;
     margin: 0 auto;
     padding-top: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 300px;
     &-type {
         position: relative;
         margin-top: 350px;
@@ -157,7 +158,6 @@ nav {
         background: $blue;
         width: calc(100% + 3px);
         height: calc(100% + 3px);
-        bottom: 3px;
         border-radius: 4px;
         z-index: -1;
     }
@@ -167,15 +167,160 @@ nav {
     &--left::after {
         right: 3px;
     }
+    &--top::after {
+        bottom: 3px;
+    }
+    &--bot::after {
+        top: 3px;
+    }
+    &--sm {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
 }
 
-.filler {
+h2 {
+    color: $black;
+    font-family: 'COCOGOOSE', sans-serif;
+    font-size: 40px;
+    line-height: 50px;
+    margin: 0;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    span {
+        color: $white;
+        position: relative;
+        font-size: 50px;
+        &::after {
+            content: '';
+            position: absolute;
+            background: $blue;
+            width: 113%;
+            height: 90%;
+            right: -4%;
+            top: 0%;
+            border-radius: 3px;
+            z-index: -1;
+        }
+        &.left::after {
+            transform: rotate(-3deg);
+        }
+        &.right::after {
+            transform: rotate(3deg);
+        }
+    }
+}
+
+p {
+    color: $black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 0;
+    margin-bottom: 15px;
+    span {
+        display: inline-block;
+    }
+}
+
+h3 {
+    color: $black;
+    font-family: 'COCOGOOSE', sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0;
+}
+
+.introduction {
+    position: relative;
     width: 100%;
-    max-width: 1500px;
-    height: 200vh;
+    max-width: $maxwidth;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    p {
+        max-width: 550px;
+    }
+    .btn, p {
+        margin-left: 70px;
+    }
 }
 
-@media(max-width: 1500px) {
+
+$project-textwidth: 300px;
+.projects {
+    position: relative;
+    width: 100%;
+    max-width: $maxwidth;
+    margin: 0 auto;
+    h2 {
+        text-align: right;
+        margin-bottom: 70px;
+    }
+    .featured {
+        height: 400px;
+        position: relative;
+        margin-bottom: 120px;
+        &__left {
+            .featured--img {
+                left: 0;
+            }
+            .featured--txt {
+                left: calc(100% - #{$project-textwidth});
+                text-align: left;
+                h3, p, .btn {
+                    margin-left: 40px;
+                }
+            }
+        }
+        &__right {
+            .featured--img {
+                right: 0;
+            }
+            .featured--txt {
+                right: calc(100% - #{$project-textwidth});
+                text-align: right;
+                h3, p, .btn {
+                    margin-right: 40px;
+                }
+            }
+        }
+        &--img {
+            position: absolute;
+            width: calc(100% - #{$project-textwidth});
+            height: inherit;
+            background: $blue;
+            display: inline-block;
+            border-radius: 15px;
+        }
+        &--txt {
+            width: $project-textwidth;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            h3 {
+                margin-bottom: 10px;
+            }
+            p {
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+@media(min-width: $maxwidth) {
+    .projects {
+        .featured {
+            &__left {
+                transform: translateX(-5%);
+            }
+            &__right {
+                transform: translateX(5%);
+            }
+        }
+    }
+}
+
+@media(max-width: $maxwidth) {
     .hero {
         &-type {
             margin-top: 300px;
@@ -190,6 +335,22 @@ nav {
         &-img--laptop {
             width: 750px;
             height: 750px;
+        }
+    }
+    .projects {
+        .featured {
+            &__left {
+                .featured--img {
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                }
+            }
+            &__right {
+                .featured--img {
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+            }
         }
     }
 }
