@@ -175,13 +175,16 @@ nav {
     }
 }
 
+$btn-radius: 2px;
+$btn-offset: 3px;
+$btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
 .btn {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     position: relative;
     display: inline-block;
     padding: 10px 25px;
-    border: 2px solid $black;
+    border: $btn-radius solid $black;
     border-radius: 4px;
     color: $white;
     cursor: pointer;
@@ -193,18 +196,31 @@ nav {
         height: calc(100% + 3px);
         border-radius: 4px;
         z-index: -1;
-    }
-    &--right::after {
-        left: 3px;
+        transition: 0.15s ease-out;
     }
     &--left::after {
-        right: 3px;
+        right: $btn-offset;
+    }
+    &--right::after {
+        left: $btn-offset;
     }
     &--top::after {
-        bottom: 3px;
+        bottom: $btn-offset;
     }
     &--bot::after {
-        top: 3px;
+        top: $btn-offset;
+    }
+    &.btn--left.btn--top:active::after {
+        transform: translate($btn-offset-active, $btn-offset-active);
+    }
+    &.btn--left.btn--bot:active::after {
+        transform: translate($btn-offset-active, -$btn-offset-active);
+    }
+    &.btn--right.btn--top:active::after {
+        transform: translate(-$btn-offset-active, $btn-offset-active);
+    }
+    &.btn--right.btn--bot:active::after {
+        transform: translate(-$btn-offset-active, -$btn-offset-active);
     }
     &--sm {
         font-size: 18px;
@@ -224,6 +240,9 @@ h2 {
         color: $white;
         position: relative;
         font-size: 50px;
+        a {
+            color: $white;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -269,9 +288,10 @@ h3 {
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     p {
         max-width: 550px;
+        padding-right: 50px;
     }
     h2 {
         margin-left: 50px;
@@ -288,6 +308,7 @@ $project-textwidth: 500px;
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
+    margin-bottom: 200px;
     h2 {
         text-align: right;
         margin-bottom: 50px;
@@ -415,6 +436,12 @@ $project-textwidth: 500px;
     }
 }
 
+#watchr {
+    .featured__img {
+        background: #0F1923;
+    }
+}
+
 .contact {
     width: 100%;
     max-width: $maxwidth;
@@ -444,9 +471,11 @@ footer {
         color: $black;
         font-family: 'Roboto', sans-serif;
         font-size: 15px;
+        margin-left: 15px;
     }
     .footer__links {
         display: inline-block;
+        margin-right: 10px;
         #github, #linkedin {
             height: $footerheight;
             width: auto;
@@ -491,24 +520,7 @@ footer {
     }
 }
 
-@media (max-width: 1250px) {
-    .hero {
-        &__type {
-            width: 50%;
-            margin-top: 250px;
-            &__heading {
-                font-size: 40px;
-                line-height: 50px;
-                span {
-                    font-size: 50px;
-                }
-            }
-        }
-        &__img__laptop {
-            width: 600px;
-            height: 600px;
-        }
-    }
+@media(max-width: 1400px) {
     .projects {
         .featured {
             &--left {
@@ -531,6 +543,34 @@ footer {
     }
 }
 
+@media (max-width: 1250px) {
+    .hero {
+        margin-bottom: 250px;
+        &__type {
+            width: 50%;
+            margin-top: 250px;
+            &__heading {
+                font-size: 40px;
+                line-height: 50px;
+                span {
+                    font-size: 50px;
+                }
+            }
+        }
+        &__img__laptop {
+            width: 600px;
+            height: 600px;
+        }
+    }
+    h2 {
+        font-size: 32px;
+        line-height: 42px;
+        span {
+            font-size: 42px;
+        }
+    }
+}
+
 @media (max-width: 1000px) {
     nav {
         #logo {
@@ -538,6 +578,7 @@ footer {
         }
     }
     .hero {
+        margin-bottom: 360px;
         &__type {
             width: calc(100% - 40px);
             margin-top: 210px;
@@ -589,6 +630,7 @@ footer {
 
 @media(max-width: 825px) {
     .hero {
+        margin-bottom: 300px;
         &__type {
             width: calc(100% - 30px);
             margin-top: 150px;
@@ -612,6 +654,25 @@ footer {
                     right: -85%;
                 }
             }
+        }
+    }
+    .introduction {
+        h2 {
+            margin-left: 30px;
+        }
+        .btn, p {
+            margin-left: 70px;
+        }
+    }
+    .projects {
+        h2 {
+            margin-right: 30px;
+            margin-bottom: 40px;
+        }
+    }
+    .contact {
+        h2 {
+            margin-left: 30px;
         }
     }
 }
@@ -644,6 +705,17 @@ footer {
             }
         }
     }
+    h2 {
+        font-size: 28px;
+        line-height: 35px;
+        span {
+            font-size: 35px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 27px;
+    }
 }
 
 @media(max-width: 600px) {
@@ -659,6 +731,7 @@ footer {
         }
     }
     .hero {
+        margin-bottom: 500px;
         &__type {
             width: calc(100% - 20px);
             margin-top: 40px;
@@ -677,6 +750,24 @@ footer {
                     right: -50%;
                 }
             }
+        }
+    }
+    .introduction {
+        h2 {
+            margin-left: 20px;
+        }
+        .btn, p {
+            margin-left: 50px;
+        }
+    }
+    .projects {
+        h2 {
+            margin-right: 20px;
+        }
+    }
+    .contact {
+        h2 {
+            margin-left: 20px;
         }
     }
 }

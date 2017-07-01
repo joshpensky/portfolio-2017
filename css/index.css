@@ -205,14 +205,15 @@ nav.nav__hidden {
   height: calc(100% + 3px);
   border-radius: 4px;
   z-index: -1;
-}
-
-.btn--right::after {
-  left: 3px;
+  transition: 0.15s ease-out;
 }
 
 .btn--left::after {
   right: 3px;
+}
+
+.btn--right::after {
+  left: 3px;
 }
 
 .btn--top::after {
@@ -221,6 +222,22 @@ nav.nav__hidden {
 
 .btn--bot::after {
   top: 3px;
+}
+
+.btn.btn--left.btn--top:active::after {
+  transform: translate(10px, 10px);
+}
+
+.btn.btn--left.btn--bot:active::after {
+  transform: translate(10px, -10px);
+}
+
+.btn.btn--right.btn--top:active::after {
+  transform: translate(-10px, 10px);
+}
+
+.btn.btn--right.btn--bot:active::after {
+  transform: translate(-10px, -10px);
 }
 
 .btn--sm {
@@ -242,6 +259,10 @@ h2 span {
   color: #fff;
   position: relative;
   font-size: 50px;
+}
+
+h2 span a {
+  color: #fff;
 }
 
 h2 span::after {
@@ -290,11 +311,12 @@ h3 {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .introduction p {
   max-width: 550px;
+  padding-right: 50px;
 }
 
 .introduction h2 {
@@ -310,6 +332,7 @@ h3 {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  margin-bottom: 200px;
 }
 
 .projects h2 {
@@ -454,6 +477,10 @@ h3 {
   background-repeat: no-repeat;
 }
 
+#watchr .featured__img {
+  background: #0F1923;
+}
+
 .contact {
   width: 100%;
   max-width: 1500px;
@@ -486,10 +513,12 @@ footer .footer__copy {
   color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
+  margin-left: 15px;
 }
 
 footer .footer__links {
   display: inline-block;
+  margin-right: 10px;
 }
 
 footer .footer__links #github, footer .footer__links #linkedin {
@@ -524,7 +553,25 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
+@media (max-width: 1400px) {
+  .projects .featured--left .featured__txt {
+    left: calc(100% - 400px);
+  }
+  .projects .featured--right .featured__txt {
+    right: calc(100% - 400px);
+  }
+  .projects .featured__img {
+    width: calc(100% - 400px);
+  }
+  .projects .featured__txt {
+    width: 400px;
+  }
+}
+
 @media (max-width: 1250px) {
+  .hero {
+    margin-bottom: 250px;
+  }
   .hero__type {
     width: 50%;
     margin-top: 250px;
@@ -540,23 +587,21 @@ footer .footer__links #github, footer .footer__links #linkedin {
     width: 600px;
     height: 600px;
   }
-  .projects .featured--left .featured__txt {
-    left: calc(100% - 400px);
+  h2 {
+    font-size: 32px;
+    line-height: 42px;
   }
-  .projects .featured--right .featured__txt {
-    right: calc(100% - 400px);
-  }
-  .projects .featured__img {
-    width: calc(100% - 400px);
-  }
-  .projects .featured__txt {
-    width: 400px;
+  h2 span {
+    font-size: 42px;
   }
 }
 
 @media (max-width: 1000px) {
   nav #logo {
     background-image: url("../img/logo-white.png");
+  }
+  .hero {
+    margin-bottom: 360px;
   }
   .hero__type {
     width: calc(100% - 40px);
@@ -607,6 +652,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 825px) {
+  .hero {
+    margin-bottom: 300px;
+  }
   .hero__type {
     width: calc(100% - 30px);
     margin-top: 150px;
@@ -628,6 +676,19 @@ footer .footer__links #github, footer .footer__links #linkedin {
     height: 1000px;
     top: -90%;
     right: -85%;
+  }
+  .introduction h2 {
+    margin-left: 30px;
+  }
+  .introduction .btn, .introduction p {
+    margin-left: 70px;
+  }
+  .projects h2 {
+    margin-right: 30px;
+    margin-bottom: 40px;
+  }
+  .contact h2 {
+    margin-left: 30px;
   }
 }
 
@@ -655,6 +716,17 @@ footer .footer__links #github, footer .footer__links #linkedin {
     top: -90%;
     right: -85%;
   }
+  h2 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+  h2 span {
+    font-size: 35px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -666,6 +738,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   nav .nav-bar__item {
     margin-left: 10px;
+  }
+  .hero {
+    margin-bottom: 500px;
   }
   .hero__type {
     width: calc(100% - 20px);
@@ -685,6 +760,18 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .hero__img__laptop::after {
     top: -120%;
     right: -50%;
+  }
+  .introduction h2 {
+    margin-left: 20px;
+  }
+  .introduction .btn, .introduction p {
+    margin-left: 50px;
+  }
+  .projects h2 {
+    margin-right: 20px;
+  }
+  .contact h2 {
+    margin-left: 20px;
   }
 }
 
