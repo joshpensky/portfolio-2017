@@ -5,58 +5,76 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <title>Josh Pensky</title>
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/nav.js"></script>
     </head>
     <body>
         <nav>
             <div id="logo"></div>
             <ul class="nav-bar">
-                <a href="about.html" class="nav-bar--item">about</a>
-                <a href="projects.html" class="nav-bar--item">projects</a>
-                <a href="chat.html" class="nav-bar--item nav-bar--item__fill">let's chat</a>
+                <a href="about.html" class="nav-bar__item">about</a>
+                <a href="projects.html" class="nav-bar__item">projects</a>
+                <a href="chat.html" class="nav-bar__item nav-bar__item--filled">let's chat</a>
             </ul>
         </nav>
         <div class="container">
             <div class="hero">
-                <div class="hero-type">
-                    <h1 class="hero-type--heading">let's <span>paint</span> the web.<br />together.</h1>
-                    <div class="btn btn__top btn__right">Let's do it</div>
+                <div class="hero__type">
+                    <h1 class="hero__type__heading">let's <span>paint</span> the web.<br />together.</h1>
+                    <div class="btn btn--top btn--right">Let's do it</div>
                 </div>
-                <div class="hero-img">
-                    <div class="hero-img--laptop"></div>
+                <div class="hero__img">
+                    <div class="hero__img__laptop"></div>
                 </div>
             </div>
             <div class="introduction">
                 <h2>my name is <span class="left">josh pensky</span>,<br />and I make the web look good.</h2>
                 <p>As a designer/front-end developer, it is my passion to design and build gorgeous, functionally-intuitive user experiences for your <span>web project.</span></p>
-                <div class="btn btn__sm btn__bot btn__left">More about me</div>
+                <div class="btn btn--sm btn--bot btn--left">More about me</div>
             </div>
             <div class="projects">
                 <h2>past <span class="right">projects</span></h2>
-                <div class="featured featured__right">
-                    <div class="featured--img"></div>
-                    <div class="featured--txt">
+                <div class="featured featured--right">
+                    <div class="featured__img"></div>
+                    <div class="featured__txt">
                         <h3>watchr</h3>
                         <p>Binging shows and movies, for the modern, <span>modern world.</span></p>
-                        <div class="btn btn__sm btn__bot btn__right">View case study</div>
+                        <div class="btn btn--sm btn--bot btn--right">View case study</div>
                     </div>
                 </div>
-                <div class="featured featured__left">
-                    <div class="featured--img"></div>
-                    <div class="featured--txt">
-                        <h3>CAMD systems</h3>
+                <div class="featured featured--left" id="camd">
+                    <div class="featured__img">
+                        <div id="graphic">graphic</div>
+                        <div id="design">design</div>
+                        <div id="layout">
+                        </div>
+                    </div>
+                    <div class="featured__txt">
+                        <h3>C.A.M.D. systems</h3>
                         <p>Back to basics with Northeastern University's visual <span>art majors.</span></p>
-                        <div class="btn btn__sm btn__bot btn__left">View work</div>
+                        <div class="btn btn--sm btn--bot btn--left">View work</div>
                     </div>
                 </div>
-                <div class="featured featured__right">
-                    <div class="featured--img"></div>
-                    <div class="featured--txt">
+                <div class="featured featured--right">
+                    <div class="featured__img"></div>
+                    <div class="featured__txt">
                         <h3>josh pensky</h3>
-                        <p>Arguably the greatest street in the city <span>of Boston.</span></p>
-                        <div class="btn btn__sm btn__bot btn__right">View case study</div>
+                        <p>Yep, I made this <span>site, too.</span></p>
+                        <div class="btn btn--sm btn--bot btn--right">View case study</div>
                     </div>
                 </div>
             </div>
+            <div class="contact">
+                <div class="contact__heading">
+                    <h2>have an idea?<br /><span class="right">let's chat.</span></h2>
+                </div>
+            </div>
+            <footer>
+                <div class="footer__copy">&copy; 2017 Josh Pensky.</div>
+                <div class="footer__links">
+                    <a href="https://github.com/joshjpeg1" target="_blank" rel="noreferrer noopener"><img id="github" src="img/github.png" /></a>
+                    <a href="https://www.linkedin.com/in/joshuapensky/" target="_blank" rel="noreferrer noopener"><img id="linkedin" src="img/linkedin.png" /></a>
+                </div>
+            </footer>
         </div>
     </body>
 </html>
