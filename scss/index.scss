@@ -293,7 +293,7 @@ h3 {
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
     p {
         max-width: 550px;
         padding-right: 30px;
@@ -571,6 +571,9 @@ footer {
             height: 600px;
         }
     }
+    .introduction {
+        margin-bottom: 100px;
+    }
     h2 {
         font-size: 32px;
         line-height: 42px;
@@ -637,6 +640,9 @@ footer {
                 }
             }
         }
+    }
+    .introduction {
+        margin-bottom: 80px;
     }
 }
 
@@ -917,7 +923,7 @@ footer {
     }
 }
 
-@media(max-width: 470px) {
+@media(max-width: 485px) {
     .introduction {
         h2 {
             margin-bottom: 12px;

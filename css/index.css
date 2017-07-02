@@ -317,7 +317,7 @@ h3 {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 .introduction p {
@@ -598,6 +598,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
     width: 600px;
     height: 600px;
   }
+  .introduction {
+    margin-bottom: 100px;
+  }
   h2 {
     font-size: 32px;
     line-height: 42px;
@@ -662,6 +665,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
     height: 1150px;
     top: -75%;
     right: -79%;
+  }
+  .introduction {
+    margin-bottom: 80px;
   }
 }
 
@@ -900,7 +906,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 485px) {
   .introduction h2 {
     margin-bottom: 12px;
   }
