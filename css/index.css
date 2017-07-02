@@ -123,6 +123,7 @@ nav.nav__hidden {
   display: inline-block;
   width: 48%;
   padding-right: 20px;
+  z-index: 5;
 }
 
 .hero__type__heading {
@@ -256,16 +257,21 @@ h2 {
 }
 
 h2 span {
+  display: inline-block;
+}
+
+h2 #paint {
   color: #fff;
   position: relative;
   font-size: 50px;
+  display: inline;
 }
 
-h2 span a {
+h2 #paint a {
   color: #fff;
 }
 
-h2 span::after {
+h2 #paint::after {
   content: '';
   position: absolute;
   background: #2980FF;
@@ -277,11 +283,11 @@ h2 span::after {
   z-index: -1;
 }
 
-h2 span.left::after {
+h2 #paint.left::after {
   transform: rotate(-3deg);
 }
 
-h2 span.right::after {
+h2 #paint.right::after {
   transform: rotate(3deg);
 }
 
@@ -316,15 +322,20 @@ h3 {
 
 .introduction p {
   max-width: 550px;
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .introduction h2 {
   margin-left: 50px;
+  padding-right: 30px;
 }
 
 .introduction .btn, .introduction p {
   margin-left: 120px;
+}
+
+.introduction #hidden {
+  display: none;
 }
 
 .projects {
@@ -412,7 +423,7 @@ h3 {
 }
 
 .projects .featured__txt p {
-  width: 240px;
+  max-width: 240px;
   line-height: 26px;
   margin-bottom: 15px;
 }
@@ -492,7 +503,7 @@ h3 {
   margin-left: 50px;
 }
 
-.contact h2 span::after {
+.contact h2 #paint::after {
   width: 110%;
   right: -7%;
   top: 14%;
@@ -591,7 +602,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 32px;
     line-height: 42px;
   }
-  h2 span {
+  h2 #paint {
     font-size: 42px;
   }
 }
@@ -633,6 +644,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
     bottom: -6px;
     left: -6px;
     border: 2px solid #fff;
+  }
+  .hero__type .btn.btn--top.btn--right:active::after {
+    transform: none;
   }
   .hero__img {
     top: 70px;
@@ -683,9 +697,82 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .introduction .btn, .introduction p {
     margin-left: 70px;
   }
+  .projects {
+    margin-bottom: 130px;
+  }
   .projects h2 {
     margin-right: 30px;
     margin-bottom: 40px;
+  }
+  .projects .featured {
+    height: auto;
+    margin-bottom: 60px;
+  }
+  .projects .featured--left .featured__txt, .projects .featured--right .featured__txt {
+    left: 0;
+    text-align: left;
+    z-index: 6;
+  }
+  .projects .featured--left .featured__txt h3, .projects .featured--left .featured__txt p, .projects .featured--left .featured__txt .btn, .projects .featured--right .featured__txt h3, .projects .featured--right .featured__txt p, .projects .featured--right .featured__txt .btn {
+    margin-left: 30px;
+    margin-right: 0px;
+  }
+  .projects .featured--left .featured__txt h3, .projects .featured--right .featured__txt h3 {
+    margin-top: 20px;
+  }
+  .projects .featured--left .featured__txt p, .projects .featured--right .featured__txt p {
+    float: none;
+  }
+  .projects .featured--left .featured__txt .btn, .projects .featured--right .featured__txt .btn {
+    float: none;
+    clear: none;
+  }
+  .projects .featured--left .featured__txt {
+    text-align: right;
+  }
+  .projects .featured--left .featured__txt h3, .projects .featured--left .featured__txt p, .projects .featured--left .featured__txt .btn {
+    margin-left: 0px;
+    margin-right: 30px;
+  }
+  .projects .featured--left .featured__txt p {
+    float: right;
+  }
+  .projects .featured--left .featured__txt .btn {
+    float: right;
+    clear: right;
+  }
+  .projects .featured__img {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    display: block;
+    border-radius: 0px;
+  }
+  .projects .featured__txt {
+    width: 100%;
+    position: relative;
+  }
+  .projects .featured__txt h3 {
+    margin-bottom: 10px;
+  }
+  .projects .featured__txt p {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  #camd .featured__img::after {
+    display: none;
+  }
+  #camd .featured__img #graphic {
+    font-size: 125px;
+    transform: translate(130px, -105px) rotate(90deg);
+  }
+  #camd .featured__img #design {
+    font-size: 240px;
+    transform: translate(-165px, 35px);
+  }
+  #camd .featured__img #layout {
+    height: 140px;
+    transform: translate(-170px, 0px);
   }
   .contact h2 {
     margin-left: 30px;
@@ -720,12 +807,24 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 28px;
     line-height: 35px;
   }
-  h2 span {
+  h2 #paint {
     font-size: 35px;
+  }
+  h3 {
+    font-size: 24px;
   }
   p {
     font-size: 18px;
     line-height: 27px;
+  }
+  .projects .featured--left .featured__txt h3, .projects .featured--right .featured__txt h3 {
+    margin-top: 18px;
+  }
+  .projects .featured__txt h3 {
+    margin-bottom: 5px;
+  }
+  .projects .featured__txt p {
+    margin-bottom: 13px;
   }
 }
 
@@ -761,6 +860,13 @@ footer .footer__links #github, footer .footer__links #linkedin {
     top: -120%;
     right: -50%;
   }
+  h2 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  h2 #paint {
+    font-size: 36px;
+  }
   .introduction h2 {
     margin-left: 20px;
   }
@@ -770,12 +876,55 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .projects h2 {
     margin-right: 20px;
   }
+  .projects .featured__img {
+    height: 300px;
+  }
+  #camd .featured__img::after {
+    display: none;
+  }
+  #camd .featured__img #graphic {
+    font-size: 105px;
+    transform: translate(115px, -90px) rotate(90deg);
+  }
+  #camd .featured__img #design {
+    font-size: 170px;
+    transform: translate(-135px, 18px);
+  }
+  #camd .featured__img #layout {
+    width: 630px;
+    height: 140px;
+    transform: translate(-150px, 0px);
+  }
   .contact h2 {
     margin-left: 20px;
   }
 }
 
+@media (max-width: 470px) {
+  .introduction h2 {
+    margin-bottom: 12px;
+  }
+  .introduction h2 #paint::after {
+    width: 110%;
+  }
+  .introduction #hidden {
+    display: block;
+  }
+  .introduction h2, .introduction p, .introduction .btn {
+    margin-left: 30px;
+  }
+  .introduction p {
+    margin-bottom: 18px;
+  }
+  .projects h2 {
+    margin-right: 30px;
+  }
+}
+
 @media (max-width: 420px) {
+  .hero {
+    margin-bottom: 420px;
+  }
   .hero__type {
     width: calc(100% - 20px);
     margin-top: 40px;
@@ -806,6 +955,25 @@ footer .footer__links #github, footer .footer__links #linkedin {
     top: -60%;
     right: -30%;
   }
+  .projects .featured__img {
+    height: 250px;
+  }
+  #camd .featured__img::after {
+    display: none;
+  }
+  #camd .featured__img #graphic {
+    font-size: 87px;
+    transform: translate(115px, -80px) rotate(90deg);
+  }
+  #camd .featured__img #design {
+    font-size: 140px;
+    transform: translate(-90px, 18px);
+  }
+  #camd .featured__img #layout {
+    width: 500px;
+    height: 120px;
+    transform: translate(-95px, 0px);
+  }
 }
 
 @media (max-width: 370px) {
@@ -819,6 +987,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   nav .nav-bar__item {
     margin-left: 5px;
+  }
+  .hero {
+    margin-bottom: 310px;
   }
   .hero__type {
     width: calc(100% - 15px);
