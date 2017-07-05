@@ -1097,6 +1097,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   nav .nav-bar__item {
     margin-left: 5px;
+    font-size: 14px;
   }
   .hero {
     margin-bottom: 310px;
