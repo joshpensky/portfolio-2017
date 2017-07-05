@@ -32,14 +32,6 @@ a {
                                   supported by Chrome and Opera */
 }
 
-#top-paint {
-  transition: 1s ease-out;
-}
-
-#top-paint.hidden::after {
-  width: 50%;
-}
-
 nav {
   height: 55px;
   position: fixed;
@@ -97,7 +89,8 @@ nav .nav-bar {
 
 nav .nav-bar__item {
   margin: 0;
-  font-family: 'COCOGOOSE', sans-serif;
+  font-family: 'CocogoosePro', sans-serif;
+  letter-spacing: 0px;
   font-size: 15px;
   display: inline-block;
   margin-left: 20px;
@@ -159,12 +152,16 @@ nav.nav--hidden {
 
 .hero__type__heading {
   color: #000;
-  font-family: 'COCOGOOSE', sans-serif;
+  font-family: 'CocogoosePro', sans-serif;
   font-size: 60px;
   line-height: 75px;
   text-align: right;
   margin: 0;
   margin-bottom: 20px;
+}
+
+.hero__type__heading:not(:root:root) {
+  letter-spacing: -3px;
 }
 
 .hero__type__heading span {
@@ -178,7 +175,7 @@ nav.nav--hidden {
   position: absolute;
   background: #2980FF;
   width: 125%;
-  height: 90%;
+  height: 102%;
   right: -7%;
   top: -5%;
   transform: rotate(3deg);
@@ -279,12 +276,16 @@ nav.nav--hidden {
 
 h2 {
   color: #000;
-  font-family: 'COCOGOOSE', sans-serif;
+  font-family: 'CocogoosePro', sans-serif;
   font-size: 40px;
   line-height: 50px;
   margin: 0;
   margin-bottom: 15px;
   padding-top: 20px;
+}
+
+h2:not(:root:root) {
+  letter-spacing: -3px;
 }
 
 h2 span {
@@ -314,7 +315,7 @@ h2 #paint::after {
   position: absolute;
   background: #2980FF;
   width: 113%;
-  height: 90%;
+  height: 110%;
   right: -4%;
   top: 0%;
   border-radius: 3px;
@@ -345,10 +346,14 @@ p span {
 
 h3 {
   color: #000;
-  font-family: 'COCOGOOSE', sans-serif;
+  font-family: 'CocogoosePro', sans-serif;
   font-size: 30px;
   line-height: 40px;
   margin: 0;
+}
+
+h3:not(:root:root) {
+  letter-spacing: -2px;
 }
 
 .introduction {
@@ -711,7 +716,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .hero__type__heading span::after {
     background: #fff;
     width: 110%;
-    height: 90%;
     right: -5%;
     top: -5%;
   }

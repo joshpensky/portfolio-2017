@@ -33,13 +33,6 @@ a {
                                   supported by Chrome and Opera */
 }
 
-#top-paint {
-    transition: 1s ease-out;
-    &.hidden::after {
-        width: 50%;
-    }
-}
-
 nav {
     height: 55px;
     position: fixed;
@@ -89,7 +82,8 @@ nav {
         height: inherit;
         &__item {
             margin: 0;
-            font-family: 'COCOGOOSE', sans-serif;
+            font-family: 'CocogoosePro', sans-serif;
+            letter-spacing: 0px;
             font-size: 15px;
             display: inline-block;
             margin-left: 20px;
@@ -147,7 +141,10 @@ nav {
         z-index: 5;
         &__heading {
             color: $black;
-            font-family: 'COCOGOOSE', sans-serif;
+            font-family: 'CocogoosePro', sans-serif;
+            &:not(:root:root) {
+                letter-spacing: -3px;
+            }
             font-size: 60px;
             line-height: 75px;
             text-align: right;
@@ -162,7 +159,7 @@ nav {
                     position: absolute;
                     background: $blue;
                     width: 125%;
-                    height: 90%;
+                    height: 102%;
                     right: -7%;
                     top: -5%;
                     transform: rotate(3deg);
@@ -256,7 +253,10 @@ $btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
 
 h2 {
     color: $black;
-    font-family: 'COCOGOOSE', sans-serif;
+    font-family: 'CocogoosePro', sans-serif;
+    &:not(:root:root) {
+        letter-spacing: -3px;
+    }
     font-size: 40px;
     line-height: 50px;
     margin: 0;
@@ -278,7 +278,7 @@ h2 {
             position: absolute;
             background: $blue;
             width: 113%;
-            height: 90%;
+            height: 110%;
             right: -4%;
             top: 0%;
             border-radius: 3px;
@@ -314,7 +314,10 @@ p {
 
 h3 {
     color: $black;
-    font-family: 'COCOGOOSE', sans-serif;
+    font-family: 'CocogoosePro', sans-serif;
+    &:not(:root:root) {
+        letter-spacing: -2px;
+    }
     font-size: 30px;
     line-height: 40px;
     margin: 0;
@@ -673,7 +676,6 @@ footer {
                     &::after {
                         background: $white;
                         width: 110%;
-                        height: 90%;
                         right: -5%;
                         top: -5%;
                     }
