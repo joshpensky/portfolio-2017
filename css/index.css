@@ -41,22 +41,43 @@ a {
 }
 
 nav {
-  height: 60px;
+  height: 55px;
   position: fixed;
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 1500px;
-  z-index: 5;
+  z-index: 10;
   left: 50%;
   transform: translateX(-50%);
-  transition: 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background 0.1s ease-out;
+}
+
+nav::before, nav::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: calc(50vw - (1500px / 2));
+  height: inherit;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+nav::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+nav::after {
+  right: 0;
+  transform: translateX(100%);
 }
 
 nav #logo {
   padding-left: 50px;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   background-image: url("../img/logo.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -90,39 +111,24 @@ nav .nav-bar__item--filled {
   border-radius: 3px;
 }
 
-nav.nav__overlay {
+nav.nav--overlay {
   background: #fff;
 }
 
-nav.nav__overlay::before, nav.nav__overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: calc(50vw - (1500px / 2));
-  height: inherit;
-  background: #fff;
+nav.nav--overlay::before, nav.nav--overlay::after {
+  opacity: 1;
 }
 
-nav.nav__overlay::before {
-  left: 0;
-  transform: translateX(-100%);
-}
-
-nav.nav__overlay::after {
-  right: 0;
-  transform: translateX(100%);
-}
-
-nav.nav__overlay .nav-bar__item {
+nav.nav--overlay .nav-bar__item {
   color: #2980FF;
 }
 
-nav.nav__overlay .nav-bar__item--filled {
+nav.nav--overlay .nav-bar__item--filled {
   color: #fff;
   background: #2980FF;
 }
 
-nav.nav__hidden {
+nav.nav--hidden {
   transform: translate(-50%, -100%);
 }
 
@@ -675,6 +681,19 @@ footer .footer__links #github, footer .footer__links #linkedin {
 @media (max-width: 1000px) {
   nav #logo {
     background-image: url("../img/logo-white.png");
+  }
+  nav.nav--overlay {
+    background: #2980FF;
+  }
+  nav.nav--overlay::before, nav.nav--overlay::after {
+    background: #2980FF;
+  }
+  nav.nav--overlay .nav-bar__item {
+    color: white;
+  }
+  nav.nav--overlay .nav-bar__item--filled {
+    color: #2980FF;
+    background: #fff;
   }
   .hero {
     margin-bottom: 360px;

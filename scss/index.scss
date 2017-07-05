@@ -41,20 +41,38 @@ a {
 }
 
 nav {
-    height: 60px;
+    height: 55px;
     position: fixed;
     display: flex;
     align-items: center;
     width: 100%;
     max-width: $maxwidth;
-    z-index: 5;
+    z-index: 10;
     left: 50%;
     transform: translateX(-50%);
-    transition: 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background 0.1s ease-out;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: calc(50vw - (#{$maxwidth} / 2));
+        height: inherit;
+        background: $white;
+        opacity: 0;
+        transition: opacity 0.1s ease-out;
+    }
+    &::before {
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &::after {
+        right: 0;
+        transform: translateX(100%);
+    }
     #logo {
         padding-left: 50px;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         background-image: url("../img/logo.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -84,23 +102,11 @@ nav {
             }
         }
     }
-    &.nav__overlay {
+    &.nav--overlay {
         background: $white;
+        //box-shadow: 0px 20px 50px -20px rgba(0, 0, 0, 0.2);
         &::before, &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: calc(50vw - (#{$maxwidth} / 2));
-            height: inherit;
-            background: $white;
-        }
-        &::before {
-            left: 0;
-            transform: translateX(-100%);
-        }
-        &::after {
-            right: 0;
-            transform: translateX(100%);
+            opacity: 1;
         }
         .nav-bar {
             &__item {
@@ -112,8 +118,9 @@ nav {
             }
         }
     }
-    &.nav__hidden {
+    &.nav--hidden {
         transform: translate(-50%, -100%);
+        //box-shadow: none;
     }
 }
 
@@ -637,6 +644,21 @@ footer {
     nav {
         #logo {
             background-image: url("../img/logo-white.png");
+        }
+        &.nav--overlay {
+            background: $blue;
+            &::before, &::after {
+                background: $blue;
+            }
+            .nav-bar {
+                &__item {
+                    color: white;
+                    &--filled {
+                        color: $blue;
+                        background: $white;
+                    }
+                }
+            }
         }
     }
     .hero {
