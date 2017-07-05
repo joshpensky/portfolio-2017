@@ -1,7 +1,11 @@
-This is a portfolio website made for and by Josh Pensky. As a designer/front-end developer, it is my
-passion to design and build gorgeous, functionally-intuitive user experiences for your web project.
+/* TEAM */
+Designer/Developer: Josh Pensky
+Contact: hello@joshuapensky.com
+Location: Boston, Massachusetts
 
-Last update: 07/05/17
-Language: English
-Doctype: HTML
-Tools: Atom, Adobe Illustrator & Experience Design
+
+/* SITE */
+Last update: 2017/05/07
+Standards: HTML5, CSS3, JS
+Components: n/a
+Software: Atom, Adobe Illustrator, Adobe Experience Design, iTerm 2
