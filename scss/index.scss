@@ -33,6 +33,13 @@ a {
                                   supported by Chrome and Opera */
 }
 
+nav.animate {
+    transition: transform 0.2s ease-in-out, background 0.1s ease-out;
+    &::before, &::after {
+        transition: opacity 0.1s ease-out;
+    }
+}
+
 nav {
     height: 55px;
     position: fixed;
@@ -43,7 +50,6 @@ nav {
     z-index: 10;
     left: 50%;
     transform: translateX(-50%);
-    transition: transform 0.2s ease-in-out, background 0.1s ease-out;
     &::before, &::after {
         content: '';
         position: absolute;
@@ -52,7 +58,6 @@ nav {
         height: inherit;
         background: $white;
         opacity: 0;
-        transition: opacity 0.1s ease-out;
     }
     &::before {
         left: 0;
@@ -123,6 +128,14 @@ nav {
     overflow-x: hidden;
 }
 
+#top-paint.hidden::after {
+    width: 0%;
+}
+
+#top-paint.animate::after {
+    transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+}
+
 .hero {
     position: relative;
     width: 100%;
@@ -158,7 +171,7 @@ nav {
                     background: $blue;
                     width: 125%;
                     height: 102%;
-                    right: -7%;
+                    left: -18%;
                     top: -5%;
                     transform: rotate(3deg);
                     border-radius: 3px;
@@ -448,6 +461,7 @@ $project-textwidth: 500px;
         }
         #show-cards {
             position: absolute;
+            top: 0;
             width: 1190px;
             transform: translate(-60px, -45px);
         }
@@ -674,6 +688,7 @@ footer {
                     &::after {
                         background: $white;
                         width: 110%;
+                        left: -7%;
                         right: -5%;
                         top: -5%;
                     }

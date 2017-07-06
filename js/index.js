@@ -3,9 +3,19 @@ var hidden = false;
 
 /**
  * Sets the last position to the window's current y-position on load.
+ * Unveils the word "paint" from the hero.
  */
 window.addEventListener("load", () => {
     lastPos = window.scrollY;
+    var topPaint = document.getElementById('top-paint');
+    topPaint.classList.remove("hidden");
+    setTimeout(() => {
+        topPaint.classList.remove("animate");
+    }, 1100);
+    var navBar = document.querySelector("nav");
+    setTimeout(() => {
+        navBar.classList.add("animate");
+    }, 100);
 });
 
 /**
