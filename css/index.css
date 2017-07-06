@@ -639,7 +639,7 @@ h3:not(:root:root) {
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
-  z-index: 2;
+  z-index: -1;
 }
 
 footer {

@@ -556,6 +556,7 @@ $project-textwidth: 500px;
         position: relative;
         display: inline-block;
         h2 {
+
             margin-left: 50px;
             #paint::after {
                 width: 110%;
@@ -575,7 +576,7 @@ $project-textwidth: 500px;
             background-position: left;
             background-size: contain;
             background-repeat: no-repeat;
-            z-index: 2;
+            z-index: -1;
         }
     }
 }
