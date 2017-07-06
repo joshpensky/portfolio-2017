@@ -96,6 +96,7 @@ nav .nav-bar {
 nav .nav-bar__item {
   margin: 0;
   font-family: 'CocogoosePro', sans-serif;
+  font-weight: normal;
   letter-spacing: 0px;
   font-size: 15px;
   display: inline-block;
@@ -167,6 +168,7 @@ nav.nav--hidden {
 .hero__type__heading {
   color: #000;
   font-family: 'CocogoosePro', sans-serif;
+  font-weight: bold;
   font-size: 60px;
   line-height: 75px;
   text-align: right;
@@ -292,6 +294,7 @@ nav.nav--hidden {
 h2 {
   color: #000;
   font-family: 'CocogoosePro', sans-serif;
+  font-weight: bold;
   font-size: 40px;
   line-height: 50px;
   margin: 0;
@@ -363,6 +366,7 @@ p span {
 h3 {
   color: #000;
   font-family: 'CocogoosePro', sans-serif;
+  font-weight: bold;
   font-size: 30px;
   line-height: 40px;
   margin: 0;
@@ -552,7 +556,7 @@ h3:not(:root:root) {
 #camd .featured__img #graphic, #camd .featured__img #design {
   display: inline-block;
   position: absolute;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   bottom: 0;
   right: 0;
 }
