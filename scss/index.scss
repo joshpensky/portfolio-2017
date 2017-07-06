@@ -291,7 +291,7 @@ h2 {
             width: 113%;
             height: 110%;
             right: -4%;
-            top: 0%;
+            top: -3%;
             border-radius: 3px;
             z-index: -1;
             transition: 0.2s ease-out;
@@ -1036,14 +1036,14 @@ footer {
         margin-bottom: 500px;
         &__type {
             width: calc(100% - 20px);
-            margin-top: 40px;
+            margin-top: 20px;
             &__heading {
                 color: $white;
                 margin-bottom: 30px;
             }
         }
         &__img {
-            top: 180px;
+            top: 160px;
             left: 0px;
             &__laptop {
                 left: -115px;
@@ -1181,7 +1181,7 @@ footer {
         margin-bottom: 420px;
         &__type {
             width: calc(100% - 20px);
-            margin-top: 40px;
+            margin-top: 20px;
             &__heading {
                 font-size: 27px;
                 line-height: 37px;
@@ -1195,7 +1195,7 @@ footer {
             }
         }
         &__img {
-            top: 170px;
+            top: 150px;
             left: 0px;
             &__laptop {
                 width: 470px;
@@ -1266,7 +1266,7 @@ footer {
         margin-bottom: 310px;
         &__type {
             width: calc(100% - 15px);
-            margin-top: 30px;
+            margin-top: 20px;
             &__heading {
                 font-size: 25px;
                 line-height: 33px;
@@ -1278,7 +1278,7 @@ footer {
             }
         }
         &__img {
-            top: 150px;
+            top: 140px;
             left: 0px;
             &__laptop {
                 width: 360px;

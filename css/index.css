@@ -333,7 +333,7 @@ h2 #paint::after {
   width: 113%;
   height: 110%;
   right: -4%;
-  top: 0%;
+  top: -3%;
   border-radius: 3px;
   z-index: -1;
   transition: 0.2s ease-out;
@@ -1038,14 +1038,14 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   .hero__type {
     width: calc(100% - 20px);
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .hero__type__heading {
     color: #fff;
     margin-bottom: 30px;
   }
   .hero__img {
-    top: 180px;
+    top: 160px;
     left: 0px;
   }
   .hero__img__laptop {
@@ -1149,7 +1149,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   .hero__type {
     width: calc(100% - 20px);
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .hero__type__heading {
     font-size: 27px;
@@ -1163,7 +1163,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 17px;
   }
   .hero__img {
-    top: 170px;
+    top: 150px;
     left: 0px;
   }
   .hero__img__laptop {
@@ -1220,7 +1220,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   .hero__type {
     width: calc(100% - 15px);
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .hero__type__heading {
     font-size: 25px;
@@ -1232,7 +1232,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 30px;
   }
   .hero__img {
-    top: 150px;
+    top: 140px;
     left: 0px;
   }
   .hero__img__laptop {
