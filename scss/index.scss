@@ -633,6 +633,9 @@ footer {
             &__heading {
                 font-size: 40px;
                 line-height: 50px;
+                &:not(:root:root) {
+                    letter-spacing: -2px;
+                }
                 span {
                     font-size: 50px;
                 }
@@ -649,6 +652,9 @@ footer {
     h2 {
         font-size: 32px;
         line-height: 42px;
+        &:not(:root:root) {
+            letter-spacing: -2px;
+        }
         #paint {
             font-size: 42px;
         }
@@ -688,7 +694,7 @@ footer {
                     &::after {
                         background: $white;
                         width: 110%;
-                        left: -7%;
+                        left: -5%;
                         right: -5%;
                         top: -5%;
                     }

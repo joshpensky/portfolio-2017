@@ -679,6 +679,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 40px;
     line-height: 50px;
   }
+  .hero__type__heading:not(:root:root) {
+    letter-spacing: -2px;
+  }
   .hero__type__heading span {
     font-size: 50px;
   }
@@ -692,6 +695,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
   h2 {
     font-size: 32px;
     line-height: 42px;
+  }
+  h2:not(:root:root) {
+    letter-spacing: -2px;
   }
   h2 #paint {
     font-size: 42px;
@@ -731,7 +737,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .hero__type__heading span::after {
     background: #fff;
     width: 110%;
-    left: -7%;
+    left: -5%;
     right: -5%;
     top: -5%;
   }
