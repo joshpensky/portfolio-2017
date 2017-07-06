@@ -529,7 +529,7 @@ $project-textwidth: 500px;
             content: '';
             position: absolute;
             background: $white;
-            z-index: 3;
+            z-index: 2;
         }
         &::before {
             width: 110%;
@@ -543,7 +543,6 @@ $project-textwidth: 500px;
             top: 0;
             height: calc(100% + 120px);
             transform: translate(40px, -40px);
-            z-index: 2;
         }
     }
 }
@@ -976,7 +975,7 @@ footer {
             padding-left: 25px;
         }
         .nav-bar {
-            padding-right: 25px;
+            padding-right: 15px;
             &__item {
                 margin-left: 10px;
             }

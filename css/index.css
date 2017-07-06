@@ -587,7 +587,7 @@ h3:not(:root:root) {
   content: '';
   position: absolute;
   background: #fff;
-  z-index: 3;
+  z-index: 2;
 }
 
 #josh .featured__img::before {
@@ -603,7 +603,6 @@ h3:not(:root:root) {
   top: 0;
   height: calc(100% + 120px);
   transform: translate(40px, -40px);
-  z-index: 2;
 }
 
 .contact {
@@ -981,7 +980,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     padding-left: 25px;
   }
   nav .nav-bar {
-    padding-right: 25px;
+    padding-right: 15px;
   }
   nav .nav-bar__item {
     margin-left: 10px;
