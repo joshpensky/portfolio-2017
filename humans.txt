@@ -1,0 +1,11 @@
+/* TEAM */
+Designer/Developer: Josh Pensky
+Contact: hello@joshuapensky.com
+Location: Boston, Massachusetts
+
+
+/* SITE */
+Last update: 2017/05/07
+Standards: HTML5, CSS3, JS
+Components: n/a
+Software: Atom, Adobe Illustrator, Adobe Experience Design, iTerm 2
