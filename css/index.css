@@ -175,6 +175,7 @@ nav.nav--hidden {
 }
 
 .hero__type__heading:not(:root:root) {
+  /* SAFARI */
   letter-spacing: -3px;
 }
 
@@ -267,19 +268,19 @@ nav.nav--hidden {
   top: 3px;
 }
 
-.btn.btn--left.btn--top:active::after {
+.btn.btn--left.btn--top:active::after, .btn.btn--left.btn--top:focus::after {
   transform: translate(10px, 10px);
 }
 
-.btn.btn--left.btn--bot:active::after {
+.btn.btn--left.btn--bot:active::after, .btn.btn--left.btn--bot:focus::after {
   transform: translate(10px, -10px);
 }
 
-.btn.btn--right.btn--top:active::after {
+.btn.btn--right.btn--top:active::after, .btn.btn--right.btn--top:focus::after {
   transform: translate(-10px, 10px);
 }
 
-.btn.btn--right.btn--bot:active::after {
+.btn.btn--right.btn--bot:active::after, .btn.btn--right.btn--bot:focus::after {
   transform: translate(-10px, -10px);
 }
 
@@ -299,6 +300,7 @@ h2 {
 }
 
 h2:not(:root:root) {
+  /* SAFARI */
   letter-spacing: -3px;
 }
 
@@ -367,6 +369,7 @@ h3 {
 }
 
 h3:not(:root:root) {
+  /* SAFARI */
   letter-spacing: -2px;
 }
 
@@ -580,6 +583,29 @@ h3:not(:root:root) {
   background-repeat: no-repeat;
 }
 
+#josh .featured__img::before, #josh .featured__img::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  z-index: 3;
+}
+
+#josh .featured__img::before {
+  width: 110%;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+
+#josh .featured__img #josh-laptop {
+  position: absolute;
+  top: 0;
+  height: calc(100% + 120px);
+  transform: translate(40px, -40px);
+  z-index: 2;
+}
+
 .contact {
   width: 100%;
   max-width: 1500px;
@@ -680,6 +706,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     line-height: 50px;
   }
   .hero__type__heading:not(:root:root) {
+    /* SAFARI */
     letter-spacing: -2px;
   }
   .hero__type__heading span {
@@ -697,6 +724,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     line-height: 42px;
   }
   h2:not(:root:root) {
+    /* SAFARI */
     letter-spacing: -2px;
   }
   h2 #paint {
@@ -755,7 +783,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     left: -6px;
     border: 2px solid #fff;
   }
-  .hero__type .btn.btn--top.btn--right:active::after {
+  .hero__type .btn.btn--top.btn--right:active::after, .hero__type .btn.btn--top.btn--right:focus::after {
     transform: none;
   }
   .hero__img {
@@ -942,6 +970,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .projects .featured__txt p {
     margin-bottom: 13px;
   }
+  #josh .featured__img #josh-laptop {
+    height: calc(100% + 100px);
+    transform: translate(30px, -20px);
+  }
 }
 
 @media (max-width: 600px) {
@@ -1105,6 +1137,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
     width: 500px;
     height: 120px;
     transform: translate(-95px, 0px);
+  }
+  #josh .featured__img #josh-laptop {
+    height: calc(100% + 100px);
+    transform: translate(-20px, -20px);
   }
 }
 

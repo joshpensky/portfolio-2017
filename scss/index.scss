@@ -153,7 +153,7 @@ nav {
         &__heading {
             color: $black;
             font-family: 'CocogoosePro', sans-serif;
-            &:not(:root:root) {
+            &:not(:root:root) { /* SAFARI */
                 letter-spacing: -3px;
             }
             font-size: 60px;
@@ -244,16 +244,16 @@ $btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
     &--bot::after {
         top: $btn-offset;
     }
-    &.btn--left.btn--top:active::after {
+    &.btn--left.btn--top:active::after, &.btn--left.btn--top:focus::after {
         transform: translate($btn-offset-active, $btn-offset-active);
     }
-    &.btn--left.btn--bot:active::after {
+    &.btn--left.btn--bot:active::after, &.btn--left.btn--bot:focus::after {
         transform: translate($btn-offset-active, -$btn-offset-active);
     }
-    &.btn--right.btn--top:active::after {
+    &.btn--right.btn--top:active::after, &.btn--right.btn--top:focus::after {
         transform: translate(-$btn-offset-active, $btn-offset-active);
     }
-    &.btn--right.btn--bot:active::after {
+    &.btn--right.btn--bot:active::after, &.btn--right.btn--bot:focus::after {
         transform: translate(-$btn-offset-active, -$btn-offset-active);
     }
     &--sm {
@@ -265,7 +265,7 @@ $btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
 h2 {
     color: $black;
     font-family: 'CocogoosePro', sans-serif;
-    &:not(:root:root) {
+    &:not(:root:root) { /* SAFARI */
         letter-spacing: -3px;
     }
     font-size: 40px;
@@ -326,7 +326,7 @@ p {
 h3 {
     color: $black;
     font-family: 'CocogoosePro', sans-serif;
-    &:not(:root:root) {
+    &:not(:root:root) { /* SAFARI */
         letter-spacing: -2px;
     }
     font-size: 30px;
@@ -523,6 +523,31 @@ $project-textwidth: 500px;
     }
 }
 
+#josh {
+    .featured__img {
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            background: $white;
+            z-index: 3;
+        }
+        &::before {
+            width: 110%;
+            height: 90px;
+            bottom: 0;
+            left: 0;
+            transform: translateY(100%);
+        }
+        #josh-laptop {
+            position: absolute;
+            top: 0;
+            height: calc(100% + 120px);
+            transform: translate(40px, -40px);
+            z-index: 2;
+        }
+    }
+}
+
 .contact {
     width: 100%;
     max-width: $maxwidth;
@@ -633,7 +658,7 @@ footer {
             &__heading {
                 font-size: 40px;
                 line-height: 50px;
-                &:not(:root:root) {
+                &:not(:root:root) { /* SAFARI */
                     letter-spacing: -2px;
                 }
                 span {
@@ -652,7 +677,7 @@ footer {
     h2 {
         font-size: 32px;
         line-height: 42px;
-        &:not(:root:root) {
+        &:not(:root:root) { /* SAFARI */
             letter-spacing: -2px;
         }
         #paint {
@@ -713,7 +738,7 @@ footer {
                     left: -6px;
                     border: 2px solid $white;
                 }
-                &.btn--top.btn--right:active::after {
+                &.btn--top.btn--right:active::after, &.btn--top.btn--right:focus::after {
                     transform: none;
                 }
             }
@@ -935,6 +960,14 @@ footer {
             }
         }
     }
+    #josh {
+        .featured__img {
+            #josh-laptop {
+                height: calc(100% + 100px);
+                transform: translate(30px, -20px);
+            }
+        }
+    }
 }
 
 @media(max-width: 600px) {
@@ -1142,6 +1175,14 @@ footer {
                 width: 500px;
                 height: 120px;
                 transform: translate(-95px, 0px);
+            }
+        }
+    }
+    #josh {
+        .featured__img {
+            #josh-laptop {
+                height: calc(100% + 100px);
+                transform: translate(-20px, -20px);
             }
         }
     }
