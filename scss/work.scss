@@ -59,9 +59,6 @@
             line-height: 18px;
             margin: 0;
             margin-bottom: 5px;
-            &:not(:root:root) { /* SAFARI */
-                letter-spacing: -2px;
-            }
         }
         &__body {
             margin: 0;
@@ -181,9 +178,6 @@
             line-height: 18px;
             margin: 0;
             margin-bottom: 3px;
-            &:not(:root:root) { /* SAFARI */
-                letter-spacing: -2px;
-            }
         }
     }
     #previous, #next {
@@ -246,9 +240,6 @@
             margin-left: 30px;
             width: calc(100% - 60px);
             padding-top: calc(100% - 60px);
-            /*width: 100%;
-            padding-top: 100%;
-            border-radius: 0px;*/
         }
         .info {
             width: calc(100% - 30px);

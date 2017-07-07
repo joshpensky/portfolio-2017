@@ -534,11 +534,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-bottom: 5px;
 }
 
-.main .info__subtitle:not(:root:root) {
-  /* SAFARI */
-  letter-spacing: -2px;
-}
-
 .main .info__body {
   margin: 0;
   margin-bottom: 30px;
@@ -677,11 +672,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-bottom: 3px;
 }
 
-.directions .direction__dir:not(:root:root) {
-  /* SAFARI */
-  letter-spacing: -2px;
-}
-
 .directions #previous, .directions #next {
   display: inline-block;
   position: relative;
@@ -745,9 +735,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
     margin-left: 30px;
     width: calc(100% - 60px);
     padding-top: calc(100% - 60px);
-    /*width: 100%;
-            padding-top: 100%;
-            border-radius: 0px;*/
   }
   .main .info {
     width: calc(100% - 30px);
