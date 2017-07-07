@@ -1,0 +1,192 @@
+@import 'base';
+
+.filler {
+    height: 200vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+#title {
+    padding-top: 40px;
+    color: $black;
+    font-family: 'CocogoosePro', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 65px;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    &:not(:root:root) { /* SAFARI */
+        letter-spacing: -3px;
+    }
+}
+
+.main {
+    margin-bottom: 30px;
+    vertical-align: top;
+    #viewer {
+        margin-left: 30px;
+        display: inline-block;
+        width: 800px;
+        padding-top: 800px;
+        border-radius: 5px;
+        background-image: url("../img/camd/cover.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: background-image .3s ease;
+    }
+    .info {
+        vertical-align: top;
+        margin-left: 30px;
+        display: inline-block;
+        width: 25%;
+        &__subtitle {
+            color: $black;
+            font-family: 'CocogoosePro', sans-serif;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 18px;
+            margin: 0;
+            margin-bottom: 5px;
+            &:not(:root:root) { /* SAFARI */
+                letter-spacing: -2px;
+            }
+        }
+        &__body {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.slide-container {
+    position: relative;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-bottom: 40px;
+    overflow-x: hidden;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        width: 30px;
+        height: 130px;
+        z-index: 3;
+        transition: box-shadow 0.2s ease;
+    }
+    &::before {
+        left: 0;
+        transform: translateX(-100%);
+        box-shadow: 10px 0px 30px 4px rgba(0, 0, 0, 0);
+    }
+    &::after {
+        right: 0;
+        transform: translateX(100%);
+        box-shadow: -10px 0px 30px 4px rgba(0, 0, 0, 0);
+    }
+    &--left::before {
+        box-shadow: 10px 0px 30px 4px rgba(0, 0, 0, 0.1);
+    }
+    &--right::after {
+        box-shadow: -10px 0px 30px 4px rgba(0, 0, 0, 0.1);
+    }
+    .slide-list {
+        height: 150px;
+        margin: 0;
+        padding: 0;
+        overflow-x: scroll;
+        overflow-y: visible;
+        white-space: nowrap;
+        position: relative;
+        #selector {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 125px;
+            height: 12px;
+            background: $blue;
+            border-radius: 4px;
+            z-index: 5;
+            transition: transform 0.3s cubic-bezier(1, -0.3, 0.08, 0.97);
+        }
+        .slide__item {
+            display: inline-block;
+            width: 125px;
+            height: 125px;
+            background-color: $white;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0px 15px 50px -20px rgba(0, 0, 0, 0.3);
+            &--selected {
+                cursor: default;
+            }
+        }
+    }
+}
+
+.directions {
+    margin-bottom: 50px;
+    .direction {
+        &__dir {
+            color: $black;
+            font-family: 'CocogoosePro', sans-serif;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 18px;
+            margin: 0;
+            margin-bottom: 3px;
+            &:not(:root:root) { /* SAFARI */
+                letter-spacing: -2px;
+            }
+        }
+    }
+    #previous, #next {
+        display: inline-block;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            width: 30px;
+            height: 30px;
+            background-image: url("../img/arrow.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    #previous {
+        margin-left: 30px;
+        &::before {
+            left: 0;
+            background-position: right;
+        }
+        .direction__dir, .direction__title {
+            margin-left: 50px;
+        }
+    }
+    #next {
+        float: right;
+        text-align: right;
+        margin-right: 30px;
+        &::before {
+            right: 0;
+            transform: rotate(180deg);
+            background-position: left;
+        }
+        .direction__dir, .direction__title {
+            margin-right: 50px;
+        }
+    }
+}
