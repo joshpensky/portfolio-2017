@@ -1,11 +1,17 @@
 @import 'base';
 
+nav {
+    #logo {
+        background-image: url("../img/logo-white.png");
+    }
+}
+
 .hero {
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
     margin-top: 260px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     position: relative;
     overflow: visible;
     &::before {
@@ -14,10 +20,11 @@
         background: $blue;
         top: 0;
         left: 0;
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 600px;
         border-radius: 50%;
-        transform: translate(calc(-100% - 25px), -25%);
+        transform: translate(calc(-100% + 250px), -70%);
+        z-index: -1;
     }
 
     h1 {
@@ -28,33 +35,99 @@
         &:not(:root:root) { /* SAFARI */
             letter-spacing: -3px;
         }
-        font-size: 60px;
+        font-size: 70px;
         line-height: 75px;
         margin: 0;
         margin-bottom: 20px;
     }
     p {
-        padding: 0 30px;
+        padding-left: 230px;
+        padding-right: 30px;
         max-width: 900px;
     }
 }
 
 .case-studies, .projects {
+    clear: both;
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
-    margin-bottom: 100px;
     h2 {
         text-align: right;
         margin-right: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+.projects-list {
+    margin: 0;
+    padding: 0;
+    .project {
+        display: inline-block;
+        width: calc(49% - 30px);
+        margin-bottom: 30px;
+        &:nth-child(2n + 1) {
+            float: left;
+            margin-left: 30px;
+        }
+        &:nth-child(2n + 2) {
+            float: right;
+            margin-right: 30px;
+        }
+        &__img {
+            width: 100%;
+            padding-top: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: $blue;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        &__title {
+            color: $black;
+            font-family: 'CocogoosePro', sans-serif;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 25px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        &__year {
+            color: $gray;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            line-height: 18px;
+            margin: 0;
+            margin-bottom: 15px;
+            span {
+                display: inline-block;
+            }
+        }
     }
 }
 
 .case-studies {
+    .projects-list {
+        .project {
+            &:last-child {
+                margin-bottom: 50px;
+            }
+            &__img {
+                padding-top: 120%;
+            }
+        }
+    }
 }
 
 .projects {
-    margin-bottom: 300px;
+    .projects-list {
+        .project {
+            &:last-child {
+                margin-bottom: 200px;
+            }
+        }
+    }
 }
 
 .filler {

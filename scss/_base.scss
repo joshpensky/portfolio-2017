@@ -265,6 +265,7 @@ $btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
 }
 
 .contact {
+    clear: both;
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;

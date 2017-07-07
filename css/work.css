@@ -286,6 +286,7 @@ nav.nav--hidden {
 }
 
 .contact {
+  clear: both;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
