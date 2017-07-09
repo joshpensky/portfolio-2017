@@ -4,6 +4,11 @@ nav {
     #logo {
         background-image: url("../img/logo-white.png");
     }
+    &.nav--overlay {
+        #logo {
+            background-image: url("../img/logo.png");
+        }
+    }
 }
 
 .hero {
@@ -55,25 +60,26 @@ nav {
     h2 {
         text-align: right;
         margin-right: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 }
 
 .projects-list {
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &::after {
+        content: "";
+        flex: 1 1 100%;
+        max-width: 32%
+    }
     .project {
+        width: 32%;
         display: inline-block;
-        width: calc(49% - 30px);
         margin-bottom: 30px;
-        &:nth-child(2n + 1) {
-            float: left;
-            margin-left: 30px;
-        }
-        &:nth-child(2n + 2) {
-            float: right;
-            margin-right: 30px;
-        }
+        position: relative;
         &__img {
             width: 100%;
             padding-top: 60%;
@@ -107,9 +113,51 @@ nav {
     }
 }
 
+#watchr {
+    .project__img {
+        background: #0F1923;
+        position: relative;
+        overflow: hidden;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 300%;
+            height: 105%;
+            transform: translate(-7%, 3%);
+            background-image: url("../img/watchr.png");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+#josh-pensky {
+    .project__img {
+        position: relative;
+        overflow: hidden;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 120%;
+            height: 105%;
+            transform: translate(5%, 10%);
+            background-image: url("../img/laptop.png");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
 .case-studies {
     .projects-list {
         .project {
+            width: 48.5%;
             &:last-child {
                 margin-bottom: 50px;
             }
@@ -124,7 +172,7 @@ nav {
     .projects-list {
         .project {
             &:last-child {
-                margin-bottom: 200px;
+                margin-bottom: 15%;
             }
         }
     }
@@ -132,4 +180,84 @@ nav {
 
 .filler {
     height: 200vh;
+}
+
+@media(max-width: 1000px) {
+    .projects-list {
+        .project {
+            &__title {
+                font-size: 22px;
+                line-height: 22px;
+            }
+            &__year {
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+    }
+    .projects {
+        .projects-list {
+            .project {
+                width: 48.5%;
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    .projects-list {
+        .project {
+            &__title {
+                font-size: 22px;
+                line-height: 22px;
+            }
+            &__year {
+                font-size: 16px;
+                line-height: 16px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .projects, .case-studies {
+        .projects-list {
+            .project {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .projects {
+        .projects-list {
+            .project {
+                &:last-child {
+                    margin-bottom: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .projects-list {
+        padding: 0 0px;
+        .project {
+            &__img {
+                border-radius: 0px;
+            }
+            &__title, &__year {
+                padding: 0 20px;
+            }
+        }
+    }
+    .projects {
+        .projects-list {
+            .project {
+                &:last-child {
+                    margin-bottom: 270px;
+                }
+            }
+        }
+    }
 }

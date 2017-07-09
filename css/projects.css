@@ -142,19 +142,19 @@ nav::before, nav::after {
   content: '';
   position: absolute;
   top: 0;
-  width: calc(50vw - (1500px / 2));
+  width: calc(calc(50vw - (1500px / 2)) + 2px);
   height: inherit;
   background: #fff;
   opacity: 0;
 }
 
 nav::before {
-  left: 0;
+  left: 1px;
   transform: translateX(-100%);
 }
 
 nav::after {
-  right: 0;
+  right: 1px;
   transform: translateX(100%);
 }
 
@@ -472,6 +472,10 @@ nav #logo {
   background-image: url("../img/logo-white.png");
 }
 
+nav.nav--overlay #logo {
+  background-image: url("../img/logo.png");
+}
+
 .hero {
   width: 100%;
   max-width: 1500px;
@@ -527,28 +531,28 @@ nav #logo {
 .case-studies h2, .projects h2 {
   text-align: right;
   margin-right: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .projects-list {
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projects-list::after {
+  content: "";
+  flex: 1 1 100%;
+  max-width: 32%;
 }
 
 .projects-list .project {
+  width: 32%;
   display: inline-block;
-  width: calc(49% - 30px);
   margin-bottom: 30px;
-}
-
-.projects-list .project:nth-child(2n + 1) {
-  float: left;
-  margin-left: 30px;
-}
-
-.projects-list .project:nth-child(2n + 2) {
-  float: right;
-  margin-right: 30px;
+  position: relative;
 }
 
 .projects-list .project__img {
@@ -585,6 +589,49 @@ nav #logo {
   display: inline-block;
 }
 
+#watchr .project__img {
+  background: #0F1923;
+  position: relative;
+  overflow: hidden;
+}
+
+#watchr .project__img::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300%;
+  height: 105%;
+  transform: translate(-7%, 3%);
+  background-image: url("../img/watchr.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#josh-pensky .project__img {
+  position: relative;
+  overflow: hidden;
+}
+
+#josh-pensky .project__img::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120%;
+  height: 105%;
+  transform: translate(5%, 10%);
+  background-image: url("../img/laptop.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.case-studies .projects-list .project {
+  width: 48.5%;
+}
+
 .case-studies .projects-list .project:last-child {
   margin-bottom: 50px;
 }
@@ -594,9 +641,59 @@ nav #logo {
 }
 
 .projects .projects-list .project:last-child {
-  margin-bottom: 200px;
+  margin-bottom: 15%;
 }
 
 .filler {
   height: 200vh;
+}
+
+@media (max-width: 1000px) {
+  .projects-list .project__title {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .projects-list .project__year {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .projects .projects-list .project {
+    width: 48.5%;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-list .project__title {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .projects-list .project__year {
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+  .projects .projects-list .project, .case-studies .projects-list .project {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects .projects-list .project:last-child {
+    margin-bottom: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .projects-list {
+    padding: 0 0px;
+  }
+  .projects-list .project__img {
+    border-radius: 0px;
+  }
+  .projects-list .project__title, .projects-list .project__year {
+    padding: 0 20px;
+  }
+  .projects .projects-list .project:last-child {
+    margin-bottom: 270px;
+  }
 }

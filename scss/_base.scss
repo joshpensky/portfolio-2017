@@ -136,17 +136,17 @@ nav {
         content: '';
         position: absolute;
         top: 0;
-        width: calc(50vw - (#{$maxwidth} / 2));
+        width: calc(calc(50vw - (#{$maxwidth} / 2)) + 2px);
         height: inherit;
         background: $white;
         opacity: 0;
     }
     &::before {
-        left: 0;
+        left: 1px;
         transform: translateX(-100%);
     }
     &::after {
-        right: 0;
+        right: 1px;
         transform: translateX(100%);
     }
     #logo {
