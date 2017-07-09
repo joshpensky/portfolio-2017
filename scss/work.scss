@@ -281,7 +281,7 @@ nav {
 
 @media(max-width: 1000px) {
     nav {
-        #logo {
+        /*#logo {
             background-image: url('../img/logo-white.png');
         }
         &.nav--overlay {
@@ -295,27 +295,20 @@ nav {
                     }
                 }
             }
+        }*/
+        .nav-bar {
+            &__item {
+                color: $blue;
+                &--filled {
+                    color: $white;
+                    background: $blue;
+                }
+            }
         }
     }
     .container {
         &::after {
             display: none;
-        }
-    }
-    #title {
-        color: $white;
-        margin-bottom: 90px;
-        &::after {
-            content: '';
-            position: absolute;
-            background: $blue;
-            left: 0;
-            bottom: 0;
-            width: 250vw;
-            height: 250vw;
-            border-radius: 50%;
-            transform: translate(-90vw, 70px);
-            z-index: -1;
         }
     }
     .main {
@@ -351,18 +344,6 @@ nav {
         margin-left: 20px;
         font-size: 40px;
         line-height: 50px;
-        &::after {
-            content: '';
-            position: absolute;
-            background: $blue;
-            left: 0;
-            bottom: 0;
-            width: 250vw;
-            height: 250vw;
-            border-radius: 50%;
-            transform: translate(calc(-75vw - 30px), 70px);
-            z-index: -1;
-        }
     }
     .main {
         #viewer {
