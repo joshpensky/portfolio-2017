@@ -2,12 +2,7 @@
 
 nav {
     #logo {
-        background-image: url("../img/logo-white.png");
-    }
-    &.nav--overlay {
-        #logo {
-            background-image: url("../img/logo.png");
-        }
+        background-image: url("../img/logo.png");
     }
 }
 
@@ -15,26 +10,13 @@ nav {
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
-    margin-top: 260px;
-    margin-bottom: 80px;
+    margin-top: 250px;
+    margin-bottom: 60px;
     position: relative;
     overflow: visible;
-    &::before {
-        content: '';
-        position: absolute;
-        background: $blue;
-        top: 0;
-        left: 0;
-        width: 600px;
-        height: 600px;
-        border-radius: 50%;
-        transform: translate(calc(-100% + 250px), -70%);
-        z-index: -1;
-    }
-
     h1 {
         padding-left: 30px;
-        color: $black;
+        color: $white;
         font-family: 'CocogoosePro', sans-serif;
         font-weight: bold;
         &:not(:root:root) { /* SAFARI */
@@ -44,11 +26,24 @@ nav {
         line-height: 75px;
         margin: 0;
         margin-bottom: 20px;
+        padding-right: 30px;
+        &::before {
+            content: '';
+            position: absolute;
+            background: $blue;
+            top: 0;
+            left: 0;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            transform: translate(-20%, -25%);
+            z-index: -1;
+        }
     }
     p {
-        padding-left: 230px;
+        padding-left: 630px;
         padding-right: 30px;
-        max-width: 900px;
+        max-width: 750px;
     }
 }
 
@@ -145,7 +140,7 @@ nav {
             bottom: 0;
             width: 120%;
             height: 105%;
-            transform: translate(5%, 10%);
+            transform: translate(5%, 8%);
             background-image: url("../img/laptop.png");
             background-position: left;
             background-repeat: no-repeat;
@@ -182,6 +177,23 @@ nav {
     height: 200vh;
 }
 
+@media(max-width: 1100px) {
+    .hero {
+        margin-top: 200px;
+        margin-bottom: 80px;
+        h1 {
+            color: $black;
+            margin-bottom: 40px;
+            &::before {
+                display: none;
+            }
+        }
+        p {
+            padding-left: 30px;
+        }
+    }
+}
+
 @media(max-width: 1000px) {
     .projects-list {
         .project {
@@ -200,6 +212,16 @@ nav {
             .project {
                 width: 48.5%;
             }
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .hero {
+        h1 {
+            font-size: 58px;
+            line-height: 72px;
+            margin-bottom: 25px;
         }
     }
 }
@@ -228,6 +250,11 @@ nav {
 }
 
 @media (max-width: 600px) {
+    .hero {
+        h1, p {
+            padding-left: 20px;
+        }
+    }
     .projects {
         .projects-list {
             .project {
@@ -259,5 +286,11 @@ nav {
                 }
             }
         }
+    }
+}
+
+@media(max-width: 400px) {
+    .hero {
+        margin-top: 150px;
     }
 }

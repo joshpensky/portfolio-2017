@@ -481,7 +481,7 @@ nav .nav-bar__item--filled {
   background: #fff;
 }
 
-.cont {
+.master-container {
   overflow-x: hidden;
 }
 
@@ -544,7 +544,6 @@ nav .nav-bar__item--filled {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: whitesmoke;
   transition: background-image .3s ease;
 }
 
@@ -578,7 +577,6 @@ nav .nav-bar__item--filled {
   margin-left: 30px;
   margin-bottom: 40px;
   overflow-y: visible;
-  overflow-x: hidden;
 }
 
 .slide-container::before, .slide-container::after {

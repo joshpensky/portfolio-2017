@@ -16,7 +16,7 @@ nav {
     }
 }
 
-.cont {
+.master-container {
     overflow-x: hidden;
 }
 
@@ -75,7 +75,7 @@ nav {
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-        background-color: rgb(245, 245, 245);
+        //background-color: rgb(245, 245, 245);
         transition: background-image .3s ease;
     }
     .info {
@@ -107,7 +107,6 @@ nav {
     margin-left: 30px;
     margin-bottom: 40px;
     overflow-y: visible;
-    overflow-x: hidden;
     &::before, &::after {
         content: '';
         position: absolute;
