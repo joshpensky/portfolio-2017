@@ -1,4 +1,5 @@
 @import 'base';
+@import 'floating';
 
 nav {
     .nav-bar {
@@ -123,90 +124,8 @@ nav {
     }
 }
 
-
-$project-textwidth: 500px;
-.projects {
-    position: relative;
-    width: 100%;
-    max-width: $maxwidth;
-    margin: 0 auto;
-    h2 {
-        text-align: right;
-        margin-bottom: 50px;
-        margin-right: 50px;
-    }
-    .featured {
-        height: 400px;
-        position: relative;
-        margin-bottom: 100px;
-        &:last-child {
-            margin-bottom: 0px;
-        }
-        &--left {
-            .featured__img {
-                left: 0;
-            }
-            .featured__txt {
-                left: calc(100% - #{$project-textwidth});
-                text-align: left;
-                h3, p, .btn {
-                    margin-left: 40px;
-                }
-                p {
-                    float: left;
-                }
-                .btn {
-                    float: left;
-                    clear: left;
-                }
-            }
-        }
-        &--right {
-            .featured__img {
-                right: 0;
-            }
-            .featured__txt {
-                right: calc(100% - #{$project-textwidth});
-                text-align: right;
-                h3, p, .btn {
-                    margin-right: 40px;
-                }
-                p {
-                    float: right;
-                }
-                .btn {
-                    float: right;
-                    clear: right;
-                }
-            }
-        }
-        &__img {
-            position: absolute;
-            width: calc(100% - #{$project-textwidth});
-            height: inherit;
-            background: $blue;
-            display: inline-block;
-            border-radius: 15px;
-        }
-        &__txt {
-            width: $project-textwidth;
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            h3 {
-                margin-bottom: 10px;
-            }
-            p {
-                max-width: 240px;
-                line-height: 26px;
-                margin-bottom: 15px;
-            }
-        }
-    }
-}
-
 #watchr {
-    .featured__img {
+    .floating__section__img {
         background: #0F1923;
         &::before, &::after {
             content: '';
@@ -238,7 +157,7 @@ $project-textwidth: 500px;
 }
 
 #camd {
-    .featured__img {
+    .floating__section__img {
         background: #F7F7F7;
         z-index: 3;
         &::before, &::after {
@@ -293,7 +212,7 @@ $project-textwidth: 500px;
 }
 
 #josh {
-    .featured__img {
+    .floating__section__img {
         &::before, &::after {
             content: '';
             position: absolute;
@@ -333,16 +252,16 @@ $project-textwidth: 500px;
             height: 750px;
         }
     }
-    .projects {
-        .featured {
+    .floating {
+        .floating__section {
             &--left {
-                .featured__img {
+                .floating__section__img {
                     border-top-left-radius: 0px;
                     border-bottom-left-radius: 0px;
                 }
             }
             &--right {
-                .featured__img {
+                .floating__section__img {
                     border-top-right-radius: 0px;
                     border-bottom-right-radius: 0px;
                 }
@@ -352,15 +271,15 @@ $project-textwidth: 500px;
 }
 
 @media(max-width: 1400px) {
-    .projects {
-        .featured {
+    .floating {
+        .floating__section {
             &--left {
-                .featured__txt {
+                .floating__section__txt {
                     left: calc(100% - 400px);
                 }
             }
             &--right {
-                .featured__txt {
+                .floating__section__txt {
                     right: calc(100% - 400px);
                 }
             }
@@ -515,16 +434,16 @@ $project-textwidth: 500px;
             margin-left: 70px;
         }
     }
-    .projects {
+    .floating {
         h2 {
             margin-right: 30px;
             margin-bottom: 40px;
         }
-        .featured {
+        .floating__section {
             height: auto;
             margin-bottom: 60px;
             &--left, &--right {
-                .featured__txt {
+                .floating__section__txt {
                     left: 0;
                     text-align: left;
                     z-index: 6;
@@ -545,7 +464,7 @@ $project-textwidth: 500px;
                 }
             }
             &--left {
-                .featured__txt {
+                .floating__section__txt {
                     text-align: right;
                     h3, p, .btn {
                         margin-left: 0px;
@@ -581,14 +500,14 @@ $project-textwidth: 500px;
         }
     }
     #watchr {
-        .featured__img {
+        .floating__section__img {
             #show-cards {
                 transform: translate(-120px, -55px);
             }
         }
     }
     #camd {
-        .featured__img {
+        .floating__section__img {
             &::after {
                 display: none;
             }
@@ -636,10 +555,10 @@ $project-textwidth: 500px;
             }
         }
     }
-    .projects {
-        .featured {
+    .floating {
+        .floating__section {
             &--left, &--right {
-                .featured__txt {
+                .floating__section__txt {
                     h3 {
                         margin-top: 18px;
                     }
@@ -656,7 +575,7 @@ $project-textwidth: 500px;
         }
     }
     #josh {
-        .featured__img {
+        .floating__section__img {
             #josh-laptop {
                 height: calc(100% + 100px);
                 transform: translate(30px, -20px);
@@ -707,23 +626,23 @@ $project-textwidth: 500px;
             margin-left: 50px;
         }
     }
-    .projects {
+    .floating {
         h2 {
             margin-right: 20px;
         }
-        .featured {
+        .floating__section {
             &__img {
                 height: 300px;
             }
         }
     }
     #watchr {
-        .featured__img::before {
+        .floating__section__img::before {
             height: 300px;
         }
     }
     #camd {
-        .featured__img {
+        .floating__section__img {
             &::after {
                 display: none;
             }
@@ -764,20 +683,20 @@ $project-textwidth: 500px;
             margin-bottom: 18px;
         }
     }
-    .projects {
+    .floating {
         h2 {
             margin-right: 30px;
         }
-        .featured {
+        .floating__section {
             &--left {
-                .featured__txt {
+                .floating__section__txt {
                     h3, p, .btn {
                         margin-right: 20px;
                     }
                 }
             }
             &--right {
-                .featured__txt {
+                .floating__section__txt {
                     h3, p, .btn {
                         margin-left: 20px;
                     }
@@ -786,7 +705,7 @@ $project-textwidth: 500px;
         }
     }
     #watchr {
-        .featured__img {
+        .floating__section__img {
             #show-cards {
                 width: 800px;
                 transform: translate(-80px, -30px);
@@ -829,15 +748,15 @@ $project-textwidth: 500px;
             }
         }
     }
-    .projects {
-        .featured {
+    .floating {
+        .floating__section {
             &__img {
                 height: 250px;
             }
         }
     }
     #camd {
-        .featured__img {
+        .floating__section__img {
             &::after {
                 display: none;
             }
@@ -857,7 +776,7 @@ $project-textwidth: 500px;
         }
     }
     #josh {
-        .featured__img {
+        .floating__section__img {
             #josh-laptop {
                 height: calc(100% + 100px);
                 transform: translate(-20px, -20px);
