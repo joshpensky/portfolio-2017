@@ -112,7 +112,7 @@ nav {
         position: absolute;
         top: -10px;
         width: 30px;
-        height: 150px;
+        height: 160px;
         z-index: 4;
         transition: box-shadow 0.2s ease;
     }
@@ -280,21 +280,6 @@ nav {
 
 @media(max-width: 1000px) {
     nav {
-        /*#logo {
-            background-image: url('../img/logo-white.png');
-        }
-        &.nav--overlay {
-            background: $blue;
-            .nav-bar {
-                &__item {
-                    color: $white;
-                    &--filled {
-                        color: $blue;
-                        background: $white;
-                    }
-                }
-            }
-        }*/
         .nav-bar {
             &__item {
                 color: $blue;
@@ -364,6 +349,9 @@ nav {
     .slide-container {
         width: calc(100% - 40px);
         margin-left: 20px;
+        &::before, &::after {
+            height: 140px;
+        }
         &__indicator {
             width: 10px;
             height: 10px;

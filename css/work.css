@@ -34,13 +34,13 @@ h2 {
   padding-top: 20px;
 }
 
+h2 span {
+  display: inline-block;
+}
+
 h2:not(:root:root) {
   /* SAFARI */
   letter-spacing: -3px;
-}
-
-h2 span {
-  display: inline-block;
 }
 
 h2 #paint {
@@ -150,19 +150,19 @@ nav::before, nav::after {
   content: '';
   position: absolute;
   top: 0;
-  width: calc(calc(50vw - (1500px / 2)) + 2px);
+  width: calc(calc(50vw - (1500px / 2)));
   height: inherit;
   background: #fff;
   opacity: 0;
 }
 
 nav::before {
-  left: 1px;
+  left: 0px;
   transform: translateX(-100%);
 }
 
 nav::after {
-  right: 1px;
+  right: 0px;
   transform: translateX(100%);
 }
 
@@ -199,10 +199,37 @@ nav .nav-bar__item {
   padding: 5px 10px;
 }
 
+nav .nav-bar__item:last-child {
+  padding-right: 0px;
+}
+
+nav .nav-bar__item:last-child.nav-bar__item--filled::after {
+  width: calc(100% + 10px);
+}
+
 nav .nav-bar__item--filled {
   color: #fff;
+  position: relative;
+}
+
+nav .nav-bar__item--filled::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100%);
+  height: calc(100%);
   background: #2980FF;
   border-radius: 3px;
+  z-index: -1;
+}
+
+nav .nav-bar__item--filled.left::after {
+  transform: rotate(-3deg);
+}
+
+nav .nav-bar__item--filled.right::after {
+  transform: rotate(3deg);
 }
 
 nav.nav--overlay {
@@ -211,15 +238,6 @@ nav.nav--overlay {
 
 nav.nav--overlay::before, nav.nav--overlay::after {
   opacity: 1;
-}
-
-nav.nav--overlay .nav-bar__item {
-  color: #2980FF;
-}
-
-nav.nav--overlay .nav-bar__item--filled {
-  color: #fff;
-  background: #2980FF;
 }
 
 nav.nav--hidden {
@@ -298,6 +316,7 @@ nav.nav--hidden {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  padding-top: 250px;
   margin-bottom: 220px;
 }
 
@@ -363,6 +382,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 1250px) {
   .contact {
+    padding-top: 200px;
     margin-bottom: 200px;
   }
   .contact .contact__heading::after {
@@ -383,7 +403,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
+@media (max-width: 1000px) {
+  .contact {
+    padding-top: 140px;
+  }
+}
+
 @media (max-width: 825px) {
+  .contact {
+    padding-top: 120px;
+  }
   .contact .contact__heading h2 {
     margin-left: 30px;
   }
@@ -409,6 +438,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     line-height: 27px;
   }
   .contact {
+    padding-top: 150px;
     margin-bottom: 180px;
   }
   .contact .contact__heading::after {
@@ -435,6 +465,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 36px;
   }
   .contact {
+    padding-top: 300px;
     margin-bottom: 100px;
   }
   .contact .contact__heading h2 {
@@ -467,6 +498,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 14px;
   }
   .contact {
+    padding-top: 270px;
     margin-bottom: 70px;
   }
   .contact .contact__heading::after {
@@ -592,7 +624,7 @@ nav .nav-bar__item--filled {
   position: absolute;
   top: -10px;
   width: 30px;
-  height: 150px;
+  height: 160px;
   z-index: 4;
   transition: box-shadow 0.2s ease;
 }
@@ -779,23 +811,6 @@ nav .nav-bar__item--filled {
 }
 
 @media (max-width: 1000px) {
-  nav {
-    /*#logo {
-            background-image: url('../img/logo-white.png');
-        }
-        &.nav--overlay {
-            background: $blue;
-            .nav-bar {
-                &__item {
-                    color: $white;
-                    &--filled {
-                        color: $blue;
-                        background: $white;
-                    }
-                }
-            }
-        }*/
-  }
   nav .nav-bar__item {
     color: #2980FF;
   }
@@ -850,6 +865,9 @@ nav .nav-bar__item--filled {
   .slide-container {
     width: calc(100% - 40px);
     margin-left: 20px;
+  }
+  .slide-container::before, .slide-container::after {
+    height: 140px;
   }
   .slide-container__indicator {
     width: 10px;
