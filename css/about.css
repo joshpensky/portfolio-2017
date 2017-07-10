@@ -3,7 +3,7 @@
 }
 
 #top-paint.animate::after {
-  transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+  transition: width 0.75s cubic-bezier(1, -0.3, 0.45, 1);
 }
 
 body {
@@ -34,13 +34,13 @@ h2 {
   padding-top: 20px;
 }
 
+h2 span {
+  display: inline-block;
+}
+
 h2:not(:root:root) {
   /* SAFARI */
   letter-spacing: -3px;
-}
-
-h2 span {
-  display: inline-block;
 }
 
 h2 #paint {
@@ -199,10 +199,37 @@ nav .nav-bar__item {
   padding: 5px 10px;
 }
 
+nav .nav-bar__item:last-child {
+  padding-right: 0px;
+}
+
+nav .nav-bar__item:last-child.nav-bar__item--filled::after {
+  width: calc(100% + 10px);
+}
+
 nav .nav-bar__item--filled {
   color: #fff;
+  position: relative;
+}
+
+nav .nav-bar__item--filled::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100%);
+  height: calc(100%);
   background: #2980FF;
   border-radius: 3px;
+  z-index: -1;
+}
+
+nav .nav-bar__item--filled.left::after {
+  transform: rotate(-3deg);
+}
+
+nav .nav-bar__item--filled.right::after {
+  transform: rotate(3deg);
 }
 
 nav.nav--overlay {
@@ -298,6 +325,7 @@ nav.nav--hidden {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  padding-top: 250px;
   margin-bottom: 220px;
 }
 
@@ -363,6 +391,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 1250px) {
   .contact {
+    padding-top: 200px;
     margin-bottom: 200px;
   }
   .contact .contact__heading::after {
@@ -383,7 +412,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
+@media (max-width: 1000px) {
+  .contact {
+    padding-top: 140px;
+  }
+}
+
 @media (max-width: 825px) {
+  .contact {
+    padding-top: 120px;
+  }
   .contact .contact__heading h2 {
     margin-left: 30px;
   }
@@ -409,6 +447,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     line-height: 27px;
   }
   .contact {
+    padding-top: 150px;
     margin-bottom: 180px;
   }
   .contact .contact__heading::after {
@@ -435,6 +474,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 36px;
   }
   .contact {
+    padding-top: 300px;
     margin-bottom: 100px;
   }
   .contact .contact__heading h2 {
@@ -467,6 +507,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 14px;
   }
   .contact {
+    padding-top: 270px;
     margin-bottom: 70px;
   }
   .contact .contact__heading::after {
@@ -638,7 +679,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  margin-bottom: 200px;
 }
 
 .tools h2 {
@@ -651,6 +691,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   height: 400px;
   position: relative;
   margin-bottom: 100px;
+}
+
+.tools__section:last-child {
+  margin-bottom: 0px;
 }
 
 .tools__section--left .tools__section__img {
@@ -773,12 +817,12 @@ footer .footer__links #github, footer .footer__links #linkedin {
   transform: translate(40px, 30px);
 }
 
-#other .tools__section__img {
+#more .tools__section__img {
   background: #DDD;
   overflow: hidden;
 }
 
-#other .tools__section__img::after {
+#more .tools__section__img::after {
   content: '';
   position: absolute;
   left: 0;
@@ -822,6 +866,15 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
+@media (max-width: 1250px) {
+  .split-view .what, .split-view .why {
+    margin-bottom: 50px;
+  }
+  .tools h2 {
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 1150px) {
   #code .tools__section__img::after {
     transform: translate(20px, 30px);
@@ -830,7 +883,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 860px) {
   .split-view {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   .split-view .what, .split-view .why {
     max-width: 100%;
@@ -841,6 +894,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   .split-view .why {
     float: none;
+  }
+  .split-view .what {
+    float: right;
+    text-align: right;
   }
 }
 
@@ -919,6 +976,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 700px) {
+  .tools h2 {
+    margin-bottom: 25px;
+  }
   .tools__section--left .tools__section__txt h3, .tools__section--right .tools__section__txt h3 {
     margin-top: 18px;
   }

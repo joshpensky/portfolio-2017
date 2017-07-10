@@ -3,7 +3,7 @@
 }
 
 #top-paint.animate::after {
-  transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+  transition: width 0.75s cubic-bezier(1, -0.3, 0.45, 1);
 }
 
 body {
@@ -34,13 +34,13 @@ h2 {
   padding-top: 20px;
 }
 
+h2 span {
+  display: inline-block;
+}
+
 h2:not(:root:root) {
   /* SAFARI */
   letter-spacing: -3px;
-}
-
-h2 span {
-  display: inline-block;
 }
 
 h2 #paint {
@@ -199,10 +199,37 @@ nav .nav-bar__item {
   padding: 5px 10px;
 }
 
+nav .nav-bar__item:last-child {
+  padding-right: 0px;
+}
+
+nav .nav-bar__item:last-child.nav-bar__item--filled::after {
+  width: calc(100% + 10px);
+}
+
 nav .nav-bar__item--filled {
   color: #fff;
+  position: relative;
+}
+
+nav .nav-bar__item--filled::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100%);
+  height: calc(100%);
   background: #2980FF;
   border-radius: 3px;
+  z-index: -1;
+}
+
+nav .nav-bar__item--filled.left::after {
+  transform: rotate(-3deg);
+}
+
+nav .nav-bar__item--filled.right::after {
+  transform: rotate(3deg);
 }
 
 nav.nav--overlay {
@@ -298,6 +325,7 @@ nav.nav--hidden {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  padding-top: 250px;
   margin-bottom: 220px;
 }
 
@@ -363,6 +391,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 1250px) {
   .contact {
+    padding-top: 200px;
     margin-bottom: 200px;
   }
   .contact .contact__heading::after {
@@ -383,7 +412,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
+@media (max-width: 1000px) {
+  .contact {
+    padding-top: 140px;
+  }
+}
+
 @media (max-width: 825px) {
+  .contact {
+    padding-top: 120px;
+  }
   .contact .contact__heading h2 {
     margin-left: 30px;
   }
@@ -409,6 +447,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     line-height: 27px;
   }
   .contact {
+    padding-top: 150px;
     margin-bottom: 180px;
   }
   .contact .contact__heading::after {
@@ -435,6 +474,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 36px;
   }
   .contact {
+    padding-top: 300px;
     margin-bottom: 100px;
   }
   .contact .contact__heading h2 {
@@ -467,6 +507,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 14px;
   }
   .contact {
+    padding-top: 270px;
     margin-bottom: 70px;
   }
   .contact .contact__heading::after {
@@ -600,7 +641,6 @@ nav .nav-bar__item--filled {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  margin-bottom: 250px;
 }
 
 .projects h2 {
@@ -613,6 +653,10 @@ nav .nav-bar__item--filled {
   height: 400px;
   position: relative;
   margin-bottom: 100px;
+}
+
+.projects .featured:last-child {
+  margin-bottom: 0px;
 }
 
 .projects .featured--left .featured__img {
@@ -867,9 +911,6 @@ nav .nav-bar__item--filled {
   .introduction {
     margin-bottom: 100px;
   }
-  .projects {
-    margin-bottom: 200px;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -944,9 +985,6 @@ nav .nav-bar__item--filled {
   .introduction {
     margin-bottom: 80px;
   }
-  .projects {
-    margin-bottom: 140px;
-  }
 }
 
 @media (max-width: 825px) {
@@ -980,9 +1018,6 @@ nav .nav-bar__item--filled {
   }
   .introduction .btn, .introduction p {
     margin-left: 70px;
-  }
-  .projects {
-    margin-bottom: 120px;
   }
   .projects h2 {
     margin-right: 30px;
@@ -1087,9 +1122,6 @@ nav .nav-bar__item--filled {
     top: -90%;
     right: -85%;
   }
-  .projects {
-    margin-bottom: 150px;
-  }
   .projects .featured--left .featured__txt h3, .projects .featured--right .featured__txt h3 {
     margin-top: 18px;
   }
@@ -1142,9 +1174,6 @@ nav .nav-bar__item--filled {
   }
   .introduction .btn, .introduction p {
     margin-left: 50px;
-  }
-  .projects {
-    margin-bottom: 300px;
   }
   .projects h2 {
     margin-right: 20px;
@@ -1294,8 +1323,5 @@ nav .nav-bar__item--filled {
     height: 600px;
     top: -95%;
     right: -40%;
-  }
-  .projects {
-    margin-bottom: 270px;
   }
 }

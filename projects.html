@@ -23,8 +23,8 @@
             <a href="index.html"><div id="logo"></div></a>
             <ul class="nav-bar">
                 <a href="about.html" class="nav-bar__item">about</a>
-                <a href="projects.html" class="nav-bar__item">projects</a>
-                <a href="chat.html" class="nav-bar__item nav-bar__item--filled">let's chat</a>
+                <a href="projects.html" class="nav-bar__item nav-bar__item--filled right">projects</a>
+                <a href="chat.html" class="nav-bar__item">let's chat</a>
             </ul>
         </nav>
         <div class="container">
@@ -131,7 +131,7 @@
             window.addEventListener("load", () => {
                 var topPaint = document.getElementById('top-paint');
                 topPaint.classList.remove("hidden");
-                setTimeout(() => {topPaint.classList.remove("animate");}, 1100);
+                setTimeout(() => {topPaint.classList.remove("animate");}, 800);
             });
             WebFont.load({
                 google: {

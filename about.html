@@ -22,9 +22,9 @@
         <nav>
             <a href="index.html"><div id="logo"></div></a>
             <ul class="nav-bar">
-                <a href="about.html" class="nav-bar__item">about</a>
+                <a href="about.html" class="nav-bar__item nav-bar__item--filled left">about</a>
                 <a href="projects.html" class="nav-bar__item">projects</a>
-                <a href="chat.html" class="nav-bar__item nav-bar__item--filled">let's chat</a>
+                <a href="chat.html" class="nav-bar__item">let's chat</a>
             </ul>
         </nav>
         <div class="container">
@@ -36,15 +36,20 @@
             <div class="split-view">
                 <div class="what">
                     <h2><span id="paint" class="left">what</span> i do</h2>
-                    <p>Art has always been such a large part of my life. With the introduction of coding and computer science a few years ago, I have found a way to combine these two parts of me into one through the development of user interfaces and experiences.</p>
+                    <p>Art has always been such a large part of my life. With the introduction of
+                        coding and computer science a few years ago, I have found a way to combine
+                        these two parts of me into one through the development of user interfaces <span>and experiences.</span></p>
                 </div>
                 <div class="why">
                     <h2><span id="paint" class="right">why</span> i do it</h2>
-                    <p>Plain and simple: it's fun. Combining my loves for art and computer science, discovering the near endless different ways to solve a problem, collaborating with others to help achieve their vision. These are the reasons that the work I do never gets old and always keeps me motivated to keep moving forward.</p>
+                    <p>Plain and simple: it's fun. Combining my loves for art and computer science,
+                        discovering the near endless different ways to solve a problem, collaborating
+                        with others to help achieve their vision. These are the reasons that the
+                        work I do never gets old and always keeps me motivated to <span>keep moving forward.</span></p>
                 </div>
             </div>
             <div class="tools">
-                <h2>my <span id="paint" class="left">tools</span></h2>
+                <h2><span id="paint" class="left">how</span> i do it</h2>
                 <div class="tools__section tools__section--right" id="design">
                     <div class="tools__section__img"></div>
                     <div class="tools__section__txt">
@@ -64,7 +69,7 @@
                     <div class="tools__section__txt">
                         <h3>code</h3>
                         <ul>
-                            <li>HTML/CSS</li>
+                            <li>HTML &amp; CSS</li>
                             <li>Javascript</li>
                             <li>Java</li>
                             <li>Python</li>
@@ -75,10 +80,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="tools__section tools__section--right" id="other">
+                <div class="tools__section tools__section--right" id="more">
                     <div class="tools__section__img"></div>
                     <div class="tools__section__txt">
-                        <h3>other</h3>
+                        <h3>more</h3>
                         <ul>
                             <li>Adobe After Effects</li>
                             <li>Adobe Premiere Pro</li>
@@ -107,7 +112,7 @@
             window.addEventListener("load", () => {
                 var topPaint = document.getElementById('top-paint');
                 topPaint.classList.remove("hidden");
-                setTimeout(() => {topPaint.classList.remove("animate");}, 1100);
+                setTimeout(() => {topPaint.classList.remove("animate");}, 800);
             });
             WebFont.load({
                 google: {

@@ -1,4 +1,4 @@
-@import 'hero';
+    @import 'hero';
 
 
 .filler {
@@ -42,7 +42,6 @@ $project-textwidth: 500px;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    margin-bottom: 200px;
     h2 {
         text-align: right;
         padding-right: 30px;
@@ -52,6 +51,9 @@ $project-textwidth: 500px;
         height: 400px;
         position: relative;
         margin-bottom: 100px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
         &--left {
             .tools__section__img {
                 left: 0;
@@ -169,7 +171,7 @@ $project-textwidth: 500px;
     }
 }
 
-#other {
+#more {
     .tools__section {
         &__img {
             background: #DDD;
@@ -237,6 +239,19 @@ $project-textwidth: 500px;
     }
 }
 
+@media(max-width: 1250px) {
+    .split-view {
+        .what, .why {
+            margin-bottom: 50px;
+        }
+    }
+    .tools {
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
 @media(max-width: 1150px) {
     #code {
         .tools__section {
@@ -251,7 +266,7 @@ $project-textwidth: 500px;
 
 @media(max-width: 860px) {
     .split-view {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         .what, .why {
             max-width: 100%;
             margin-bottom: 30px;
@@ -261,6 +276,10 @@ $project-textwidth: 500px;
         }
         .why {
             float: none;
+        }
+        .what {
+            float: right;
+            text-align: right;
         }
     }
 }
@@ -353,6 +372,9 @@ $project-textwidth: 500px;
 
 @media(max-width: 700px) {
     .tools {
+        h2 {
+            margin-bottom: 25px;
+        }
         &__section {
             &--left, &--right {
                 .tools__section__txt {

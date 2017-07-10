@@ -122,13 +122,6 @@
     h2 {
         margin-top: 40px;
     }
-    .projects-list {
-        .project {
-            &:last-child {
-                margin-bottom: 15%;
-            }
-        }
-    }
 }
 
 @media(max-width: 1000px) {
@@ -160,18 +153,6 @@
     }
 }
 
-@media (max-width: 600px) {
-    .projects {
-        .projects-list {
-            .project {
-                &:last-child {
-                    margin-bottom: 300px;
-                }
-            }
-        }
-    }
-}
-
 @media (max-width: 450px) {
     .projects-list {
         padding: 0;
@@ -187,11 +168,11 @@
             }
         }
     }
-    .projects {
+    .case-studies {
         .projects-list {
             .project {
-                &:last-child {
-                    margin-bottom: 270px;
+                &__img {
+                    border-radius: 0px;
                 }
             }
         }

@@ -18,7 +18,7 @@ $maxwidth: 1500px;
 }
 
 #top-paint.animate::after {
-    transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+    transition: width 0.75s cubic-bezier(1, -0.3, 0.45, 1);
 }
 
 body {
@@ -42,9 +42,6 @@ h2 {
     color: $black;
     font-family: 'CocogoosePro', sans-serif;
     font-weight: bold;
-    &:not(:root:root) { /* SAFARI */
-        letter-spacing: -3px;
-    }
     font-size: 40px;
     line-height: 50px;
     margin: 0;
@@ -52,6 +49,9 @@ h2 {
     padding-top: 20px;
     span {
         display: inline-block;
+    }
+    &:not(:root:root) { /* SAFARI */
+        letter-spacing: -3px;
     }
     #paint {
         color: $white;
@@ -185,10 +185,34 @@ nav {
             margin-left: 20px;
             color: $blue;
             padding: 5px 10px;
+            &:last-child {
+                padding-right: 0px;
+                &.nav-bar__item--filled{
+                    &::after {
+                        width: calc(100% + 10px);
+                    }
+                }
+            }
             &--filled {
                 color: $white;
-                background: $blue;
-                border-radius: 3px;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: calc(100%);
+                    height: calc(100%);
+                    background: $blue;
+                    border-radius: 3px;
+                    z-index: -1;
+                }
+                &.left::after {
+                    transform: rotate(-3deg);
+                }
+                &.right::after {
+                    transform: rotate(3deg);
+                }
             }
         }
     }
@@ -277,12 +301,12 @@ $btn-offset-active: (2 * $btn-offset) + (2 * $btn-radius);
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
+    padding-top: 250px;
     margin-bottom: 220px;
     .contact__heading {
         position: relative;
         display: inline-block;
         h2 {
-
             margin-left: 50px;
             #paint::after {
                 width: 110%;
@@ -337,6 +361,7 @@ footer {
 
 @media (max-width: 1250px) {
     .contact {
+        padding-top: 200px;
         margin-bottom: 200px;
         .contact__heading {
             &::after {
@@ -358,8 +383,15 @@ footer {
     }
 }
 
+@media(max-width: 1000px) {
+    .contact {
+        padding-top: 140px;
+    }
+}
+
 @media(max-width: 825px) {
     .contact {
+        padding-top: 120px;
         .contact__heading {
             h2 {
                 margin-left: 30px;
@@ -388,6 +420,7 @@ footer {
         line-height: 27px;
     }
     .contact {
+        padding-top: 150px;
         margin-bottom: 180px;
         .contact__heading {
             &::after {
@@ -418,6 +451,7 @@ footer {
         }
     }
     .contact {
+        padding-top: 300px;
         margin-bottom: 100px;
         .contact__heading {
             h2 {
@@ -456,6 +490,7 @@ footer {
         }
     }
     .contact {
+        padding-top: 270px;
         margin-bottom: 70px;
         .contact__heading {
             &::after {
