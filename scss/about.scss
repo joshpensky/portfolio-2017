@@ -1,0 +1,48 @@
+@import 'hero';
+
+
+.filler {
+    height: 200vh;
+}
+
+#main-photo {
+    width: 100%;
+    max-width: $maxwidth;
+    padding-top: 500px;
+    background: rgb(222, 222, 222);
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.split-view {
+    width: 100%;
+    max-width: $maxwidth;
+    margin: 0 auto;
+    position: relative;
+    .what, .why {
+        display: inline-block;
+        position: relative;
+        max-width: 43%;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 100px;
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+    .why {
+        float: right;
+    }
+}
+
+.tools {
+    clear: both;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    h2 {
+        text-align: right;
+        padding-right: 30px;
+    }
+}

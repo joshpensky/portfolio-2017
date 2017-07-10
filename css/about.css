@@ -627,175 +627,52 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
-.case-studies, .projects {
+.filler {
+  height: 200vh;
+}
+
+#main-photo {
+  width: 100%;
+  max-width: 1500px;
+  padding-top: 500px;
+  background: #dedede;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.split-view {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.split-view .what, .split-view .why {
+  display: inline-block;
+  position: relative;
+  max-width: 43%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 100px;
+}
+
+.split-view .what h2, .split-view .why h2 {
+  margin-bottom: 20px;
+}
+
+.split-view .why {
+  float: right;
+}
+
+.tools {
   clear: both;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
 }
 
-.case-studies h2, .projects h2 {
+.tools h2 {
   text-align: right;
-  margin-right: 30px;
-  margin-bottom: 40px;
-}
-
-.projects-list {
-  margin: 0;
-  padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.projects-list::after {
-  content: "";
-  flex: 1 1 100%;
-  max-width: 32%;
-}
-
-.projects-list .project {
-  width: 32%;
-  display: inline-block;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.projects-list .project__img {
-  width: 100%;
-  padding-top: 60%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #2980FF;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.projects-list .project__title {
-  color: #000;
-  font-family: 'CocogoosePro', sans-serif;
-  font-weight: normal;
-  font-size: 25px;
-  line-height: 25px;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.projects-list .project__year {
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  line-height: 18px;
-  margin: 0;
-  margin-bottom: 15px;
-}
-
-.projects-list .project__year span {
-  display: inline-block;
-}
-
-#watchr .project__img {
-  background: #0F1923;
-  position: relative;
-  overflow: hidden;
-}
-
-#watchr .project__img::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 300%;
-  height: 105%;
-  transform: translate(-7%, 3%);
-  background-image: url("../img/watchr.png");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#josh-pensky .project__img {
-  position: relative;
-  overflow: hidden;
-}
-
-#josh-pensky .project__img::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 120%;
-  height: 105%;
-  transform: translate(5%, 8%);
-  background-image: url("../img/laptop.png");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.case-studies .projects-list .project {
-  width: 48.5%;
-}
-
-.case-studies .projects-list .project:last-child {
-  margin-bottom: 50px;
-}
-
-.case-studies .projects-list .project__img {
-  padding-top: 120%;
-}
-
-.projects .projects-list .project:last-child {
-  margin-bottom: 15%;
-}
-
-@media (max-width: 1000px) {
-  .projects-list .project__title {
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .projects-list .project__year {
-    font-size: 16px;
-    line-height: 16px;
-  }
-  .projects .projects-list .project {
-    width: 48.5%;
-  }
-}
-
-@media (max-width: 650px) {
-  .projects-list .project__title {
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .projects-list .project__year {
-    font-size: 16px;
-    line-height: 16px;
-    margin-bottom: 5px;
-  }
-  .projects .projects-list .project, .case-studies .projects-list .project {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .projects .projects-list .project:last-child {
-    margin-bottom: 300px;
-  }
-}
-
-@media (max-width: 450px) {
-  .projects-list {
-    padding: 0 0px;
-  }
-  .projects-list .project__img {
-    border-radius: 0px;
-  }
-  .projects-list .project__title, .projects-list .project__year {
-    padding: 0 20px;
-  }
-  .projects .projects-list .project:last-child {
-    margin-bottom: 270px;
-  }
+  padding-right: 30px;
 }
