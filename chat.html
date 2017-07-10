@@ -29,7 +29,7 @@
         </nav>
         <div class="container">
             <div class="hero">
-                <h1>let's chat!</h1>
+                <h1>let's <span id="top-paint" class="animate hidden">chat!</span></h1>
                 <p>You’ve gotten to know about me. <span>Now let’s hear about you.</span><br />Fill out the form below so I can learn more about <span>you and your needs.</span></p>
             </div>
             <div class="filler"></div>
@@ -47,6 +47,11 @@
             </footer>
         </div>
         <script>
+            window.addEventListener("load", () => {
+                var topPaint = document.getElementById('top-paint');
+                topPaint.classList.remove("hidden");
+                setTimeout(() => {topPaint.classList.remove("animate");}, 1100);
+            });
             WebFont.load({
                 google: {
                     families: ['Roboto:400,500']

@@ -602,11 +602,11 @@ nav .nav-bar__item--filled {
 }
 
 .slide-container--left::before {
-  box-shadow: 20px 0px 20px -13px rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 0px 20px -13px rgba(0, 0, 0, 0.3);
 }
 
 .slide-container--right::after {
-  box-shadow: -20px 0px 20px -13px rgba(0, 0, 0, 0.2);
+  box-shadow: -20px 0px 20px -13px rgba(0, 0, 0, 0.3);
 }
 
 .slide-container__indicator {

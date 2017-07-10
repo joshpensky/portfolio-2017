@@ -1,3 +1,11 @@
+#top-paint.hidden::after {
+  width: 0%;
+}
+
+#top-paint.animate::after {
+  transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+}
+
 body {
   position: relative;
   width: 100vw;
@@ -508,6 +516,25 @@ footer .footer__links #github, footer .footer__links #linkedin {
   z-index: -1;
 }
 
+.hero h1 span {
+  position: relative;
+  color: #2980FF;
+}
+
+.hero h1 span::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 113%;
+  height: 110%;
+  left: -7%;
+  top: -3%;
+  border-radius: 3px;
+  z-index: -1;
+  transition: width 0.2s ease-out;
+  transform: rotate(-3deg);
+}
+
 .hero p {
   padding-left: 630px;
   padding-right: 30px;
@@ -521,62 +548,31 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 1000px) {
-  nav #logo {
-    background-image: url("../img/logo-white.png");
-  }
-  nav .nav-bar__item {
-    color: #fff;
-  }
-  nav .nav-bar__item--filled {
-    color: #2980FF;
-    background: #fff;
-  }
-  nav.nav--overlay {
-    background: #2980FF;
-  }
-  nav.nav--overlay #logo {
-    background-image: url("../img/logo-white.png");
-  }
-  nav.nav--overlay .nav-bar__item {
-    color: #fff;
-  }
-  nav.nav--overlay .nav-bar__item--filled {
-    color: #2980FF;
-    background: #fff;
-  }
   .hero {
     margin-top: 200px;
-    margin-bottom: 180px;
+    margin-bottom: 60px;
   }
   .hero h1 {
-    color: #fff;
+    color: #000;
     margin-bottom: 40px;
   }
   .hero h1::before {
-    width: 1600px;
-    height: 1600px;
-    transform: translate(-450px, -76%);
+    display: none;
+  }
+  .hero h1 span {
+    color: #fff;
+  }
+  .hero h1 span::after {
+    background: #2980FF;
   }
   .hero p {
     padding-left: 30px;
     font-weight: 400;
-    color: #fff;
+    color: #000;
   }
 }
 
 @media (max-width: 700px) {
-  .hero::before {
-    content: '';
-    position: absolute;
-    background: #2980FF;
-    bottom: 0;
-    left: 0;
-    width: 1200px;
-    height: 1200px;
-    border-radius: 50%;
-    transform: translate(-28%, 13%);
-    z-index: -1;
-  }
   .hero h1 {
     font-size: 58px;
     line-height: 72px;
@@ -588,36 +584,8 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 600px) {
-  .hero::before {
-    content: '';
-    position: absolute;
-    background: #2980FF;
-    left: 0;
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
-    transform: translate(-30%, 15%);
-    z-index: -1;
-  }
   .hero h1, .hero p {
     padding-left: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero {
-    margin-bottom: 100px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    background: #2980FF;
-    left: 0;
-    width: 800px;
-    height: 800px;
-    border-radius: 50%;
-    transform: translate(-25%, 10%);
-    z-index: -1;
   }
 }
 
@@ -656,8 +624,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 .projects-list .project {
   width: 32%;
-  display: inline-block;
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
   position: relative;
 }
 
@@ -668,7 +637,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #2980FF;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
@@ -686,9 +655,12 @@ footer .footer__links #github, footer .footer__links #linkedin {
   color: #333;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 24px;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
+  font-weight: 400;
+  max-width: 75%;
+  flex-grow: 1;
 }
 
 .projects-list .project__year span {
@@ -738,12 +710,13 @@ footer .footer__links #github, footer .footer__links #linkedin {
   width: 48.5%;
 }
 
-.case-studies .projects-list .project:last-child {
-  margin-bottom: 50px;
-}
-
 .case-studies .projects-list .project__img {
   padding-top: 120%;
+  border-radius: 15px;
+}
+
+.projects h2 {
+  margin-top: 40px;
 }
 
 .projects .projects-list .project:last-child {
@@ -755,25 +728,13 @@ footer .footer__links #github, footer .footer__links #linkedin {
     font-size: 22px;
     line-height: 22px;
   }
-  .projects-list .project__year {
-    font-size: 16px;
-    line-height: 16px;
-  }
   .projects .projects-list .project {
     width: 48.5%;
+    border-radius: 15px;
   }
 }
 
 @media (max-width: 650px) {
-  .projects-list .project__title {
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .projects-list .project__year {
-    font-size: 16px;
-    line-height: 16px;
-    margin-bottom: 5px;
-  }
   .projects .projects-list .project, .case-studies .projects-list .project {
     width: 100%;
   }
@@ -787,13 +748,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 450px) {
   .projects-list {
-    padding: 0 0px;
+    padding: 0;
   }
   .projects-list .project__img {
     border-radius: 0px;
   }
   .projects-list .project__title, .projects-list .project__year {
     padding: 0 20px;
+  }
+  .projects-list .project .btn {
+    margin-left: 20px;
   }
   .projects .projects-list .project:last-child {
     margin-bottom: 270px;

@@ -127,10 +127,10 @@ nav {
         box-shadow: -20px 0px 20px -13px rgba(0, 0, 0, 0);
     }
     &--left::before {
-        box-shadow: 20px 0px 20px -13px rgba(0, 0, 0, 0.2);
+        box-shadow: 20px 0px 20px -13px rgba(0, 0, 0, 0.3);
     }
     &--right::after {
-        box-shadow: -20px 0px 20px -13px rgba(0, 0, 0, 0.2);
+        box-shadow: -20px 0px 20px -13px rgba(0, 0, 0, 0.3);
     }
     &__indicator {
         position: absolute;

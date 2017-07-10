@@ -13,6 +13,14 @@ $maxwidth: 1500px;
     }
 }
 
+#top-paint.hidden::after {
+    width: 0%;
+}
+
+#top-paint.animate::after {
+    transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+}
+
 body {
     position: relative;
     width: 100vw;

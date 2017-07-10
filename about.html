@@ -29,7 +29,7 @@
         </nav>
         <div class="container">
             <div class="hero">
-                <h1>josh who?</h1>
+                <h1>josh <span id="top-paint" class="animate hidden">who?</span></h1>
                 <p>The name’s Pensky. Josh Pensky. I am a Boston-based designer and front-end developer, who is passionate about building gorgeous, functionally-intuitive experiences for you <span>and your users.</span></p>
             </div>
             <div id="main-photo"></div>
@@ -45,8 +45,51 @@
             </div>
             <div class="tools">
                 <h2>my <span id="paint" class="left">tools</span></h2>
+                <div class="tools__section tools__section--right" id="design">
+                    <div class="tools__section__img"></div>
+                    <div class="tools__section__txt">
+                        <h3>design</h3>
+                        <ul>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe InDesign</li>
+                            <li>Adobe Experience Design</li>
+                            <li>Invision</li>
+                            <li>Balsamiq</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tools__section tools__section--left" id="code">
+                    <div class="tools__section__img"></div>
+                    <div class="tools__section__txt">
+                        <h3>code</h3>
+                        <ul>
+                            <li>HTML/CSS</li>
+                            <li>Javascript</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>Processing</li>
+                            <li>Racket/Lisp</li>
+                            <li>Git/Github</li>
+                            <li>Command Line</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tools__section tools__section--right" id="other">
+                    <div class="tools__section__img"></div>
+                    <div class="tools__section__txt">
+                        <h3>other</h3>
+                        <ul>
+                            <li>Adobe After Effects</li>
+                            <li>Adobe Premiere Pro</li>
+                            <li>Final Cut Pro</li>
+                            <li>Markdown</li>
+                            <li>Microsoft Office</li>
+                            <li>iWork</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="filler"></div>
             <div class="contact">
                 <div class="contact__heading">
                     <h2>have an idea?<br /><span id="paint" class="right"><a href="chat.html">let's chat.</a></span></h2>
@@ -61,6 +104,11 @@
             </footer>
         </div>
         <script>
+            window.addEventListener("load", () => {
+                var topPaint = document.getElementById('top-paint');
+                topPaint.classList.remove("hidden");
+                setTimeout(() => {topPaint.classList.remove("animate");}, 1100);
+            });
             WebFont.load({
                 google: {
                     families: ['Roboto:400,500']

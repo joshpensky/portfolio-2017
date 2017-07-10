@@ -12,14 +12,6 @@ nav {
     }
 }
 
-#top-paint.hidden::after {
-    width: 0%;
-}
-
-#top-paint.animate::after {
-    transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
-}
-
 .hero {
     position: relative;
     width: 100%;
@@ -715,7 +707,7 @@ $project-textwidth: 500px;
             &__img {
                 height: 300px;
             }
-        }
+        } 
     }
     #watchr {
         .featured__img::before {

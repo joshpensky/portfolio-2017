@@ -29,7 +29,7 @@
         </nav>
         <div class="container">
             <div class="hero">
-                <h1>project 101</h1>
+                <h1>project <span id="top-paint" class="animate hidden">101</span></h1>
                 <p>The name’s Pensky. Josh Pensky. I am a Boston-based designer and front-end developer, who is passionate about building gorgeous, functionally-intuitive experiences for you <span>and your users.</span></p>
             </div>
             <div class="case-studies">
@@ -38,12 +38,18 @@
                     <li class="project" id="watchr">
                         <a href="projects/watchr.html"><div class="project__img"></div></a>
                         <h4 class="project__title">watchr</h4>
-                        <h5 class="project__year">2017</h5>
+                        <h5 class="project__year">Binging shows and movies, for the modern, <span>modern world.</span></h5>
+                        <div><a href="projects/watchr.html">
+                            <div class="btn btn--sm btn--bot btn--left">View case study</div>
+                        </a></div>
                     </li>
                     <li class="project" id="josh-pensky">
                         <a href="projects/josh-pensky.html"><div class="project__img"></div></a>
                         <h4 class="project__title">josh pensky</h4>
-                        <h5 class="project__year">2017</h5>
+                        <h5 class="project__year">Indentity-building for yours truly.</h5>
+                        <div><a href="projects/josh-pensky.html">
+                            <div class="btn btn--sm btn--bot btn--left">View case study</div>
+                        </a></div>
                     </li>
                 </ul>
             </div>
@@ -53,37 +59,58 @@
                     <li class="project">
                         <a href="projects/camd-systems.html"><div class="project__img" style="background-image: url('img/camd/cover.png');"></div></a>
                         <h4 class="project__title">C.A.M.D. Systems</h4>
-                        <h5 class="project__year">2017</h5>
+                        <h5 class="project__year">Back to basics with Northeastern University's visual art majors.</h5>
+                        <div><a href="projects/camd-systems.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/mahler-symphony-no9.html"><div class="project__img" style="background-image: url('img/mahler/mahler.png');"></div></a>
                         <h4 class="project__title">Mahler Symphony no.9</h4>
-                        <h5 class="project__year">2017</h5>
+                        <h5 class="project__year">There's a harmony to this piece (and it's not the orchestra).</h5>
+                        <div><a href="projects/mahler-symphony-no9.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/water-temperature.html"><div class="project__img" style="background-image: url('img/water/temperature.png');"></div></a>
                         <h4 class="project__title">Water Temperature</h4>
-                        <h5 class="project__year">2017</h5>
+                        <h5 class="project__year">Back to basics with Northeastern University's visual art majors.</h5>
+                        <div><a href="projects/water-temperature.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/newbury-st.html"><div class="project__img" style="background-image: url('img/newbury-st/newbury.png');"></div></a>
                         <h4 class="project__title">Newbury St.</h4>
-                        <h5 class="project__year">2016</h5>
+                        <h5 class="project__year">Arguably the greatest street in the city of Boston.</h5>
+                        <div><a href="projects/newbury-st.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/the-ills-of-technology.html"><div class="project__img" style="background-image: url('img/ills-of-tech/drive.png');"></div></a>
                         <h4 class="project__title">The Ills of Technology</h4>
-                        <h5 class="project__year">2016</h5>
+                        <h5 class="project__year">Back to basics with Northeastern University's visual art majors.</h5>
+                        <div><a href="projects/the-ills-of-technology.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/ifuneral.html"><div class="project__img" style="background-image: url('img/ifuneral/ifuneral.png');"></div></a>
                         <h4 class="project__title">iFuneral</h4>
-                        <h5 class="project__year">2015</h5>
+                        <h5 class="project__year">Back to basics with Northeastern University's visual art majors.</h5>
+                        <div><a href="projects/ifuneral.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                     <li class="project">
                         <a href="projects/childs-play.html"><div class="project__img" style="background-image: url('img/childs-play/childs-play.png');"></div></a>
                         <h4 class="project__title">Child's Play</h4>
-                        <h5 class="project__year">2015</h5>
+                        <h5 class="project__year">Back to basics with Northeastern University's visual art majors.</h5>
+                        <div><a href="projects/childs-play.html">
+                            <div class="btn btn--sm btn--bot btn--left">View work</div>
+                        </a></div>
                     </li>
                 </ul>
             </div>
@@ -101,6 +128,11 @@
             </footer>
         </div>
         <script>
+            window.addEventListener("load", () => {
+                var topPaint = document.getElementById('top-paint');
+                topPaint.classList.remove("hidden");
+                setTimeout(() => {topPaint.classList.remove("animate");}, 1100);
+            });
             WebFont.load({
                 google: {
                     families: ['Roboto:400,500']

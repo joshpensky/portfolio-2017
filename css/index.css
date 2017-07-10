@@ -1,3 +1,11 @@
+#top-paint.hidden::after {
+  width: 0%;
+}
+
+#top-paint.animate::after {
+  transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
+}
+
 body {
   position: relative;
   width: 100vw;
@@ -142,19 +150,19 @@ nav::before, nav::after {
   content: '';
   position: absolute;
   top: 0;
-  width: calc(50vw - (1500px / 2));
+  width: calc(calc(50vw - (1500px / 2)) + 2px);
   height: inherit;
   background: #fff;
   opacity: 0;
 }
 
 nav::before {
-  left: 0;
+  left: 1px;
   transform: translateX(-100%);
 }
 
 nav::after {
-  right: 0;
+  right: 1px;
   transform: translateX(100%);
 }
 
@@ -286,6 +294,7 @@ nav.nav--hidden {
 }
 
 .contact {
+  clear: both;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
@@ -474,14 +483,6 @@ nav .nav-bar__item {
 nav .nav-bar__item--filled {
   color: #2980FF;
   background: #fff;
-}
-
-#top-paint.hidden::after {
-  width: 0%;
-}
-
-#top-paint.animate::after {
-  transition: width 1s cubic-bezier(1, -0.3, 0.45, 1);
 }
 
 .hero {
