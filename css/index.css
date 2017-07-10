@@ -150,19 +150,19 @@ nav::before, nav::after {
   content: '';
   position: absolute;
   top: 0;
-  width: calc(calc(50vw - (1500px / 2)) + 2px);
+  width: calc(calc(50vw - (1500px / 2)));
   height: inherit;
   background: #fff;
   opacity: 0;
 }
 
 nav::before {
-  left: 1px;
+  left: 0px;
   transform: translateX(-100%);
 }
 
 nav::after {
-  right: 1px;
+  right: 0px;
   transform: translateX(100%);
 }
 
@@ -712,18 +712,18 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .floating__section__txt .btn {
     margin-bottom: 0px;
   }
-  .floating__section__txt ul, .floating__section__txt p {
+  .floating__section__txt ul {
     max-width: 500px;
   }
-  .floating__section__txt ul li, .floating__section__txt p li {
+  .floating__section__txt ul li {
     display: inline-block;
   }
-  .floating__section__txt ul li::after, .floating__section__txt p li::after {
+  .floating__section__txt ul li::after {
     content: ' / ';
     color: #2980FF;
     font-weight: 500;
   }
-  .floating__section__txt ul li:last-child::after, .floating__section__txt p li:last-child::after {
+  .floating__section__txt ul li:last-child::after {
     content: none;
   }
 }

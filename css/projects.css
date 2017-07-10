@@ -150,19 +150,19 @@ nav::before, nav::after {
   content: '';
   position: absolute;
   top: 0;
-  width: calc(calc(50vw - (1500px / 2)) + 2px);
+  width: calc(calc(50vw - (1500px / 2)));
   height: inherit;
   background: #fff;
   opacity: 0;
 }
 
 nav::before {
-  left: 1px;
+  left: 0px;
   transform: translateX(-100%);
 }
 
 nav::after {
-  right: 1px;
+  right: 0px;
   transform: translateX(100%);
 }
 
@@ -238,15 +238,6 @@ nav.nav--overlay {
 
 nav.nav--overlay::before, nav.nav--overlay::after {
   opacity: 1;
-}
-
-nav.nav--overlay .nav-bar__item {
-  color: #2980FF;
-}
-
-nav.nav--overlay .nav-bar__item--filled {
-  color: #fff;
-  background: #2980FF;
 }
 
 nav.nav--hidden {

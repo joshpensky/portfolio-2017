@@ -144,17 +144,17 @@ nav {
         content: '';
         position: absolute;
         top: 0;
-        width: calc(calc(50vw - (#{$maxwidth} / 2)) + 2px);
+        width: calc(calc(50vw - (#{$maxwidth} / 2)));
         height: inherit;
         background: $white;
         opacity: 0;
     }
     &::before {
-        left: 1px;
+        left: 0px;
         transform: translateX(-100%);
     }
     &::after {
-        right: 1px;
+        right: 0px;
         transform: translateX(100%);
     }
     #logo {
