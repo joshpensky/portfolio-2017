@@ -6,7 +6,22 @@ nav {
             color: $white;
             &--filled {
                 color: $blue;
-                background: $white;
+                &::after {
+                    background: $white;
+                }
+            }
+        }
+    }
+    &.nav--overlay {
+        .nav-bar {
+            &__item {
+                color: $blue;
+                &--filled {
+                    color: $white;
+                    &::after {
+                        background: $blue;
+                    }
+                }
             }
         }
     }

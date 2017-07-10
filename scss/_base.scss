@@ -221,15 +221,6 @@ nav {
         &::before, &::after {
             opacity: 1;
         }
-        .nav-bar {
-            &__item {
-                color: $blue;
-                &--filled {
-                    color: $white;
-                    background: $blue;
-                }
-            }
-        }
     }
     &.nav--hidden {
         transform: translate(-50%, -100%);

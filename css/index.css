@@ -240,15 +240,6 @@ nav.nav--overlay::before, nav.nav--overlay::after {
   opacity: 1;
 }
 
-nav.nav--overlay .nav-bar__item {
-  color: #2980FF;
-}
-
-nav.nav--overlay .nav-bar__item--filled {
-  color: #fff;
-  background: #2980FF;
-}
-
 nav.nav--hidden {
   transform: translate(-50%, -100%);
 }
@@ -523,7 +514,22 @@ nav .nav-bar__item {
 
 nav .nav-bar__item--filled {
   color: #2980FF;
+}
+
+nav .nav-bar__item--filled::after {
   background: #fff;
+}
+
+nav.nav--overlay .nav-bar__item {
+  color: #2980FF;
+}
+
+nav.nav--overlay .nav-bar__item--filled {
+  color: #fff;
+}
+
+nav.nav--overlay .nav-bar__item--filled::after {
+  background: #2980FF;
 }
 
 .hero {
