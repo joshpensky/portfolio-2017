@@ -212,11 +212,11 @@ nav .nav-bar__item--filled::after {
 }
 
 nav .nav-bar__item--filled.left::after {
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
 }
 
 nav .nav-bar__item--filled.right::after {
-  transform: rotate(3deg);
+  transform: rotate(2deg);
 }
 
 nav.nav--overlay {

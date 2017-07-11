@@ -24,6 +24,9 @@ function checkTyped(elem) {
 
 function send() {
     if (checkFullName() && checkEmail()) {
+        fullName.disabled = true;
+        email.disabled = true;
+        message.disabled = true;
         animateSend();
     }
 }

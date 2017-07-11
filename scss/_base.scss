@@ -205,10 +205,10 @@ nav {
                     z-index: -1;
                 }
                 &.left::after {
-                    transform: rotate(-3deg);
+                    transform: rotate(-2deg);
                 }
                 &.right::after {
-                    transform: rotate(3deg);
+                    transform: rotate(2deg);
                 }
             }
         }
