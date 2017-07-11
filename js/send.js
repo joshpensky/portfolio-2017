@@ -6,7 +6,7 @@ function send() {
         setTimeout(() => {
             sendBtn.classList.remove("send--animate");
             sendBtn.classList.add("send--blank");
-            wrapper.innerHTML = "thank you";
+            wrapper.innerHTML = "thank you!";
             setTimeout(() => {
                 sendBtn.classList.add("send--sent");
             }, 40);

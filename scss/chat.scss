@@ -1,5 +1,10 @@
 @import 'hero';
 
+.container {
+    flex: 1;
+
+}
+
 .form {
     width: 100%;
     max-width: 1500px;
@@ -100,11 +105,9 @@
         }
     }
     &--sent {
-        background: rgb(240, 240, 240) !important;
-        transition: background 0.2s ease;
         .wrapper {
             padding-right: 20px;
-            color: rgb(130, 130, 130);
+            color: $black;
             &::before, &::after {
                 display: none;
             }

@@ -468,17 +468,6 @@ nav {
 }
 
 @media(max-width: 600px) {
-    nav {
-        #logo {
-            padding-left: 25px;
-        }
-        .nav-bar {
-            padding-right: 15px;
-            &__item {
-                margin-left: 10px;
-            }
-        }
-    }
     .hero {
         margin-bottom: 500px;
         &__type {

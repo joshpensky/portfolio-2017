@@ -10,6 +10,9 @@ body {
   position: relative;
   width: 100vw;
   margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
@@ -177,6 +180,7 @@ nav #logo {
 }
 
 nav .nav-bar {
+  padding-left: 0px;
   padding-right: 30px;
   position: absolute;
   display: flex;
