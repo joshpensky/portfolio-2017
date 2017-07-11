@@ -21,14 +21,15 @@ function checkTyped(elem) {
     elem.classList.remove("typed");
 }
 
-
 function send() {
-    if (checkFullName() && checkEmail()) {
-        fullName.disabled = true;
-        email.disabled = true;
-        message.disabled = true;
-        animateSend();
+    if (!checkFullName() || !checkEmail()) {
+        return false;
     }
+    fullName.disabled = true;
+    email.disabled = true;
+    message.disabled = true;
+    sendMessage();
+    animateSend();
 }
 
 function checkFullName() {
@@ -63,6 +64,24 @@ function checkEmail() {
     email.classList.add("error");
     label.innerHTML = "Please enter a valid email address.";
     return false;
+}
+
+function sendMessage() {
+    var http = new XMLHttpRequest();
+    var url = "/chat.php";//your url to the server side file that will receive the data.
+    var data = "fullname=" + fullName.value.trim() + "&email=" + email.value.trim()
+        + "&message=" + getMessage();
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(data);
+}
+
+function getMessage() {
+    var msg = message.value.trim();
+    if (msg == "") {
+        return "I would like to work with you!";
+    }
+    return msg;
 }
 
 function animateSend() {
