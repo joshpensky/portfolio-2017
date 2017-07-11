@@ -883,10 +883,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
-.filler {
-  height: 200vh;
-}
-
 #main-photo {
   width: 100%;
   max-width: 1500px;
@@ -910,7 +906,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   max-width: 43%;
   padding-left: 30px;
   padding-right: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .split-view .what h2, .split-view .why h2 {

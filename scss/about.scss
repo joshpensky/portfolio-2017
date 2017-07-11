@@ -1,11 +1,6 @@
 @import 'hero';
 @import 'floating';
 
-
-.filler {
-    height: 200vh;
-}
-
 #main-photo {
     width: 100%;
     max-width: $maxwidth;
@@ -27,7 +22,7 @@
         max-width: 43%;
         padding-left: 30px;
         padding-right: 30px;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
         h2 {
             margin-bottom: 20px;
         }

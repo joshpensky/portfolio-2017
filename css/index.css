@@ -898,6 +898,10 @@ nav.nav--overlay .nav-bar__item--filled::after {
   display: none;
 }
 
+.floating h2 {
+  margin-bottom: 40px;
+}
+
 #watchr .floating__section__img {
   background: #0F1923;
 }
@@ -1028,29 +1032,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
   .hero__img__laptop {
     width: 750px;
     height: 750px;
-  }
-  .floating .floating__section--left .floating__section__img {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-  .floating .floating__section--right .floating__section__img {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .floating .floating__section--left .floating__section__txt {
-    left: calc(100% - 400px);
-  }
-  .floating .floating__section--right .floating__section__txt {
-    right: calc(100% - 400px);
-  }
-  .floating .floating__section__img {
-    width: calc(100% - 400px);
-  }
-  .floating .floating__section__txt {
-    width: 400px;
   }
 }
 
@@ -1188,65 +1169,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
   .introduction .btn, .introduction p {
     margin-left: 70px;
   }
-  .floating h2 {
-    margin-right: 30px;
-    margin-bottom: 40px;
-  }
-  .floating .floating__section {
-    height: auto;
-    margin-bottom: 60px;
-  }
-  .floating .floating__section--left .floating__section__txt, .floating .floating__section--right .floating__section__txt {
-    left: 0;
-    text-align: left;
-    z-index: 6;
-  }
-  .floating .floating__section--left .floating__section__txt h3, .floating .floating__section--left .floating__section__txt p, .floating .floating__section--left .floating__section__txt .btn, .floating .floating__section--right .floating__section__txt h3, .floating .floating__section--right .floating__section__txt p, .floating .floating__section--right .floating__section__txt .btn {
-    margin-left: 30px;
-    margin-right: 0px;
-  }
-  .floating .floating__section--left .floating__section__txt h3, .floating .floating__section--right .floating__section__txt h3 {
-    margin-top: 20px;
-  }
-  .floating .floating__section--left .floating__section__txt p, .floating .floating__section--right .floating__section__txt p {
-    float: none;
-  }
-  .floating .floating__section--left .floating__section__txt .btn, .floating .floating__section--right .floating__section__txt .btn {
-    float: none;
-    clear: none;
-  }
-  .floating .floating__section--left .floating__section__txt {
-    text-align: right;
-  }
-  .floating .floating__section--left .floating__section__txt h3, .floating .floating__section--left .floating__section__txt p, .floating .floating__section--left .floating__section__txt .btn {
-    margin-left: 0px;
-    margin-right: 30px;
-  }
-  .floating .floating__section--left .floating__section__txt p {
-    float: right;
-  }
-  .floating .floating__section--left .floating__section__txt .btn {
-    float: right;
-    clear: right;
-  }
-  .floating .floating__section__img {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    display: block;
-    border-radius: 0px;
-  }
-  .floating .floating__section__txt {
-    width: 100%;
-    position: relative;
-  }
-  .floating .floating__section__txt h3 {
-    margin-bottom: 10px;
-  }
-  .floating .floating__section__txt p {
-    max-width: 300px;
-    margin-bottom: 20px;
-  }
   #watchr .floating__section__img #show-cards {
     transform: translate(-120px, -55px);
   }
@@ -1290,15 +1212,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
     height: 1000px;
     top: -90%;
     right: -85%;
-  }
-  .floating .floating__section--left .floating__section__txt h3, .floating .floating__section--right .floating__section__txt h3 {
-    margin-top: 18px;
-  }
-  .floating .floating__section__txt h3 {
-    margin-bottom: 5px;
-  }
-  .floating .floating__section__txt p {
-    margin-bottom: 13px;
   }
   #josh .floating__section__img #josh-laptop {
     height: calc(100% + 100px);
@@ -1344,12 +1257,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
   .introduction .btn, .introduction p {
     margin-left: 50px;
   }
-  .floating h2 {
-    margin-right: 20px;
-  }
-  .floating .floating__section__img {
-    height: 300px;
-  }
   #watchr .floating__section__img::before {
     height: 300px;
   }
@@ -1386,15 +1293,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
   }
   .introduction p {
     margin-bottom: 18px;
-  }
-  .floating h2 {
-    margin-right: 30px;
-  }
-  .floating .floating__section--left .floating__section__txt h3, .floating .floating__section--left .floating__section__txt p, .floating .floating__section--left .floating__section__txt .btn {
-    margin-right: 20px;
-  }
-  .floating .floating__section--right .floating__section__txt h3, .floating .floating__section--right .floating__section__txt p, .floating .floating__section--right .floating__section__txt .btn {
-    margin-left: 20px;
   }
   #watchr .floating__section__img #show-cards {
     width: 800px;
@@ -1435,9 +1333,6 @@ nav.nav--overlay .nav-bar__item--filled::after {
     height: 600px;
     top: -60%;
     right: -30%;
-  }
-  .floating .floating__section__img {
-    height: 250px;
   }
   #camd .floating__section__img::after {
     display: none;

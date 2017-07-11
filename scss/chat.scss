@@ -1,0 +1,168 @@
+@import 'hero';
+
+.form {
+    width: 100%;
+    max-width: 1500px;
+    background: $white;
+    margin: 0 auto;
+    height: 500px;
+    box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding-left: 30px;
+    box-sizing: border-box;
+    z-index: 0;
+    position: relative;
+}
+
+.send {
+    @include no-select();
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 5px;
+    background: $blue;
+    display: inline-block;
+    overflow: visible;
+    position: relative;
+    .wrapper {
+        color: $white;
+        font-family: 'CocogoosePro-Regular', sans-serif;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 10px 50px 10px 20px;
+        overflow: hidden;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 400px;
+            background-image: url('../img/chat/plane-big.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 12px;
+            width: 20px;
+            height: 20px;
+            background-image: url('../img/chat/plane.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-23px, 0px);
+            transform-origin: bottom left;
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../img/chat/plane-blue.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-23px, 0px);
+        transform-origin: bottom left;
+        z-index: -1;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -10px;
+        width: calc(100% + 55px);
+        height: calc(100% + 20px);
+        background: $white;
+        z-index: -1;
+    }
+    &--animate {
+        .wrapper {
+            animation: button 1.6s forwards ease;
+            &::before {
+                animation: background 1.6s forwards ease;
+            }
+            &::after {
+                animation: plane 1.6s forwards ease;
+            }
+        }
+        &::before {
+            animation: plane 1.6s forwards ease;
+        }
+    }
+    &--sent {
+        background: rgb(240, 240, 240) !important;
+        transition: background 0.2s ease;
+        .wrapper {
+            padding-right: 20px;
+            color: rgb(130, 130, 130);
+            &::before, &::after {
+                display: none;
+            }
+        }
+    }
+    &--blank {
+        cursor: default;
+        background-color: $white;
+        .wrapper {
+            transition: color 0.2s ease;
+        }
+    }
+}
+
+@keyframes plane {
+    0% {
+        transform: translate(-23px, 0);
+    },
+    20% {
+        transform: translate(200px, 0px) rotate(0deg);
+    },
+    50% {
+        transform: translate(200px, -20px) rotate(180deg);
+    },
+    90% {
+        transform: translate(-160px, -40px) rotate(180deg) scale(3);
+    },
+    100% {
+        transform: translate(-160px, -40px) rotate(180deg) scale(3);
+    }
+}
+
+@keyframes background {
+    58% {
+        transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+    },
+    90% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    },
+    100% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    }
+}
+
+@keyframes button {
+    0% {
+        padding-right: 50px;
+    },
+    20% {
+        //padding-right: 100px;
+    },
+    100% {
+        //padding-right: 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .form {
+        box-shadow: none;
+    }
+}
