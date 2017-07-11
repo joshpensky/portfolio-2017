@@ -130,7 +130,7 @@ p span {
 }
 
 nav.animate {
-  transition: transform 0.2s ease-in-out, background 0.1s ease-out;
+  transition: background 0.1s ease-out, transform 0.2s ease-in-out;
 }
 
 nav.animate::before, nav.animate::after {
@@ -138,35 +138,18 @@ nav.animate::before, nav.animate::after {
 }
 
 nav {
-  height: 55px;
+  width: 100%;
   position: fixed;
+  z-index: 10;
+}
+
+nav .nav__container {
+  height: 55px;
+  max-width: 1500px;
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 1500px;
-  z-index: 10;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-nav::before, nav::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: calc(calc(50vw - (1500px / 2)));
-  height: inherit;
-  background: #fff;
-  opacity: 0;
-}
-
-nav::before {
-  left: 0px;
-  transform: translateX(-100%);
-}
-
-nav::after {
-  right: 0px;
-  transform: translateX(100%);
+  margin: 0 auto;
+  position: relative;
 }
 
 nav #logo {
@@ -200,7 +183,7 @@ nav .nav-bar__item {
   display: inline-block;
   margin-left: 20px;
   color: #2980FF;
-  padding: 5px 10px;
+  padding: 3px 6px;
 }
 
 nav .nav-bar__item:last-child {
@@ -208,7 +191,7 @@ nav .nav-bar__item:last-child {
 }
 
 nav .nav-bar__item:last-child.nav-bar__item--filled::after {
-  width: calc(100% + 10px);
+  width: calc(100% + 6px);
 }
 
 nav .nav-bar__item--filled {
@@ -240,17 +223,14 @@ nav.nav--overlay {
   background: #fff;
 }
 
-nav.nav--overlay::before, nav.nav--overlay::after {
-  opacity: 1;
-}
-
 nav.nav--hidden {
-  transform: translate(-50%, -100%);
+  transform: translateY(-100%);
 }
 
 .container {
   position: relative;
   width: 100vw;
+  flex: 1;
   height: inherit;
   overflow-x: hidden;
 }
@@ -744,6 +724,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
   .floating__section__txt p {
     margin-bottom: 13px;
+  }
+  .floating__section__txt ul li {
+    font-size: 18px;
+    line-height: 27px;
   }
 }
 

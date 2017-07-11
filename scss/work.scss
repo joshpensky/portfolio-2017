@@ -14,6 +14,15 @@ nav {
             }
         }
     }
+    &.nav--overlay {
+        .nav-bar__item {
+            color: $blue;
+            &--filled {
+                color: $white;
+                background: $blue;
+            }
+        }
+    }
 }
 
 .master-container {

@@ -1,28 +1,85 @@
 @import 'hero';
 
-.container {
-    flex: 1;
-
-}
-
-.form {
+.form--container {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1100px;
     background: $white;
     margin: 0 auto;
-    height: 500px;
+    margin-bottom: 30px;
     box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    padding-left: 30px;
     box-sizing: border-box;
-    z-index: 0;
-    position: relative;
+    border-radius: 15px;
+    form {
+        padding: 70px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        label {
+            display: block;
+            position: relative;
+            color: $black;
+            font-family: 'CocogoosePro', sans-serif;
+            font-weight: normal;
+            &:not(:root:root) { /* SAFARI */
+                letter-spacing: -2px;
+            }
+            font-size: 22px;
+            margin: 0;
+            margin-bottom: 7px;
+            &.required::after {
+                content: ' *';
+                font-family: 'Roboto', sans-serif;
+                font-size: 22px;
+                color: $red;
+            }
+            &.error {
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                margin-top: 5px;
+                margin-bottom: 30px;
+                color: $red;
+            }
+        }
+        input, textarea {
+            display: block;
+            width: 100%;
+            border: none;
+            background: #F2F2F2;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: background 0.2s ease;
+            &:focus {
+                outline: none;
+                border-color: $blue !important;
+            }
+            &.typed {
+                background: $white;
+                border-color: #DDDDDD;
+            }
+            &.error {
+                border-color: $red;
+            }
+        }
+        textarea {
+            resize: none;
+            line-height: 28px;
+            height: 160px;
+            margin-bottom: 60px;
+        }
+    }
 }
 
 .send {
     @include no-select();
     cursor: pointer;
-    margin-top: 30px;
     border-radius: 5px;
     background: $blue;
     display: inline-block;
@@ -85,14 +142,13 @@
         position: absolute;
         right: 0;
         top: -10px;
-        width: calc(100% + 55px);
+        width: calc(100% + 70px);
         height: calc(100% + 20px);
         background: $white;
         z-index: -1;
     }
     &--animate {
         .wrapper {
-            animation: button 1.6s forwards ease;
             &::before {
                 animation: background 1.6s forwards ease;
             }
@@ -105,9 +161,10 @@
         }
     }
     &--sent {
+        //background-color: #F2F2F2 !important;
+        //transition: background 0.2s ease;
         .wrapper {
-            padding-right: 20px;
-            color: $black;
+            color: $blue;//$black;
             &::before, &::after {
                 display: none;
             }
@@ -117,6 +174,9 @@
         cursor: default;
         background-color: $white;
         .wrapper {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 25px;
             transition: color 0.2s ease;
         }
     }
@@ -126,11 +186,14 @@
     0% {
         transform: translate(-23px, 0);
     },
+    10% {
+        transform: translate(-30px, 0) rotate(-10deg);
+    },
     20% {
-        transform: translate(200px, 0px) rotate(0deg);
+        transform: translate(200px, 0px) rotate(5deg) scale(1.5);
     },
     50% {
-        transform: translate(200px, -20px) rotate(180deg);
+        transform: translate(200px, -25px) rotate(180deg) scale(1.5);
     },
     90% {
         transform: translate(-160px, -40px) rotate(180deg) scale(3);
@@ -152,20 +215,17 @@
     }
 }
 
-@keyframes button {
-    0% {
-        padding-right: 50px;
-    },
-    20% {
-        //padding-right: 100px;
-    },
-    100% {
-        //padding-right: 100px;
+@media(max-width: 1100px) {
+    .form--container {
+        border-radius: 0px;
+        box-shadow: none;
     }
 }
 
-@media (max-width: 1000px) {
-    .form {
-        box-shadow: none;
+@media(max-width: 1000px) {
+    .form--container {
+        form {
+            padding: 0 30px;
+        }
     }
 }
