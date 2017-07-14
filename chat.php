@@ -14,6 +14,13 @@ if (checkFullName($fullname)) {
     echo 'false fullname';
 }
 
+/**
+ * Checks if the given name is a full name. A valid full name should have at least two words
+ * separated by a space (at least first and last).
+ *
+ * @param string $fullname   the name to be checked
+ * @return boolean true if the name contains at least the first and last, false otherwise
+ */
 function checkFullName($fullname) {
     $name_size = count(explode(" ", $fullname));
     if ($name_size >= 2) {
@@ -22,6 +29,14 @@ function checkFullName($fullname) {
     return false;
 }
 
+/**
+ * Checks if the given email is valid. A valid email should have an @ sign separating the
+ * username and service, and the service should have at least one period to indicate domain
+ * extension (".com", ".io", etc.).
+ *
+ * @param string $email   the email address to be checked
+ * @return boolean true if the email is valid, false otherwise
+ */
 function checkEmail($email) {
     $address_arr = explode("@", $email);
     if (count($address_arr) == 2) {
@@ -33,6 +48,10 @@ function checkEmail($email) {
     return false;
 }
 
+/**
+ * Creates a message to be sent to my e-mail, only after confirming the given name and
+ * email are valid.
+ */
 function sendMessage() {
     global $fullname, $email, $message;
     $msg = "Hey Josh!\r\n\r\n"
