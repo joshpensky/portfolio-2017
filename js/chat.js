@@ -24,33 +24,25 @@ function checkTyped(elem) {
 function send() {
     var name = fullName.value.trim();
     var address = email.value.trim();
-    getFromServer("/msg-verif.php", "fullname=" + name + "&email=" + address,
-            (response) => {
-                console.log(response);
-                var resp_arr = response.split(" ");
-                if (resp_arr[0] == 'true') {
-                    updateFullName(true);
-                    updateEmail(true);
-                    fullName.disabled = true;
-                    email.disabled = true;
-                    message.disabled = true;
-                    sendMessage();
-                    animateSend();
-                } else if (resp_arr[1] == 'fullname') {
-                    updateFullName(false);
-                } else if (resp_arr[1] == 'email') {
-                    updateFullName(true);
-                    updateEmail(false);
-                }
-            });
-    /*if (!checkFullName() || !checkEmail()) {
-        return false;
-    }
-    fullName.disabled = true;
-    email.disabled = true;
-    message.disabled = true;
-    sendMessage();
-    animateSend();*/
+    getFromServer("/chat.php",
+        "fullname=" + name + "&email=" + address + "&message=" + getMessage(),
+        (response) => {
+            console.log(response);
+            var resp_arr = response.split(" ");
+            if (resp_arr[0] == 'true') {
+                updateFullName(true);
+                updateEmail(true);
+                fullName.disabled = true;
+                email.disabled = true;
+                message.disabled = true;
+                animateSend();
+            } else if (resp_arr[1] == 'fullname') {
+                updateFullName(false);
+            } else if (resp_arr[1] == 'email') {
+                updateFullName(true);
+                updateEmail(false);
+            }
+        });
 }
 
 function updateFullName(pass) {
@@ -77,18 +69,6 @@ function updateEmail(pass) {
         email.classList.add("error");
         label.innerHTML = "Please enter a valid email address.";
     }
-}
-
-function sendMessage() {
-    var data = "fullname=" + fullName.value.trim() + "&email=" + email.value.trim()
-        + "&message=" + getMessage();
-    getFromServer("/chat.php", data, (response) => { return; });
-    var http = new XMLHttpRequest();
-    var url = "/chat.php";//your url to the server side file that will receive the data.
-
-    http.open("POST", url, true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(data);
 }
 
 /**
