@@ -3,14 +3,9 @@ $fullname = trim($_POST['fullname']);
 $email = trim($_POST['email']);
 $message = trim($_POST['message']);
 
-if (checkFullname($fullname)) {
+if (checkFullName($fullname)) {
     if (checkEmail($email)) {
-        $msg = "Hey Josh!\r\n\r\n"
-            . $fullname . " is interested in working with you! "
-            . "Here's what they said:\r\n\r\n" . wordwrap($message, 70, "\r\n") . "\r\n\r\n"
-            . "If you would like to work with them, you can reach them at their email: "
-            . $email . ".\r\n\r\nHave a fantastic day!\njoshuapensky.com";
-        mail("hello@joshuapensky.com", $fullname . " wants to work with you!", $msg);
+        sendMessage();
         echo 'true';
     } else {
         echo 'false email';
@@ -19,7 +14,7 @@ if (checkFullname($fullname)) {
     echo 'false fullname';
 }
 
-function checkFullname($fullname) {
+function checkFullName($fullname) {
     $name_size = count(explode(" ", $fullname));
     if ($name_size >= 2) {
         return true;
@@ -36,5 +31,15 @@ function checkEmail($email) {
         }
     }
     return false;
+}
+
+function sendMessage() {
+    global $fullname, $email, $message;
+    $msg = "Hey Josh!\r\n\r\n"
+        . $fullname . " is interested in working with you! "
+        . "Here's what they said:\r\n\r\n" . wordwrap($message, 70, "\r\n") . "\r\n\r\n"
+        . "If you would like to work with them, you can reach them at their email: "
+        . $email . ".\r\n\r\nHave a fantastic day!\njoshuapensky.com";
+    mail("hello@joshuapensky.com", $fullname . " wants to work with you!", $msg);
 }
 ?>
