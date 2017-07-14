@@ -22,57 +22,91 @@ function checkTyped(elem) {
 }
 
 function send() {
-    if (!checkFullName() || !checkEmail()) {
+    var name = fullName.value.trim();
+    var address = email.value.trim();
+    getFromServer("/msg-verif.php", "fullname=" + name + "&email=" + address,
+            (response) => {
+                console.log(response);
+                var resp_arr = response.split(" ");
+                if (resp_arr[0] == 'true') {
+                    updateFullName(true);
+                    updateEmail(true);
+                    fullName.disabled = true;
+                    email.disabled = true;
+                    message.disabled = true;
+                    sendMessage();
+                    animateSend();
+                } else if (resp_arr[1] == 'fullname') {
+                    updateFullName(false);
+                } else if (resp_arr[1] == 'email') {
+                    updateFullName(true);
+                    updateEmail(false);
+                }
+            });
+    /*if (!checkFullName() || !checkEmail()) {
         return false;
     }
     fullName.disabled = true;
     email.disabled = true;
     message.disabled = true;
     sendMessage();
-    animateSend();
+    animateSend();*/
 }
 
-function checkFullName() {
-    var name = fullName.value.trim();
+function updateFullName(pass) {
     var label = document.querySelector("#fullNameErr");
-    if (name.split(" ").length > 1) {
+    if (pass) {
         fullName.classList.remove("error");
         label.innerHTML = "";
-        return true;
+    } else {
+        fullName.focus();
+        fullName.classList.add("error");
+        label.innerHTML = "Please enter your first and last name.";
     }
-    fullName.focus();
-    fullName.classList.add("error");
-    label.innerHTML = "Please enter your first and last name.";
-    return false;
 }
 
-function checkEmail() {
-    var address = email.value.trim();
+function updateEmail(pass) {
     var label = document.querySelector("#emailErr");
-    var username = address.split("@");
-    if (username.length == 2) {
-        var service = username[1].split(".");
-        if (service.length > 1 && service[1] != "") {
-            email.classList.remove("error");
-            label.innerHTML = "";
-            return true;
+    if (pass) {
+        email.classList.remove("error");
+        label.innerHTML = "";
+    } else {
+        if (fullName !== document.activeElement) {
+            email.focus();
         }
+        email.classList.add("error");
+        label.innerHTML = "Please enter a valid email address.";
     }
-    if (fullName !== document.activeElement) {
-        email.focus();
-    }
-    email.classList.add("error");
-    label.innerHTML = "Please enter a valid email address.";
-    return false;
 }
 
 function sendMessage() {
-    var http = new XMLHttpRequest();
-    var url = "/chat.php";//your url to the server side file that will receive the data.
     var data = "fullname=" + fullName.value.trim() + "&email=" + email.value.trim()
         + "&message=" + getMessage();
+    getFromServer("/chat.php", data, (response) => { return; });
+    var http = new XMLHttpRequest();
+    var url = "/chat.php";//your url to the server side file that will receive the data.
+
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(data);
+}
+
+/**
+ *
+ * @param url        the url to the server-side file that will receive the dara
+ * @param data       the data to be sent to the server
+ * @param callback   the function to be called with the response text
+ * @return the response text from the server
+ */
+function getFromServer(url, data, callback) {
+    var http = new XMLHttpRequest();
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange = function() {
+        if(http.readyState == 4 && http.status == 200) {
+            callback(http.responseText);
+        }
+    };
     http.send(data);
 }
 

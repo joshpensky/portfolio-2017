@@ -684,6 +684,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: inline-block;
 }
 
+.projects-list .project .btn {
+  display: none;
+}
+
 #watchr .project__img {
   background: #0F1923;
   position: relative;

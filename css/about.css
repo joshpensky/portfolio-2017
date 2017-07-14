@@ -1021,10 +1021,6 @@ footer .footer__links #github, footer .footer__links #linkedin {
   .split-view .why {
     float: none;
   }
-  .split-view .what {
-    float: right;
-    text-align: right;
-  }
 }
 
 @media (max-width: 825px) {
