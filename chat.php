@@ -49,7 +49,7 @@ function checkEmail($email) {
 }
 
 /**
- * Creates a message to be sent to my e-mail, only after confirming the given name and
+ * Creates a message and sends it to my e-mail, only after confirming the given name and
  * email are valid.
  */
 function sendMessage() {
@@ -57,8 +57,8 @@ function sendMessage() {
     $msg = "Hey Josh!\r\n\r\n"
         . $fullname . " is interested in working with you! "
         . "Here's what they said:\r\n\r\n" . wordwrap($message, 70, "\r\n") . "\r\n\r\n"
-        . "If you would like to work with them, you can reach them at their email: "
-        . $email . ".\r\n\r\nHave a fantastic day!\njoshuapensky.com";
+        . "If you would like to work with them, you can reach them at their email: " . $email
+        . ".\r\n\r\nHave a fantastic day!\r\njoshuapensky.com";
     mail("hello@joshuapensky.com", $fullname . " wants to work with you!", $msg);
 }
 ?>

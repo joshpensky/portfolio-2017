@@ -35,7 +35,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: $blue;
+            background-color: rgb(245, 245, 245);
             border-radius: 10px;
             margin-bottom: 15px;
         }
@@ -127,20 +127,23 @@
     }
 }
 
+@media(max-width: 1250px) {
+  .projects {
+    .projects-list {
+      .project {
+          width: 48.5%;
+          border-radius: 15px;
+      }
+    }
+  }
+}
+
 @media(max-width: 1000px) {
     .projects-list {
         .project {
             &__title {
                 font-size: 22px;
                 line-height: 22px;
-            }
-        }
-    }
-    .projects {
-        .projects-list {
-            .project {
-                width: 48.5%;
-                border-radius: 15px;
             }
         }
     }

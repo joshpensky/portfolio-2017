@@ -653,7 +653,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #2980FF;
+  background-color: whitesmoke;
   border-radius: 10px;
   margin-bottom: 15px;
 }
@@ -740,14 +740,17 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-top: 40px;
 }
 
+@media (max-width: 1250px) {
+  .projects .projects-list .project {
+    width: 48.5%;
+    border-radius: 15px;
+  }
+}
+
 @media (max-width: 1000px) {
   .projects-list .project__title {
     font-size: 22px;
     line-height: 22px;
-  }
-  .projects .projects-list .project {
-    width: 48.5%;
-    border-radius: 15px;
   }
 }
 
