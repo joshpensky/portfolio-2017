@@ -1,186 +1,87 @@
 @import 'hero';
 
-.case-studies, .projects {
+.projects {
     clear: both;
     width: 100%;
     max-width: $maxwidth;
     margin: 0 auto;
-    h2 {
-        text-align: right;
-        margin-right: 30px;
-        margin-bottom: 40px;
-    }
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    overflow: visible;
+    //background: $red;
 }
 
 .projects-list {
+    column-count: 3;
+    column-gap: 2em;
     margin: 0;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    &::after {
-        content: "";
-        flex: 1 1 100%;
-        max-width: 32%
-    }
+    padding: 0;
     .project {
-        width: 32%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 50px;
-        position: relative;
+        width: 100%;
+        margin: 0 0 2em;
+        display: inline-block;
+        box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        background: $white;
         &__img {
             width: 100%;
             padding-top: 60%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: rgb(245, 245, 245);
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-bottom: 20px;
         }
         &__title {
-            color: $black;
-            font-family: 'CocogoosePro', sans-serif;
-            font-weight: normal;
-            font-size: 25px;
-            line-height: 25px;
-            margin: 0;
-            margin-bottom: 10px;
-        }
-        &__year {
-            color: $gray;
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            line-height: 24px;
-            margin: 0;
-            margin-bottom: 13px;
-            font-weight: 400;
-            max-width: 75%;
-            flex-grow: 1;
-            span {
-                display: inline-block;
-            }
-        }
-        .btn {
-            display: none;
-        }
-    }
-}
-
-#watchr {
-    .project__img {
-        background: #0F1923;
-        position: relative;
-        overflow: hidden;
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 300%;
-            height: 105%;
-            transform: translate(-7%, 3%);
-            background-image: url("../img/watchr.png");
-            background-position: left;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-    }
-}
-
-#josh-pensky {
-    .project__img {
-        position: relative;
-        overflow: hidden;
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 120%;
-            height: 105%;
-            transform: translate(5%, 8%);
-            background-image: url("../img/laptop.png");
-            background-position: left;
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-    }
-}
-
-.case-studies {
-    .projects-list {
-        .project {
-            width: 48.5%;
-            &__img {
-                padding-top: 120%;
-                border-radius: 15px;
-            }
-        }
-    }
-}
-
-.projects {
-    h2 {
-        margin-top: 40px;
-    }
-}
-
-@media(max-width: 1250px) {
-  .projects {
-    .projects-list {
-      .project {
-          width: 48.5%;
-          border-radius: 15px;
-      }
-    }
-  }
-}
-
-@media(max-width: 1000px) {
-    .projects-list {
-        .project {
-            &__title {
-                font-size: 22px;
-                line-height: 22px;
-            }
-        }
-    }
-}
-
-@media(max-width: 650px) {
-    .projects, .case-studies {
-        .projects-list {
-            .project {
-                width: 100%;
-            }
-        }
-    }
-}
-
-@media (max-width: 450px) {
-    .projects-list {
-        padding: 0;
-        .project {
-            &__img {
-                border-radius: 0px;
-            }
-            &__title, &__year {
-                padding: 0 20px;
-            }
-            .btn {
-                margin-left: 20px;
-            }
-        }
-    }
-    .case-studies {
-        .projects-list {
-            .project {
-                &__img {
-                    border-radius: 0px;
-                }
-            }
-        }
+           color: $black;
+           font-family: 'CocogoosePro', sans-serif;
+           font-weight: normal;
+           font-size: 30px;
+           line-height: 34px;
+           padding-right: 30px;
+           margin: 0;
+           margin-bottom: 10px;
+           margin-left: 30px;
+       }
+       &__desc {
+           color: $gray;
+           font-family: 'Roboto', sans-serif;
+           font-size: 20px;
+           line-height: 29px;
+           font-weight: 400;
+           margin: 0;
+           margin-bottom: 12px;
+           margin-left: 30px;
+           padding-right: 30px;
+           max-width: 100%;
+           span {
+               display: inline-block;
+           }
+       }
+       &__categ {
+           padding: 0;
+           margin-left: 30px;
+           margin-bottom: 15px;
+           &__item {
+               display: inline-block;
+               margin-right: calc(-4px + 10px);
+               margin-bottom: 10px;
+               color: #888888;
+               font-family: 'Roboto', sans-serif;
+               font-size: 16px;
+               line-height: 21px;
+               font-weight: 400;
+               padding: 6px 12px;
+               border-radius: 5px;
+               background: #EDEDED;
+               &--selected {
+                   background: $blue;
+                   color: $white;
+               }
+           }
+       }
     }
 }
