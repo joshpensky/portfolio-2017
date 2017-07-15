@@ -33,7 +33,7 @@ function checkTyped(elem) {
 * response is false, updates either the full name or email element to reflect the error.
 */
 function send() {
-    postToServer("/chat.php",
+    postToServer("/php/chat.php",
         "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
         (response) => {
             var resp_arr = response.split(" ");
