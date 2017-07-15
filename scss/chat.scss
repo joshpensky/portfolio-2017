@@ -48,7 +48,7 @@
             display: block;
             width: 100%;
             border: none;
-            background: #F2F2F2;
+            background: $gray-bg;
             padding: 10px 20px;
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
@@ -56,6 +56,18 @@
             border-radius: 5px;
             border: 2px solid transparent;
             transition: background 0.2s ease;
+            &::-webkit-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-moz-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-ms-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-o-input-placeholder {
+                color: $gray-txt;
+            }
             &:focus {
                 outline: none;
                 border-color: $blue !important;

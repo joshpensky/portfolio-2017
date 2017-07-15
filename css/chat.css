@@ -669,7 +669,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: block;
   width: 100%;
   border: none;
-  background: #F2F2F2;
+  background: #EDEDED;
   padding: 10px 20px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
@@ -677,6 +677,22 @@ footer .footer__links #github, footer .footer__links #linkedin {
   border-radius: 5px;
   border: 2px solid transparent;
   transition: background 0.2s ease;
+}
+
+.form--container form input[type="text"]::-webkit-input-placeholder, .form--container form input[type="email"]::-webkit-input-placeholder, .form--container form textarea::-webkit-input-placeholder {
+  color: #888888;
+}
+
+.form--container form input[type="text"]::-moz-input-placeholder, .form--container form input[type="email"]::-moz-input-placeholder, .form--container form textarea::-moz-input-placeholder {
+  color: #888888;
+}
+
+.form--container form input[type="text"]::-ms-input-placeholder, .form--container form input[type="email"]::-ms-input-placeholder, .form--container form textarea::-ms-input-placeholder {
+  color: #888888;
+}
+
+.form--container form input[type="text"]::-o-input-placeholder, .form--container form input[type="email"]::-o-input-placeholder, .form--container form textarea::-o-input-placeholder {
+  color: #888888;
 }
 
 .form--container form input[type="text"]:focus, .form--container form input[type="email"]:focus, .form--container form textarea:focus {
