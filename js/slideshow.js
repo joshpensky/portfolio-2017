@@ -1,8 +1,8 @@
 var selector,
-slideList,
-slideContainer,
-selectorStartPos,
-rightPadding;
+    slideList,
+    slideContainer,
+    selectorStartPos,
+    rightPadding;
 
 window.addEventListener("load", () => {
     selector = document.getElementById('selector');

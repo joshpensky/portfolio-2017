@@ -1,5 +1,5 @@
 var lastPos = 0,
-hidden = false;
+    hidden = false;
 
 /**
 * Sets the last position to the window's current y-position on load.

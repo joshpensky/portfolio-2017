@@ -1,7 +1,7 @@
 var fullName,
-email,
-message,
-sendBtn;
+    email,
+    message,
+    sendBtn;
 
 window.addEventListener("load", () => {
     fullName = document.querySelector("#fullName");

@@ -626,6 +626,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .projects-list {
   column-count: 3;
   column-gap: 30px;
+  -webkit-column-break-inside: avoid;
   margin: 0;
   margin-top: -30px;
   padding: 0;

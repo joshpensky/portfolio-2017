@@ -625,6 +625,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 .form--container form {
   padding: 70px;
+  padding-bottom: 50px;
   box-sizing: border-box;
   width: 100%;
   max-width: 1000px;
@@ -713,7 +714,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   resize: none;
   line-height: 28px;
   height: 160px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .send {
@@ -726,8 +727,8 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: inline-block;
   overflow: visible;
   position: relative;
-  width: 600px;
   padding: 10px 0;
+  padding-right: 250px;
   overflow: hidden;
 }
 

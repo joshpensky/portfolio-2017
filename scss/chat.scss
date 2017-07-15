@@ -11,6 +11,7 @@
     border-radius: 15px;
     form {
         padding: 70px;
+        padding-bottom: 50px;
         box-sizing: border-box;
         width: 100%;
         max-width: 1000px;
@@ -87,7 +88,7 @@
             resize: none;
             line-height: 28px;
             height: 160px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
     }
 }
@@ -98,8 +99,8 @@
     display: inline-block;
     overflow: visible;
     position: relative;
-    width: 600px;
     padding: 10px 0;
+    padding-right: 250px;
     overflow: hidden;
     .wrapper {
         display: inline-block;
@@ -170,10 +171,8 @@
         }
     }
     &--sent {
-        //background-color: #F2F2F2 !important;
-        //transition: background 0.2s ease;
         .wrapper {
-            color: $blue;//$black;
+            color: $blue;
             &::before, &::after {
                 display: none;
             }
