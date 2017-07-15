@@ -93,7 +93,7 @@ function updateEmail(pass) {
 * Passes in the given data from a server-side file at the specified url, and sends the response
 * text into the given callback function.
 *
-* @param {string}   url        the url to the server-side file that will receive the dara
+* @param {string}   url        the url to the server-side file that will receive the data
 * @param {string}   data       the data to be sent to the server
 * @param {function} callback   the function to be called with the response text as the argument
 */
