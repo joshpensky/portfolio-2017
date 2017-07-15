@@ -578,6 +578,7 @@ nav.nav--overlay .nav-bar__item--filled {
   background-repeat: no-repeat;
   background-size: contain;
   transition: background-image .3s ease;
+  vertical-align: bottom;
 }
 
 .main .info {
@@ -601,6 +602,31 @@ nav.nav--overlay .nav-bar__item--filled {
   margin: 0;
   margin-bottom: 30px;
   padding-right: 30px;
+}
+
+.main .info__categ {
+  clear: both;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.main .info__categ__item {
+  display: inline-block;
+  margin-right: calc(-4px + 10px);
+  margin-bottom: 10px;
+  color: #888888;
+  background: #EDEDED;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.main .info__categ__item--selected {
+  background: #2980FF;
+  color: #fff;
 }
 
 .slide-container {
@@ -825,12 +851,18 @@ nav.nav--overlay .nav-bar__item--filled {
     width: calc(100% - 30px);
     display: block;
   }
+  .main .info #info__tools p, .main .info #info__year p {
+    margin-bottom: 5px;
+  }
   .main .info #info__tools {
     display: inline-block;
   }
   .main .info #info__year {
     float: right;
     display: inline-block;
+  }
+  .main .info__categ {
+    margin-bottom: 20px;
   }
 }
 
@@ -847,6 +879,9 @@ nav.nav--overlay .nav-bar__item--filled {
   }
   .main .info {
     margin-left: 20px;
+  }
+  .main .info #info__tools p, .main .info #info__year p {
+    margin-bottom: 30px;
   }
   .main .info #info__tools {
     display: block;

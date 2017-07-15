@@ -33,24 +33,24 @@ function checkTyped(elem) {
 * response is false, updates either the full name or email element to reflect the error.
 */
 function send() {
-    getFromServer("/chat.php",
-    "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
-    (response) => {
-        var resp_arr = response.split(" ");
-        if (resp_arr[0] == 'true') {
-            updateFullName(true);
-            updateEmail(true);
-            fullName.disabled = true;
-            email.disabled = true;
-            message.disabled = true;
-            animateSend();
-        } else if (resp_arr[1] == 'fullname') {
-            updateFullName(false);
-        } else if (resp_arr[1] == 'email') {
-            updateFullName(true);
-            updateEmail(false);
-        }
-    });
+    postToServer("/chat.php",
+        "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
+        (response) => {
+            var resp_arr = response.split(" ");
+            if (resp_arr[0] == 'true') {
+                updateFullName(true);
+                updateEmail(true);
+                fullName.disabled = true;
+                email.disabled = true;
+                message.disabled = true;
+                animateSend();
+            } else if (resp_arr[1] == 'fullname') {
+                updateFullName(false);
+            } else if (resp_arr[1] == 'email') {
+                updateFullName(true);
+                updateEmail(false);
+            }
+        });
 }
 
 /**
@@ -97,7 +97,7 @@ function updateEmail(pass) {
 * @param {string}   data       the data to be sent to the server
 * @param {function} callback   the function to be called with the response text as the argument
 */
-function getFromServer(url, data, callback) {
+function postToServer(url, data, callback) {
     var http = new XMLHttpRequest();
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

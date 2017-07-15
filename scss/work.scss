@@ -85,6 +85,7 @@ nav {
         background-repeat: no-repeat;
         background-size: contain;
         transition: background-image .3s ease;
+        vertical-align: bottom;
     }
     .info {
         vertical-align: top;
@@ -105,8 +106,32 @@ nav {
             margin-bottom: 30px;
             padding-right: 30px;
         }
+        &__categ {
+            clear: both;
+            padding: 0;
+            margin-bottom: 15px;
+            &__item {
+                display: inline-block;
+                margin-right: calc(-4px + 10px);
+                margin-bottom: 10px;
+                color: $gray-txt;
+                background: $gray-bg;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                line-height: 21px;
+                font-weight: 400;
+                padding: 6px 12px;
+                border-radius: 5px;
+                &--selected {
+                    background: $blue;
+                    color: $white;
+                }
+            }
+        }
     }
 }
+
+
 
 .slide-container {
     clear: right;
@@ -314,11 +339,10 @@ nav {
         .info {
             width: calc(100% - 30px);
             display: block;
-            &__subtitle {
-                //color: $white;
-            }
-            &__body {
-                //color: $white;
+            #info__tools, #info__year {
+                p {
+                    margin-bottom: 5px;
+                }
             }
             #info__tools {
                 display: inline-block;
@@ -326,6 +350,9 @@ nav {
             #info__year {
                 float: right;
                 display: inline-block;
+            }
+            &__categ {
+                margin-bottom: 20px;
             }
         }
     }
@@ -345,8 +372,14 @@ nav {
         }
         .info {
             margin-left: 20px;
+            #info__tools, #info__year {
+                p {
+                    margin-bottom: 30px;
+                }
+            }
             #info__tools {
                 display: block;
+
             }
             #info__year {
                 float: none;
