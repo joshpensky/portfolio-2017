@@ -645,9 +645,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-bottom: 7px;
 }
 
-.form--container form label:not(:root:root) {
+.form--container form label:not(.error):not(:root:root) {
   /* SAFARI */
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 .form--container form label.required::after {
@@ -723,14 +723,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  border-radius: 5px;
-  background: #2980FF;
   display: inline-block;
   overflow: visible;
   position: relative;
+  width: 600px;
+  padding: 10px 0;
+  overflow: hidden;
 }
 
 .send .wrapper {
+  display: inline-block;
   color: #fff;
   font-family: 'CocogoosePro-Regular', sans-serif;
   font-size: 20px;
@@ -738,6 +740,8 @@ footer .footer__links #github, footer .footer__links #linkedin {
   padding: 10px 50px 10px 20px;
   overflow: hidden;
   position: relative;
+  border-radius: 5px;
+  background-color: #2980FF;
 }
 
 .send .wrapper::before {
@@ -757,7 +761,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .send .wrapper::after {
   content: '';
   position: absolute;
-  right: -10px;
+  left: 0;
   top: 12px;
   width: 20px;
   height: 20px;
@@ -765,7 +769,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: translate(-23px, 0px);
+  transform: translate(92px, 0px);
   transform-origin: bottom left;
   opacity: 1;
 }
@@ -773,27 +777,16 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .send::before {
   content: '';
   position: absolute;
-  right: -10px;
-  top: 12px;
+  left: 0;
+  top: 22px;
   width: 20px;
   height: 20px;
   background-image: url("../img/chat/plane-blue.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: translate(-23px, 0px);
+  transform: translate(92px, 0px);
   transform-origin: bottom left;
-  z-index: -1;
-}
-
-.send::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px;
-  width: calc(100% + 70px);
-  height: calc(100% + 20px);
-  background: #fff;
   z-index: -1;
 }
 
@@ -819,10 +812,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 .send--blank {
   cursor: default;
-  background-color: #fff;
 }
 
 .send--blank .wrapper {
+  background-color: #fff;
   padding-right: 0px;
   padding-left: 0px;
   font-size: 25px;
@@ -831,27 +824,27 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @keyframes plane {
   0% {
-    transform: translate(-23px, 0);
+    transform: translate(92px, 0);
   }
   
   10% {
-    transform: translate(-30px, 0) rotate(-10deg);
+    transform: translate(85px, 0) rotate(-10deg);
   }
   
   20% {
-    transform: translate(200px, 0px) rotate(5deg) scale(1.5);
+    transform: translate(315px, 0px) rotate(5deg) scale(1.5);
   }
   
   50% {
-    transform: translate(200px, -25px) rotate(180deg) scale(1.5);
+    transform: translate(315px, -25px) rotate(180deg) scale(1.5);
   }
   
   90% {
-    transform: translate(-160px, -40px) rotate(180deg) scale(3);
+    transform: translate(-55px, -40px) rotate(180deg) scale(3);
   }
   
   100% {
-    transform: translate(-160px, -40px) rotate(180deg) scale(3);
+    transform: translate(-55px, -40px) rotate(180deg) scale(3);
   }
 }
 
