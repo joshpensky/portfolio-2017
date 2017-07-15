@@ -620,23 +620,23 @@ footer .footer__links #github, footer .footer__links #linkedin {
   padding-left: 30px;
   padding-right: 30px;
   box-sizing: border-box;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .projects-list {
   column-count: 3;
-  column-gap: 2em;
+  column-gap: 30px;
   margin: 0;
+  margin-top: -30px;
   padding: 0;
 }
 
 .projects-list .project {
   width: 100%;
-  margin: 0 0 2em;
+  margin: 30px 0 0;
   display: inline-block;
-  box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  background: #fff;
+  background: #fafafa;
 }
 
 .projects-list .project__img {
@@ -683,6 +683,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .projects-list .project__categ {
   padding: 0;
   margin-left: 30px;
+  padding-right: 30px;
   margin-bottom: 15px;
 }
 
@@ -703,4 +704,57 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .projects-list .project__categ__item--selected {
   background: #2980FF;
   color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .projects-list {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .projects-list .project__title {
+    margin-left: 20px;
+    margin-bottom: 7px;
+    padding-right: 20px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .projects-list .project__desc {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding-right: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .projects-list .project__categ {
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+  .projects-list .project__categ__item {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 0 20px;
+  }
+  .projects-list {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects {
+    padding: 0;
+  }
+  .projects-list .project {
+    background-color: #fff;
+    border-radius: 0px;
+  }
+  .projects-list .project__img {
+    border-radius: 0px;
+  }
 }
