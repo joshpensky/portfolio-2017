@@ -3,7 +3,8 @@ var selector,
     showThumbs = true,
     slideContainer,
     selectorStartPos,
-    rightPadding;
+    rightPadding,
+    selected;
 
 window.addEventListener("load", () => {
     selector = document.getElementById('selector');
@@ -17,14 +18,16 @@ window.addEventListener("load", () => {
         rightPadding = window.getComputedStyle(rightPadding).marginRight.split("px")[0];
         slideList.addEventListener("scroll", () => { listScrolled(); });
         selectorStartPos = slideList.getBoundingClientRect().left;
+        selected = document.querySelector('.slide__item--selected');
         listScrolled();
     }
 });
 
 window.addEventListener("resize", () => {
-    if (!showThumbs) {
+    if (showThumbs) {
         selectorStartPos = slideList.getBoundingClientRect().left;
         listScrolled();
+        selectItem(selected);
     }
 });
 
@@ -69,11 +72,11 @@ function getSelectorPos() {
 function selectItem(elem) {
     var viewer = document.querySelector("#viewer");
     viewer.style.backgroundImage = elem.style.backgroundImage;
-    var selected = document.querySelector('.slide__item--selected');
     if (elem != selected) {
         selected.classList.remove("slide__item--selected");
     }
     elem.classList.add("slide__item--selected");
+    selected = elem;
     selector.style.transform = "translateX("
     + ((elem.getBoundingClientRect().left + slideList.scrollLeft) - selectorStartPos) + "px)";
     showIndicator();
