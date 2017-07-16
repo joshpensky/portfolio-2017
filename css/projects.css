@@ -692,8 +692,8 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: inline-block;
   margin-right: calc(-4px + 10px);
   margin-bottom: 10px;
-  color: #888888;
-  background: #EDEDED;
+  color: #6A6A6A;
+  background: #F0F0F0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 21px;

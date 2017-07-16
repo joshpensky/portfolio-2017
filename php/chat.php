@@ -3,15 +3,17 @@ $fullname = trim($_POST['fullname']);
 $email = trim($_POST['email']);
 $message = trim($_POST['message']);
 
-if (checkFullName($fullname)) {
-    if (checkEmail($email)) {
-        sendMessage();
-        echo 'true';
+if ($fullname != "" && $email != "" && $message != "") {
+    if (checkFullName($fullname)) {
+        if (checkEmail($email)) {
+            sendMessage();
+            echo 'true';
+        } else {
+            echo 'false email';
+        }
     } else {
-        echo 'false email';
+        echo 'false fullname';
     }
-} else {
-    echo 'false fullname';
 }
 
 /**

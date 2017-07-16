@@ -562,7 +562,6 @@ nav.nav--overlay .nav-bar__item--filled {
 
 .main {
   white-space: normal;
-  vertical-align: top;
 }
 
 .main #viewer {
@@ -578,11 +577,9 @@ nav.nav--overlay .nav-bar__item--filled {
   background-repeat: no-repeat;
   background-size: contain;
   transition: background-image .3s ease;
-  vertical-align: bottom;
 }
 
 .main .info {
-  vertical-align: top;
   margin-left: 30px;
   display: inline-block;
   width: calc(100% - 900px);
@@ -600,22 +597,22 @@ nav.nav--overlay .nav-bar__item--filled {
 
 .main .info__body {
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding-right: 30px;
 }
 
-.main .info__categ {
+.main .info__list {
   clear: both;
   padding: 0;
   margin-bottom: 15px;
 }
 
-.main .info__categ__item {
+.main .info__list__item {
   display: inline-block;
   margin-right: calc(-4px + 10px);
   margin-bottom: 10px;
-  color: #888888;
-  background: #EDEDED;
+  color: #6A6A6A;
+  background: #F0F0F0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 21px;
@@ -624,7 +621,7 @@ nav.nav--overlay .nav-bar__item--filled {
   border-radius: 5px;
 }
 
-.main .info__categ__item--selected {
+.main .info__list__item--selected {
   background: #2980FF;
   color: #fff;
 }
@@ -764,6 +761,7 @@ nav.nav--overlay .nav-bar__item--filled {
 .directions #previous, .directions #next {
   display: inline-block;
   position: relative;
+  margin-bottom: 30px;
 }
 
 .directions #previous::before, .directions #next::before {
@@ -794,7 +792,6 @@ nav.nav--overlay .nav-bar__item--filled {
   float: right;
   text-align: right;
   margin-right: 30px;
-  margin-bottom: 30px;
 }
 
 .directions #next::before {
@@ -829,7 +826,7 @@ nav.nav--overlay .nav-bar__item--filled {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   nav .nav-bar__item {
     color: #2980FF;
   }
@@ -843,6 +840,7 @@ nav.nav--overlay .nav-bar__item--filled {
   .main #viewer {
     display: block;
     float: none;
+    clear: both;
     margin-left: 30px;
     width: calc(100% - 60px);
     padding-top: calc(100% - 60px);
@@ -851,18 +849,26 @@ nav.nav--overlay .nav-bar__item--filled {
     width: calc(100% - 30px);
     display: block;
   }
-  .main .info #info__tools p, .main .info #info__year p {
-    margin-bottom: 5px;
+  .main .info #info__about {
+    max-width: 800px;
   }
   .main .info #info__tools {
+    float: left;
     display: inline-block;
+  }
+  .main .info #info__tools .info__list {
+    max-width: 470px;
   }
   .main .info #info__year {
     float: right;
     display: inline-block;
   }
-  .main .info__categ {
-    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .main .info__list__item {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
@@ -880,11 +886,12 @@ nav.nav--overlay .nav-bar__item--filled {
   .main .info {
     margin-left: 20px;
   }
-  .main .info #info__tools p, .main .info #info__year p {
-    margin-bottom: 30px;
-  }
   .main .info #info__tools {
     display: block;
+    float: none;
+  }
+  .main .info #info__tools .info__list {
+    max-width: none;
   }
   .main .info #info__year {
     float: none;
@@ -927,10 +934,14 @@ nav.nav--overlay .nav-bar__item--filled {
     height: 100px;
   }
   .directions #previous {
-    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  .directions #next {
+    margin-right: 20px;
   }
   .directions #previous, .directions #next {
     display: block;
+    margin-bottom: 20px;
   }
 }
 

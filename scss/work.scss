@@ -71,7 +71,6 @@ nav {
 
 .main {
     white-space: normal;
-    vertical-align: top;
     #viewer {
         float: right;
         position: relative;
@@ -85,10 +84,8 @@ nav {
         background-repeat: no-repeat;
         background-size: contain;
         transition: background-image .3s ease;
-        vertical-align: bottom;
     }
     .info {
-        vertical-align: top;
         margin-left: 30px;
         display: inline-block;
         width: calc(100% - 900px);
@@ -103,10 +100,10 @@ nav {
         }
         &__body {
             margin: 0;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding-right: 30px;
         }
-        &__categ {
+        &__list {
             clear: both;
             padding: 0;
             margin-bottom: 15px;
@@ -130,8 +127,6 @@ nav {
         }
     }
 }
-
-
 
 .slide-container {
     clear: right;
@@ -248,6 +243,7 @@ nav {
     #previous, #next {
         display: inline-block;
         position: relative;
+        margin-bottom: 30px;
         &::before {
             content: '';
             position: absolute;
@@ -273,7 +269,6 @@ nav {
         float: right;
         text-align: right;
         margin-right: 30px;
-        margin-bottom: 30px;
         &::before {
             right: 0;
             transform: rotate(180deg);
@@ -311,7 +306,7 @@ nav {
     }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1050px) {
     nav {
         .nav-bar {
             &__item {
@@ -332,6 +327,7 @@ nav {
         #viewer {
             display: block;
             float: none;
+            clear: both;
             margin-left: 30px;
             width: calc(100% - 60px);
             padding-top: calc(100% - 60px);
@@ -339,20 +335,32 @@ nav {
         .info {
             width: calc(100% - 30px);
             display: block;
-            #info__tools, #info__year {
-                p {
-                    margin-bottom: 5px;
-                }
+            #info__about {
+                max-width: 800px;
             }
             #info__tools {
+                float: left;
                 display: inline-block;
+                .info__list {
+                    max-width: 470px;
+                }
             }
             #info__year {
                 float: right;
                 display: inline-block;
             }
-            &__categ {
-                margin-bottom: 20px;
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .main {
+        .info {
+            &__list {
+                &__item {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
             }
         }
     }
@@ -372,14 +380,12 @@ nav {
         }
         .info {
             margin-left: 20px;
-            #info__tools, #info__year {
-                p {
-                    margin-bottom: 30px;
-                }
-            }
             #info__tools {
                 display: block;
-
+                float: none;
+                .info__list {
+                    max-width: none;
+                }
             }
             #info__year {
                 float: none;
@@ -425,10 +431,14 @@ nav {
     }
     .directions {
         #previous {
-            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        #next {
+            margin-right: 20px;
         }
         #previous, #next {
             display: block;
+            margin-bottom: 20px;
         }
     }
 }
