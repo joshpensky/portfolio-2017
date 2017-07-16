@@ -1,5 +1,6 @@
 var selector,
     slideList,
+    showThumbs = true,
     slideContainer,
     selectorStartPos,
     rightPadding;
@@ -7,17 +8,24 @@ var selector,
 window.addEventListener("load", () => {
     selector = document.getElementById('selector');
     slideList = document.querySelector('.slide-list');
-    slideContainer = document.querySelector('.slide-container');
-    rightPadding = document.getElementsByClassName('slide__item')[0];
-    rightPadding = window.getComputedStyle(rightPadding).marginRight.split("px")[0];
-    slideList.addEventListener("scroll", () => { listScrolled(); });
-    selectorStartPos = slideList.getBoundingClientRect().left;
-    listScrolled();
+    if (slideList.getElementsByTagName('li').length < 2) {
+        showThumbs = false;
+        slideList.style.display = "none";
+    } else {
+        slideContainer = document.querySelector('.slide-container');
+        rightPadding = document.getElementsByClassName('slide__item')[0];
+        rightPadding = window.getComputedStyle(rightPadding).marginRight.split("px")[0];
+        slideList.addEventListener("scroll", () => { listScrolled(); });
+        selectorStartPos = slideList.getBoundingClientRect().left;
+        listScrolled();
+    }
 });
 
 window.addEventListener("resize", () => {
-    selectorStartPos = slideList.getBoundingClientRect().left;
-    listScrolled();
+    if (!showThumbs) {
+        selectorStartPos = slideList.getBoundingClientRect().left;
+        listScrolled();
+    }
 });
 
 function listScrolled() {
