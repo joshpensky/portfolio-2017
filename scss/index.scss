@@ -82,7 +82,7 @@ nav {
         &__laptop {
             width: 800px;
             height: 800px;
-            background-image: url("../img/laptop.png");
+            background-image: url("../img/index/laptop.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -209,7 +209,7 @@ nav {
             right: 0;
             top: 0;
             transform: translate(-207px, 0px);
-            background: url("../img/camd.png");
+            background: url("../img/index/camd.png");
             background-size: cover;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -219,6 +219,7 @@ nav {
 
 #josh {
     .floating__section__img {
+        background: #F7F7F7;
         &::before, &::after {
             content: '';
             position: absolute;
@@ -227,16 +228,16 @@ nav {
         }
         &::before {
             width: 110%;
-            height: 90px;
+            height: 100px;
             bottom: 0;
             left: 0;
             transform: translateY(100%);
         }
-        #josh-laptop {
+        #painter {
             position: absolute;
             top: 0;
             height: calc(100% + 120px);
-            transform: translate(40px, -40px);
+            transform: translate(60px, -20px);
         }
     }
 }
@@ -284,6 +285,25 @@ nav {
     }
     .introduction {
         margin-bottom: 100px;
+    }
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 90px);
+                transform: translate(40px, -20px);
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 30px);
+                transform: translate(-10px, 15px);
+            }
+        }
     }
 }
 
@@ -363,6 +383,14 @@ nav {
     .introduction {
         margin-bottom: 80px;
     }
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 5px);
+                transform: translate(-30px, 30px);
+            }
+        }
+    }
 }
 
 @media(max-width: 825px) {
@@ -427,6 +455,14 @@ nav {
             }
         }
     }
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 90px);
+                transform: translate(40px, -20px);
+            }
+        }
+    }
 }
 
 @media(max-width: 700px) {
@@ -459,9 +495,9 @@ nav {
     }
     #josh {
         .floating__section__img {
-            #josh-laptop {
-                height: calc(100% + 100px);
-                transform: translate(30px, -20px);
+            #painter {
+                height: calc(100% + 60px);
+                transform: translate(10px, -20px);
             }
         }
     }
@@ -553,6 +589,14 @@ nav {
             }
         }
     }
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 40px);
+                transform: translate(-10px, -10px);
+            }
+        }
+    }
 }
 
 @media(max-width: 420px) {
@@ -611,9 +655,9 @@ nav {
     }
     #josh {
         .floating__section__img {
-            #josh-laptop {
-                height: calc(100% + 100px);
-                transform: translate(-20px, -20px);
+            #painter {
+                height: calc(100% + 50px);
+                transform: translate(-10px, -20px);
             }
         }
     }
@@ -648,6 +692,14 @@ nav {
                     top: -95%;
                     right: -40%;
                 }
+            }
+        }
+    }
+    #josh {
+        .floating__section__img {
+            #painter {
+                height: calc(100% + 20px);
+                transform: translate(-10px, -5px);
             }
         }
     }

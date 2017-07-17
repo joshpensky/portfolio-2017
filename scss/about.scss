@@ -4,8 +4,11 @@
 #main-photo {
     width: 100%;
     max-width: $maxwidth;
-    padding-top: calc(#{$maxwidth} / 2);
-    background: rgb(222, 222, 222);
+    padding-top: calc(#{$maxwidth} * 3 / 5);
+    background-image: url('../img/about/candid.jpg');
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0 auto;
     border-radius: 15px;
     margin-bottom: 40px;
@@ -99,7 +102,7 @@
 
 @media (max-width: $maxwidth) {
     #main-photo {
-        padding-top: 50%;
+        padding-top: 60%;
         border-radius: 0px;
     }
     .floating {
@@ -168,6 +171,12 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .hero {
+        margin-bottom: 40px;
+    }
+}
+
 @media(max-width: 860px) {
     .split-view {
         margin-bottom: 30px;
@@ -180,10 +189,6 @@
         }
         .why {
             float: none;
-        }
-        .what {
-            //float: right;
-            //text-align: right;
         }
     }
 }
@@ -302,6 +307,9 @@
 }
 
 @media(max-width: 600px) {
+    #main-photo {
+        padding-top: 80%;
+    }
     .floating {
         &__section {
             &__img {

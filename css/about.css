@@ -875,8 +875,11 @@ footer .footer__links #github, footer .footer__links #linkedin {
 #main-photo {
   width: 100%;
   max-width: 1500px;
-  padding-top: calc(1500px / 2);
-  background: #dedede;
+  padding-top: calc(1500px * 3 / 5);
+  background-image: url("../img/about/candid.jpg");
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0 auto;
   border-radius: 15px;
   margin-bottom: 40px;
@@ -964,7 +967,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 @media (max-width: 1500px) {
   #main-photo {
-    padding-top: 50%;
+    padding-top: 60%;
     border-radius: 0px;
   }
   .floating__section--left .floating__section__img {
@@ -1004,6 +1007,12 @@ footer .footer__links #github, footer .footer__links #linkedin {
 @media (max-width: 1150px) {
   #code .floating__section__img::after {
     transform: translate(20px, 30px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    margin-bottom: 40px;
   }
 }
 
@@ -1113,6 +1122,9 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 600px) {
+  #main-photo {
+    padding-top: 80%;
+  }
   .floating__section__img {
     height: 300px;
   }
