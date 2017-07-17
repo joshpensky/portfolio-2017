@@ -713,6 +713,10 @@ nav.nav--overlay .nav-bar__item--filled {
   /* optional: just make scrollbar invisible */
 }
 
+.slide-container .slide-list--hidden {
+  display: none;
+}
+
 .slide-container .slide-list #selector {
   position: absolute;
   left: 0;

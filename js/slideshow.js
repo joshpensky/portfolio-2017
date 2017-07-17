@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
     slideList = document.querySelector('.slide-list');
     if (slideList.getElementsByTagName('li').length < 2) {
         showThumbs = false;
-        slideList.style.display = "none";
     } else {
+        slideList.classList.remove("slide-list--hidden");
         slideContainer = document.querySelector('.slide-container');
         rightPadding = document.getElementsByClassName('slide__item')[0];
         rightPadding = window.getComputedStyle(rightPadding).marginRight.split("px")[0];

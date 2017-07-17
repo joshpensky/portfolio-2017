@@ -193,6 +193,9 @@ nav {
         white-space: nowrap;
         position: relative;
         @include no-scrollbar;
+        &--hidden {
+            display: none;
+        }
         #selector {
             position: absolute;
             left: 0;
