@@ -576,7 +576,6 @@ nav.nav--overlay .nav-bar__item--filled {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  transition: background-image .3s ease;
 }
 
 .main .info {
