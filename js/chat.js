@@ -1,13 +1,15 @@
 var fullName,
     email,
     message,
-    sendBtn;
+    sendBtn,
+    sendCont;
 
 window.addEventListener("load", () => {
     fullName = document.querySelector("#fullName");
     email = document.querySelector("#email");
     message = document.querySelector("#message");
     sendBtn = document.querySelector(".send");
+    sendCont = document.querySelector(".send__cont");
     fullName.addEventListener("keyup", () => { checkTyped(fullName); });
     email.addEventListener("keyup", () => { checkTyped(email); });
     message.addEventListener("keyup", () => { checkTyped(message); });
@@ -33,25 +35,27 @@ function checkTyped(elem) {
 * response is false, updates either the full name or email element to reflect the error.
 */
 function send() {
-    postToServer("/php/chat.php",
-        "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
-        (response) => {
-            console.log(response);
-            var resp_arr = response.split(" ");
-            if (resp_arr[0] == 'true') {
-                updateFullName(true);
-                updateEmail(true);
-                fullName.disabled = true;
-                email.disabled = true;
-                message.disabled = true;
-                animateSend();
-            } else if (resp_arr[1] == 'fullname') {
-                updateFullName(false);
-            } else if (resp_arr[1] == 'email') {
-                updateFullName(true);
-                updateEmail(false);
-            }
-        });
+    if (!sendCont.classList.contains("send__cont--sent")) {
+        postToServer("/php/chat.php",
+            "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
+            (response) => {
+                var resp_arr = response.split(" ");
+                if (resp_arr[0] == 'true') {
+                    updateFullName(true);
+                    updateEmail(true);
+                    fullName.disabled = true;
+                    email.disabled = true;
+                    message.disabled = true;
+                    sendBtn.disabled = true;
+                    animateSend();
+                } else if (resp_arr[1] == 'fullname') {
+                    updateFullName(false);
+                } else if (resp_arr[1] == 'email') {
+                    updateFullName(true);
+                    updateEmail(false);
+                }
+            });
+    }
 }
 
 /**
@@ -135,7 +139,7 @@ function animateSend() {
             sendBtn.classList.add("send--blank");
             wrapper.innerHTML = "thank you!";
             setTimeout(() => {
-                sendBtn.classList.add("send--sent");
+                sendCont.classList.add("send__cont--sent");
             }, 40);
         }, 1600);
     }

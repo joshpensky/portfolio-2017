@@ -717,14 +717,34 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-bottom: 40px;
 }
 
-.send--cont {
+input {
+  -webkit-appearance: none;
+}
+
+.send__cont {
   padding: 10px 0;
   padding-right: 250px;
   position: relative;
   overflow: hidden;
 }
 
-.send--cont .send {
+.send__cont--sent {
+  padding: 0;
+}
+
+.send__cont--sent .send::before {
+  display: none;
+}
+
+.send__cont--sent .send .wrapper {
+  color: #2980FF !important;
+}
+
+.send__cont--sent .send .wrapper::before, .send__cont--sent .send .wrapper::after {
+  display: none;
+}
+
+.send__cont .send {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -737,50 +757,11 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: inline-block;
 }
 
-.send--cont .send .wrapper {
-  display: inline-block;
-  color: #fff;
-  font-family: 'CocogoosePro', sans-serif;
-  font-size: 20px;
-  border-radius: 5px;
-  padding: 10px 50px 10px 20px;
-  overflow: hidden;
-  position: relative;
-  border-radius: 5px;
-  background-color: #2980FF;
+.send__cont .send:focus {
+  outline: none;
 }
 
-.send--cont .send .wrapper::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 400px;
-  height: 400px;
-  background-image: url("../img/chat/plane-big.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-}
-
-.send--cont .send .wrapper::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 20px;
-  height: 20px;
-  background-image: url("../img/chat/plane.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translate(92px, 0px);
-  transform-origin: bottom left;
-  opacity: 1;
-}
-
-.send--cont .send::before {
+.send__cont .send::before {
   content: '';
   position: absolute;
   left: 0;
@@ -796,36 +777,100 @@ footer .footer__links #github, footer .footer__links #linkedin {
   z-index: -1;
 }
 
-.send--cont .send--animate .wrapper::before {
-  animation: background 1.6s forwards ease;
+.send__cont .send .wrapper {
+  display: inline-block;
+  color: #fff;
+  font-family: 'CocogoosePro', sans-serif;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 10px 50px 10px 20px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  background-color: #2980FF;
 }
 
-.send--cont .send--animate .wrapper::after {
+.send__cont .send .wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  background-image: url("../img/chat/plane-big.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+}
+
+.send__cont .send .wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/chat/plane.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(92px, 0px);
+  transform-origin: bottom left;
+  opacity: 1;
+}
+
+.send__cont .send--animate .wrapper::before {
+  -webkit-animation: bg-plane 1.6s forwards ease;
+  animation: bg-plane 1.6s forwards ease;
+}
+
+.send__cont .send--animate .wrapper::after {
+  -webkit-animation: plane 1.6s forwards ease;
   animation: plane 1.6s forwards ease;
 }
 
-.send--cont .send--animate::before {
+.send__cont .send--animate::before {
+  -webkit-animation: plane 1.6s forwards ease;
   animation: plane 1.6s forwards ease;
 }
 
-.send--cont .send--sent .wrapper {
-  color: #2980FF;
-}
-
-.send--cont .send--sent .wrapper::before, .send--cont .send--sent .wrapper::after {
-  display: none;
-}
-
-.send--cont .send--blank {
+.send__cont .send--blank {
   cursor: default;
 }
 
-.send--cont .send--blank .wrapper {
+.send__cont .send--blank .wrapper {
   background-color: #fff;
   padding-right: 0px;
   padding-left: 0px;
   font-size: 25px;
   transition: color 0.2s ease;
+}
+
+@-webkit-keyframes plane {
+  0% {
+    transform: translate(92px, 0);
+  }
+  
+  10% {
+    transform: translate(85px, 0) rotate(-10deg);
+  }
+  
+  20% {
+    transform: translate(315px, 0px) rotate(5deg) scale(1.5);
+  }
+  
+  50% {
+    transform: translate(315px, -25px) rotate(180deg) scale(1.5);
+  }
+  
+  90% {
+    transform: translate(-55px, -40px) rotate(180deg) scale(3);
+  }
+  
+  100% {
+    transform: translate(-55px, -40px) rotate(180deg) scale(3);
+  }
 }
 
 @keyframes plane {
@@ -854,7 +899,29 @@ footer .footer__links #github, footer .footer__links #linkedin {
   }
 }
 
-@keyframes background {
+@-webkit-keyframes bg-plane {
+  0% {
+    transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+  }
+  
+  58% {
+    transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+  }
+  
+  90% {
+    transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+  }
+  
+  100% {
+    transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+  }
+}
+
+@keyframes bg-plane {
+  0% {
+    transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+  }
+  
   58% {
     transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
   }
@@ -878,5 +945,11 @@ footer .footer__links #github, footer .footer__links #linkedin {
 @media (max-width: 1000px) {
   .form--container form {
     padding: 0 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .form--container form input[type="text"], .form--container form input[type="email"], .form--container form textarea {
+    padding: 10px 15px;
   }
 }
