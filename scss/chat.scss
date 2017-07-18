@@ -1,0 +1,308 @@
+@import 'hero';
+
+.form--container {
+    width: 100%;
+    max-width: 1100px;
+    background: $white;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-radius: 15px;
+    form {
+        padding: 70px;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        label {
+            display: block;
+            position: relative;
+            color: $black;
+            font-family: 'CocogoosePro', sans-serif;
+            font-weight: normal;
+
+            font-size: 22px;
+            margin: 0;
+            margin-bottom: 7px;
+            &:not(.error) {
+                &:not(:root:root) { /* SAFARI */
+                    letter-spacing: -1px;
+                }
+            }
+            &.required::after {
+                content: ' *';
+                font-family: 'Roboto', sans-serif;
+                font-size: 22px;
+                color: $red;
+            }
+            &.error {
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                margin-top: 5px;
+                margin-bottom: 30px;
+                color: $red;
+            }
+        }
+        input[type="text"], input[type="email"], textarea {
+            display: block;
+            width: 100%;
+            border: none;
+            background: $gray-bg;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: background 0.2s ease;
+            &::-webkit-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-moz-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-ms-input-placeholder {
+                color: $gray-txt;
+            }
+            &::-o-input-placeholder {
+                color: $gray-txt;
+            }
+            &:focus {
+                outline: none;
+                border-color: $blue !important;
+            }
+            &.typed {
+                background: $white;
+                border-color: #DDDDDD;
+            }
+            &.error {
+                border-color: $red;
+            }
+        }
+        textarea {
+            resize: none;
+            line-height: 28px;
+            height: 160px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+.send__cont {
+    padding: 10px 0;
+    padding-right: 250px;
+    position: relative;
+    overflow: hidden;
+    &--sent {
+        padding: 0;
+        .send {
+            &::before {
+                display: none;
+            }
+            .wrapper {
+                color: $blue !important;
+                &::before, &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .send {
+        @include no-select();
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+        display: inline-block;
+        &:focus {
+            outline: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 22px;
+            width: 20px;
+            height: 20px;
+            background-image: url('../img/chat/plane-blue.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(92px, 0px);
+            transform-origin: bottom left;
+            z-index: -1;
+        }
+        .wrapper {
+            display: inline-block;
+            color: $white;
+            font-family: 'CocogoosePro', sans-serif;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px 50px 10px 20px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            background-color: $blue;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 400px;
+                height: 400px;
+                background-image: url('../img/chat/plane-big.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 12px;
+                width: 20px;
+                height: 20px;
+                background-image: url('../img/chat/plane.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transform: translate(92px, 0px);
+                transform-origin: bottom left;
+                opacity: 1;
+            }
+        }
+        &--animate {
+            .wrapper {
+                &::before {
+                    -webkit-animation: bg-plane 1.6s forwards ease;
+                    animation: bg-plane 1.6s forwards ease;
+                }
+                &::after {
+                    -webkit-animation: plane 1.6s forwards ease;
+                    animation: plane 1.6s forwards ease;
+                }
+            }
+            &::before {
+                -webkit-animation: plane 1.6s forwards ease;
+                animation: plane 1.6s forwards ease;
+            }
+        }
+        &--blank {
+            cursor: default;
+            .wrapper {
+                background-color: $white;
+                padding-right: 0px;
+                padding-left: 0px;
+                font-size: 25px;
+                transition: color 0.2s ease;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes plane {
+    0% {
+        transform: translate(92px, 0);
+    },
+    10% {
+        transform: translate(85px, 0) rotate(-10deg);
+    },
+    20% {
+        transform: translate(315px, 0px) rotate(5deg) scale(1.5);
+    },
+    50% {
+        transform: translate(315px, 0px) rotate(180deg) scale(1.5);
+    },
+    90% {
+        transform: translate(-55px, -40px) rotate(180deg) scale(3);
+    },
+    100% {
+        transform: translate(-55px, -40px) rotate(180deg) scale(3);
+    }
+}
+
+@keyframes plane {
+    0% {
+        transform: translate(92px, 0);
+    },
+    10% {
+        transform: translate(85px, 0) rotate(-10deg);
+    },
+    20% {
+        transform: translate(315px, 0px) rotate(5deg) scale(1.5);
+    },
+    50% {
+        transform: translate(315px, -25px) rotate(180deg) scale(1.5);
+    },
+    90% {
+        transform: translate(-55px, -40px) rotate(180deg) scale(3);
+    },
+    100% {
+        transform: translate(-55px, -40px) rotate(180deg) scale(3);
+    }
+}
+
+@-webkit-keyframes bg-plane {
+    0% {
+        transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+    },
+    58% {
+        transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+    },
+    90% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    },
+    100% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    }
+}
+
+@keyframes bg-plane {
+    0% {
+        transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+    },
+    57% {
+        transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+    },
+    90% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    },
+    100% {
+        transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
+    }
+}
+
+@media(max-width: 1100px) {
+    .form--container {
+        border-radius: 0px;
+        box-shadow: none;
+    }
+}
+
+@media(max-width: 1000px) {
+    .form--container {
+        form {
+            padding: 0 30px;
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .form--container {
+        form {
+            input[type="text"], input[type="email"], textarea {
+                padding: 10px 15px;
+            }
+        }
+    }
+}
