@@ -93,99 +93,103 @@
     }
 }
 
-.send {
-    @include no-select();
-    cursor: pointer;
-    display: inline-block;
-    overflow: visible;
-    position: relative;
+.send--cont {
     padding: 10px 0;
     padding-right: 250px;
+    position: relative;
     overflow: hidden;
-    .wrapper {
+    .send {
+        @include no-select();
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
         display: inline-block;
-        color: $white;
-        font-family: 'CocogoosePro-Regular', sans-serif;
-        font-size: 20px;
-        border-radius: 5px;
-        padding: 10px 50px 10px 20px;
-        overflow: hidden;
-        position: relative;
-        border-radius: 5px;
-        background-color: $blue;
+        .wrapper {
+            display: inline-block;
+            color: $white;
+            font-family: 'CocogoosePro', sans-serif;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px 50px 10px 20px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            background-color: $blue;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 400px;
+                height: 400px;
+                background-image: url('../img/chat/plane-big.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 12px;
+                width: 20px;
+                height: 20px;
+                background-image: url('../img/chat/plane.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transform: translate(92px, 0px);
+                transform-origin: bottom left;
+                opacity: 1;
+            }
+        }
         &::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 0;
-            width: 400px;
-            height: 400px;
-            background-image: url('../img/chat/plane-big.png');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 12px;
+            top: 22px;
             width: 20px;
             height: 20px;
-            background-image: url('../img/chat/plane.png');
+            background-image: url('../img/chat/plane-blue.png');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
             transform: translate(92px, 0px);
             transform-origin: bottom left;
-            opacity: 1;
+            z-index: -1;
         }
-    }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 22px;
-        width: 20px;
-        height: 20px;
-        background-image: url('../img/chat/plane-blue.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform: translate(92px, 0px);
-        transform-origin: bottom left;
-        z-index: -1;
-    }
-    &--animate {
-        .wrapper {
-            &::before {
-                animation: background 1.6s forwards ease;
+        &--animate {
+            .wrapper {
+                &::before {
+                    animation: background 1.6s forwards ease;
+                }
+                &::after {
+                    animation: plane 1.6s forwards ease;
+                }
             }
-            &::after {
+            &::before {
                 animation: plane 1.6s forwards ease;
             }
         }
-        &::before {
-            animation: plane 1.6s forwards ease;
-        }
-    }
-    &--sent {
-        .wrapper {
-            color: $blue;
-            &::before, &::after {
-                display: none;
+        &--sent {
+            .wrapper {
+                color: $blue;
+                &::before, &::after {
+                    display: none;
+                }
             }
         }
-    }
-    &--blank {
-        cursor: default;
-        .wrapper {
-            background-color: $white;
-            padding-right: 0px;
-            padding-left: 0px;
-            font-size: 25px;
-            transition: color 0.2s ease;
+        &--blank {
+            cursor: default;
+            .wrapper {
+                background-color: $white;
+                padding-right: 0px;
+                padding-left: 0px;
+                font-size: 25px;
+                transition: color 0.2s ease;
+            }
         }
     }
 }

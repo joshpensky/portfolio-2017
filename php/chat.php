@@ -3,7 +3,7 @@ $fullname = trim($_POST['fullname']);
 $email = trim($_POST['email']);
 $message = trim($_POST['message']);
 
-if (!empty($fullname) && !empty($email) && !empty(message)) {
+if (!empty($fullname) || !empty($email) || !empty(message)) {
     if (checkFullName($fullname)) {
         if (checkEmail($email)) {
             sendMessage();
@@ -14,6 +14,8 @@ if (!empty($fullname) && !empty($email) && !empty(message)) {
     } else {
         echo 'false fullname';
     }
+} else {
+    echo 'false fullname';
 }
 
 /**
@@ -61,6 +63,6 @@ function sendMessage() {
         . "Here's what they said:\r\n\r\n" . wordwrap($message, 70, "\r\n") . "\r\n\r\n"
         . "If you would like to work with them, you can reach them at their email: " . $email
         . ".\r\n\r\nHave a fantastic day!\r\njoshuapensky.com";
-    mail("hello@joshuapensky.com", $fullname . " wants to work with you!", $msg);
+    //mail("hello@joshuapensky.com", $fullname . " wants to work with you!", $msg);
 }
 ?>

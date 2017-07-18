@@ -670,7 +670,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: block;
   width: 100%;
   border: none;
-  background: #EDEDED;
+  background: #F0F0F0;
   padding: 10px 20px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
@@ -681,19 +681,19 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 .form--container form input[type="text"]::-webkit-input-placeholder, .form--container form input[type="email"]::-webkit-input-placeholder, .form--container form textarea::-webkit-input-placeholder {
-  color: #888888;
+  color: #6A6A6A;
 }
 
 .form--container form input[type="text"]::-moz-input-placeholder, .form--container form input[type="email"]::-moz-input-placeholder, .form--container form textarea::-moz-input-placeholder {
-  color: #888888;
+  color: #6A6A6A;
 }
 
 .form--container form input[type="text"]::-ms-input-placeholder, .form--container form input[type="email"]::-ms-input-placeholder, .form--container form textarea::-ms-input-placeholder {
-  color: #888888;
+  color: #6A6A6A;
 }
 
 .form--container form input[type="text"]::-o-input-placeholder, .form--container form input[type="email"]::-o-input-placeholder, .form--container form textarea::-o-input-placeholder {
-  color: #888888;
+  color: #6A6A6A;
 }
 
 .form--container form input[type="text"]:focus, .form--container form input[type="email"]:focus, .form--container form textarea:focus {
@@ -717,25 +717,30 @@ footer .footer__links #github, footer .footer__links #linkedin {
   margin-bottom: 40px;
 }
 
-.send {
+.send--cont {
+  padding: 10px 0;
+  padding-right: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.send--cont .send {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: none;
+  background: none;
   cursor: pointer;
+  padding: 0;
   display: inline-block;
-  overflow: visible;
-  position: relative;
-  padding: 10px 0;
-  padding-right: 250px;
-  overflow: hidden;
 }
 
-.send .wrapper {
+.send--cont .send .wrapper {
   display: inline-block;
   color: #fff;
-  font-family: 'CocogoosePro-Regular', sans-serif;
+  font-family: 'CocogoosePro', sans-serif;
   font-size: 20px;
   border-radius: 5px;
   padding: 10px 50px 10px 20px;
@@ -745,7 +750,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   background-color: #2980FF;
 }
 
-.send .wrapper::before {
+.send--cont .send .wrapper::before {
   content: '';
   position: absolute;
   left: 0;
@@ -759,7 +764,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
 }
 
-.send .wrapper::after {
+.send--cont .send .wrapper::after {
   content: '';
   position: absolute;
   left: 0;
@@ -775,7 +780,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   opacity: 1;
 }
 
-.send::before {
+.send--cont .send::before {
   content: '';
   position: absolute;
   left: 0;
@@ -791,31 +796,31 @@ footer .footer__links #github, footer .footer__links #linkedin {
   z-index: -1;
 }
 
-.send--animate .wrapper::before {
+.send--cont .send--animate .wrapper::before {
   animation: background 1.6s forwards ease;
 }
 
-.send--animate .wrapper::after {
+.send--cont .send--animate .wrapper::after {
   animation: plane 1.6s forwards ease;
 }
 
-.send--animate::before {
+.send--cont .send--animate::before {
   animation: plane 1.6s forwards ease;
 }
 
-.send--sent .wrapper {
+.send--cont .send--sent .wrapper {
   color: #2980FF;
 }
 
-.send--sent .wrapper::before, .send--sent .wrapper::after {
+.send--cont .send--sent .wrapper::before, .send--cont .send--sent .wrapper::after {
   display: none;
 }
 
-.send--blank {
+.send--cont .send--blank {
   cursor: default;
 }
 
-.send--blank .wrapper {
+.send--cont .send--blank .wrapper {
   background-color: #fff;
   padding-right: 0px;
   padding-left: 0px;

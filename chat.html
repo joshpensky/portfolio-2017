@@ -50,7 +50,7 @@
                     you just <span>want to say hello!).</span></p>
             </div>
             <div class="form--container">
-                <form>
+                <form onsubmit="return false;">
                     <label class="required" for="fullName">full name</label>
                     <input type="text" name="fullName" id="fullName" placeholder="Johnny Appleseed" />
                     <label class="error" for="fullName" id="fullNameErr"></label>
@@ -59,7 +59,13 @@
                     <label class="error" for="email" id="emailErr"></label>
                     <label for="message">message</label>
                     <textarea name="message" id="message" placeholder="I would like to work with you!"></textarea>
-                    <div class="send" onclick="return send();"><div class="wrapper">send</div></div>
+                    <!--<div class="send" onclick="return send();"><div class="wrapper">send</div></div>-->
+                    <div class="send--cont">
+                        <button type="submit" class="send" onclick="return send();">
+                            <div class="wrapper">send</div>
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>

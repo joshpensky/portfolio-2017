@@ -36,6 +36,7 @@ function send() {
     postToServer("/php/chat.php",
         "fullname=" + fullName.value.trim() + "&email=" + email.value.trim() + "&message=" + getMessage(),
         (response) => {
+            console.log(response);
             var resp_arr = response.split(" ");
             if (resp_arr[0] == 'true') {
                 updateFullName(true);
