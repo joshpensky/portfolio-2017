@@ -1,5 +1,6 @@
 [
     {
+        "url": "watchr",
         "title": "watchr",
         "desc-short": "Binging shows and movies, for the modern, modern world.",
         "desc-long": "Despite streaming services the likes of Netflix and Hulu dominating the media consumption market over the past several years, they still struggle constantly to connect and further engage their platform's audience beyond just the content they provide. Enter *watchr*: a solution for binge watchers and casual viewers alike that tracks progress in shows and movies across all services, visualizes users' watch history in a familiar and easily-understandable format, and enables users to give personalized recommendations to friends or even invite others to experience new content alongside them.",
@@ -56,6 +57,7 @@
         "img": []
     },
     {
+        "url": "camd-systems",
         "title": "C.A.M.D. Systems",
         "desc-short": "Back to basics with Northeastern University's visual art majors.",
         "desc-long": "I explored a redesign of advertising for Northeastern University's College of Arts, Media, and Design (C.A.M.D.) using Swiss design techniques. Choosing ten of their available majors and using the C.A.M.D. brand colors, I designed a square card to represent each of the chosen majors. The final product is a system of cards connected by the elements carried over from the other cards--an example being a heading overlaying an image in the first two cards. Try and find all of them!",
@@ -75,6 +77,7 @@
         "img": []
     },
     {
+        "url": "mahler-symphony-no9",
         "title": "Mahler Symphony no.9",
         "desc-short": "There's a harmony to this piece (and it's not the orchestra).",
         "desc-long": "After researching Swiss design for several months, it was time to put the concepts to use. For my typography class, I was tasked with creating a poster for an event for the Boston Symphony Orchestra. After creating several designs, I chose this arrangement, as it creates visual interest by incorporating the cellist as an element in the design, placing text behind her to create an illusion of depth.",
@@ -94,6 +97,7 @@
         "img": []
     },
     {
+        "url": "water-temperature",
         "title": "Water Temperature",
         "desc-short": "I was not trained for this.",
         "desc-long": "When taking a shower away from home, it's difficult to adjust the controls to the correct water temperature without scolding or freezing myself. After multiple uncomfortable experiences, I wanted to illustrate this to show others my frustration with this process.",
@@ -114,6 +118,7 @@
         "img": []
     },
     {
+        "url": "newbury-st",
         "title": "Newbury St.",
         "desc-short": "Arguably the greatest street in the city of Boston.",
         "desc-long": "After spending several months in the great city of Boston, I had come to the conclusion that Newbury Street is one of the best parts of the city. When I was tasked with creating a guidance system in the form of a website, I knew this was the area I was going to help others explore. I decided to focus on three aspects--eating, shopping, and having fun--and illustrated some icons to go along with each.",
@@ -138,6 +143,7 @@
         "img": []
     },
     {
+        "url": "the-ills-of-technology",
         "title": "The Ills of Technology",
         "desc-short": "It may make life easier, but at what cost?",
         "desc-long": "I use technology everyday, be it the phone in my pocket, the watch on my wrist, or the computers I produce my work on. Although, I always appreciate the advancements we have made and the positive impacts it's had on our lives, it's important not to let it consume us. This series of paintings explores that idea, reminding us not to forget the world and the people closest to us.",
@@ -156,6 +162,7 @@
         "img": []
     },
     {
+        "url": "ifuneral",
         "title": "iFuneral",
         "desc-short": "I think it's time to move to the yearly upgrade plan.",
         "desc-long": "My phone, as my friends and family will agree, is one of the most important devices in my life. However, in this ever-changing industry where a new phone is introduced every few months, a lot of our phones end up collecting dust when we upgrade to the latest generation. After seeing so many phones being thrown to the curb, I decided to illustrate this scene in memoriam for one of my all-time favorite devices, the iPhone 4.",
@@ -174,6 +181,7 @@
         "img": []
     },
     {
+        "url": "childs-play",
         "title": "Child's Play",
         "desc-short": "The Toy Story you didn't see.",
         "desc-long": "To the average adult eye, the toys in this painting are just that, toys. However, to children they are so much more, as they are able to dream up incredible fantasies and adventures with these Lego pieces as the starring characters. I wanted to capture a slice of that imagination, creating an action scene with just a few of these that I found searching through an old toy chest.",

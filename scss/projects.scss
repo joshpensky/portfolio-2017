@@ -40,6 +40,9 @@
         }
         &--mock {
             position: relative;
+            .project__img {
+                background-image: url('../img/loading.png');
+            }
             &__title {
                 height: 30px;
                 width: 60%;

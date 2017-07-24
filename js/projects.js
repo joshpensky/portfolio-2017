@@ -3,6 +3,9 @@
  * @type {XMLHttpRequest}
  */
 window.addEventListener("load", () => {
+    var topPaint = document.getElementById('top-paint');
+    topPaint.classList.remove("hidden");
+    setTimeout(() => {topPaint.classList.remove("animate");}, 800);
     getFromServer("/php/projects.php", "", (response) => {
         loadPage(JSON.parse(response));
 
@@ -34,7 +37,7 @@ function loadPage(dataArr) {
     var projects = [];
     for (var i = 0; i < dataArr.length; i++) {
         var item = dataArr[i];
-        projects.push(buildProject(item['title'], item['desc-short'], 'watchr',
+        projects.push(buildProject(item['title'], item['desc-short'], item['url'],
             item['cover'], item['categories']));
     }
     //projects = updateOrder(projects);

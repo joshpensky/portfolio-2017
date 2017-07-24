@@ -658,6 +658,10 @@ footer .footer__links #github, footer .footer__links #linkedin {
   position: relative;
 }
 
+.projects-list .project--mock .project__img {
+  background-image: url("../img/loading.png");
+}
+
 .projects-list .project--mock__title {
   height: 30px;
   width: 60%;
