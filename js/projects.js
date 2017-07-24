@@ -37,9 +37,45 @@ function loadPage(dataArr) {
         projects.push(buildProject(item['title'], item['desc-short'], 'watchr',
             item['cover'], item['categories']));
     }
-    console.log("DONE");
+    //projects = updateOrder(projects);
     removeMocks(0, projects);
 }
+
+var columns = 0;
+
+/**
+ * Gets the current column count of the list.
+ *
+ * @return {number} the current column count
+ */
+function getColumns(list) {
+    return window.getComputedStyle(list).columnCount;
+}
+
+/**
+ * Updates the order of the masonry layout, so the cards are arranged in rows rather than in
+ * columns (as they do in pure CSS).
+ */
+function updateOrder(projects) {
+    var list = document.querySelector(".projects-list");
+    var numCol = getColumns(list);
+    if (columns == numCol) {
+        return;
+    }
+    var reordered = [];
+    columns = numCol;
+    var colShift = 0;
+    for (var i = 0; i < columns; i++) {
+        for (var j = 0; j < projects.length; j++) {
+            if ((j - colShift) % columns == 0) {
+                reordered.push(projects[j]);
+            }
+        }
+        colShift++;
+    }
+    return reordered;
+}
+
 
 function addProjects(projects) {
     var list = document.querySelector(".projects-list");
