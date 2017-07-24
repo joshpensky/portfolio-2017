@@ -3,8 +3,9 @@
  * @type {XMLHttpRequest}
  */
 window.addEventListener("load", () => {
-    getFromServer("/php/projects.php", (response) => {
-        console.log(JSON.parse(response));
+    getFromServer("/php/projects.php", "", (response) => {
+        loadPage(JSON.parse(response));
+
     });
 })
 
@@ -26,4 +27,104 @@ function getFromServer(url, data, callback) {
         }
     };
     http.send("");
+}
+
+function loadPage(dataArr) {
+    var list = document.querySelector(".projects-list");
+    var projects = [];
+    for (var i = 0; i < dataArr.length; i++) {
+        var item = dataArr[i];
+        projects.push(buildProject(item['title'], item['desc-short'], 'watchr',
+            item['cover'], item['categories']));
+    }
+    console.log("DONE");
+    removeMocks(0, projects);
+}
+
+function addProjects(projects) {
+    var list = document.querySelector(".projects-list");
+    while (list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+    }
+    for (var elem in projects) {
+        list.appendChild(projects[elem]);
+    }
+    showProjects(0);
+}
+
+function showProjects(index) {
+    setTimeout(() => {
+        var projects = document.getElementsByClassName('project');
+        if (projects.length > index) {
+            projects[index].classList.remove('project--hidden');
+            showProjects(index + 1);
+        } else {
+            document.querySelector('.projects').style.overflow = "hidden";
+        }
+    }, 200);
+}
+
+function removeMocks(index, projects) {
+    setTimeout(() => {
+        var mocks = document.getElementsByClassName('project--mock');
+        if (mocks.length > index) {
+            mocks[index].classList.add('project--hidden');
+            removeMocks(index + 1, projects);
+        } else {
+            addProjects(projects);
+        }
+    }, 200);
+}
+
+function buildProject(titleText, descText, url, imgUrl, categories) {
+    var container = document.createElement("li"),
+        link = document.createElement("a"),
+        img = document.createElement("div"),
+        title = document.createElement("h4"),
+        desc = document.createElement("h5"),
+        categ = document.createElement("ul");
+    container.classList.add("project");
+    container.classList.add("project--hidden");
+
+    link.href = "projects/" + url + ".html";
+    img.classList.add("project__img");
+    img.style.backgroundImage = "url(" + imgUrl + ")";
+    link.appendChild(img);
+
+    title.classList.add("project__title");
+    title.innerHTML = titleText;
+
+    desc.classList.add("project__desc");
+    desc.innerHTML = descText;
+
+    categ.classList.add("project__categ");
+    for (var i = 0; i < categories.length; i++) {
+        var item = document.createElement("li");
+        item.classList.add("project__categ__item");
+        item.innerHTML = categories[i];
+        categ.appendChild(item);
+    }
+
+    container.appendChild(link);
+    container.appendChild(title);
+    container.appendChild(desc);
+    container.appendChild(categ);
+
+    return container;
+
+
+    /**
+    <li class="project">
+        <a href="projects/watchr.html"><div class="project__img" style="background-image: url('img/projects/watchr/cover.png');"></div></a>
+        <h4 class="project__title">watchr</h4>
+        <h5 class="project__desc">Binging shows and movies, for the modern, <span>modern world.</span></h5>
+        <ul class="project__categ">
+            <li class="project__categ__item">Branding</li>
+            <li class="project__categ__item">Identity</li>
+            <li class="project__categ__item">UI/UX</li>
+            <li class="project__categ__item">Front-End Dev</li>
+            <li class="project__categ__item">Back-End Dev</li>
+        </ul>
+    </li>
+     */
 }

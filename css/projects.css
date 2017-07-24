@@ -620,7 +620,15 @@ footer .footer__links #github, footer .footer__links #linkedin {
   padding-left: 30px;
   padding-right: 30px;
   box-sizing: border-box;
-  overflow: hidden;
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(500px);
+  }
 }
 
 .projects-list {
@@ -638,6 +646,102 @@ footer .footer__links #github, footer .footer__links #linkedin {
   display: inline-block;
   border-radius: 15px;
   background: #fafafa;
+  transition: 0.5s ease-out;
+}
+
+.projects-list .project--hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.projects-list .project--mock {
+  position: relative;
+}
+
+.projects-list .project--mock__title {
+  height: 30px;
+  width: 60%;
+  max-width: 350px;
+  background: #d2d2d2;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projects-list .project--mock__title::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, #e6e6e6, rgba(230, 230, 230, 0));
+  left: -30px;
+  width: 30px;
+  height: 100%;
+  animation: loading 2s ease infinite;
+}
+
+.projects-list .project--mock__title::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to left, #e6e6e6, rgba(230, 230, 230, 0));
+  left: -60px;
+  width: 30px;
+  height: 100%;
+  animation: loading 2s ease infinite;
+}
+
+.projects-list .project--mock__desc {
+  height: 20px;
+  width: calc(100% - 60px);
+  background: #e6e6e6;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.projects-list .project--mock__desc::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, #f0f0f0, rgba(240, 240, 240, 0));
+  left: -30px;
+  width: 30px;
+  height: 100%;
+  animation: loading 2s 0s ease infinite;
+}
+
+.projects-list .project--mock__desc::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to left, #f0f0f0, rgba(240, 240, 240, 0));
+  left: -60px;
+  width: 30px;
+  height: 100%;
+  animation: loading 2s 0s ease infinite;
+}
+
+.projects-list .project--mock__categ {
+  padding: 0;
+  margin-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 15px;
+}
+
+.projects-list .project--mock__categ__item {
+  width: 30px;
+  height: 10px;
+  display: inline-block;
+  margin-right: calc(-4px + 10px);
+  margin-bottom: 10px;
+  color: #6A6A6A;
+  background: #F0F0F0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  padding: 6px 12px;
+  border-radius: 5px;
 }
 
 .projects-list .project__img {
