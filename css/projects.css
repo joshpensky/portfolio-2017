@@ -651,11 +651,19 @@ footer .footer__links #github, footer .footer__links #linkedin {
 
 .projects-list .project--hidden {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: scale(0.9) translateY(-30px);
 }
 
 .projects-list .project--mock {
   position: relative;
+}
+
+.projects-list .project--mock--still .project--mock__title::before, .projects-list .project--mock--still .project--mock__title::after {
+  animation: none;
+}
+
+.projects-list .project--mock--still .project--mock__desc::before, .projects-list .project--mock--still .project--mock__desc::after {
+  animation: none;
 }
 
 .projects-list .project--mock .project__img {

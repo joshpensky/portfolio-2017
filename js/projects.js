@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
     setTimeout(() => {topPaint.classList.remove("animate");}, 800);
     getFromServer("/php/projects.php", "", (response) => {
         loadPage(JSON.parse(response));
-
     });
 })
 
@@ -40,45 +39,15 @@ function loadPage(dataArr) {
         projects.push(buildProject(item['title'], item['desc-short'], item['url'],
             item['cover'], item['categories']));
     }
-    //projects = updateOrder(projects);
-    removeMocks(0, projects);
-}
-
-var columns = 0;
-
-/**
- * Gets the current column count of the list.
- *
- * @return {number} the current column count
- */
-function getColumns(list) {
-    return window.getComputedStyle(list).columnCount;
-}
-
-/**
- * Updates the order of the masonry layout, so the cards are arranged in rows rather than in
- * columns (as they do in pure CSS).
- */
-function updateOrder(projects) {
-    var list = document.querySelector(".projects-list");
-    var numCol = getColumns(list);
-    if (columns == numCol) {
-        return;
-    }
-    var reordered = [];
-    columns = numCol;
-    var colShift = 0;
-    for (var i = 0; i < columns; i++) {
-        for (var j = 0; j < projects.length; j++) {
-            if ((j - colShift) % columns == 0) {
-                reordered.push(projects[j]);
-            }
+    setTimeout(() => {
+        var mocks = document.getElementsByClassName('project--mock');
+        for (var i = 0; i < mocks.length; i++) {
+            mocks[i].classList.add('project--mock--still');
         }
-        colShift++;
-    }
-    return reordered;
-}
+        removeMocks(0, projects);
+    }, 500);
 
+}
 
 function addProjects(projects) {
     var list = document.querySelector(".projects-list");
@@ -100,7 +69,7 @@ function showProjects(index) {
         } else {
             document.querySelector('.projects').style.overflow = "hidden";
         }
-    }, 200);
+    }, 100);
 }
 
 function removeMocks(index, projects) {
@@ -112,9 +81,32 @@ function removeMocks(index, projects) {
         } else {
             addProjects(projects);
         }
-    }, 200);
+    }, 100);
 }
 
+/**
+ * Builds a single project item for the masonry grid.
+ * An example project item is as below:
+ * <li class="project">
+ *   <a href="projects/watchr.html"><div class="project__img"></div></a>
+ *   <h4 class="project__title">watchr</h4>
+ *   <h5 class="project__desc">Binging shows and movies, for the modern, <span>modern world.</span></h5>
+ *   <ul class="project__categ">
+ *     <li class="project__categ__item">Branding</li>
+ *     <li class="project__categ__item">Identity</li>
+ *     <li class="project__categ__item">UI/UX</li>
+ *     <li class="project__categ__item">Front-End Dev</li>
+ *     <li class="project__categ__item">Back-End Dev</li>
+ *   </ul>
+ * </li>
+ *
+ * @param  {string}   titleText  the title of the project
+ * @param  {string}   descText   a short description of the project
+ * @param  {string}   url        the name of the page the project relies on
+ * @param  {string}   imgUrl     the location of the cover image for the project
+ * @param  {string[]} categories all of the categories that the project fits under
+ * @return {HTMLDomElement}      the project item to be added to the grid
+ */
 function buildProject(titleText, descText, url, imgUrl, categories) {
     var container = document.createElement("li"),
         link = document.createElement("a"),
@@ -134,7 +126,7 @@ function buildProject(titleText, descText, url, imgUrl, categories) {
     title.innerHTML = titleText;
 
     desc.classList.add("project__desc");
-    desc.innerHTML = descText;
+    desc.innerHTML = breakText(descText);
 
     categ.classList.add("project__categ");
     for (var i = 0; i < categories.length; i++) {
@@ -150,20 +142,34 @@ function buildProject(titleText, descText, url, imgUrl, categories) {
     container.appendChild(categ);
 
     return container;
+}
 
-
-    /**
-    <li class="project">
-        <a href="projects/watchr.html"><div class="project__img" style="background-image: url('img/projects/watchr/cover.png');"></div></a>
-        <h4 class="project__title">watchr</h4>
-        <h5 class="project__desc">Binging shows and movies, for the modern, <span>modern world.</span></h5>
-        <ul class="project__categ">
-            <li class="project__categ__item">Branding</li>
-            <li class="project__categ__item">Identity</li>
-            <li class="project__categ__item">UI/UX</li>
-            <li class="project__categ__item">Front-End Dev</li>
-            <li class="project__categ__item">Back-End Dev</li>
-        </ul>
-    </li>
-     */
+function breakText(text) {
+    var words = text.split(" ");
+    var copy = [];
+    for (var i = 0, len = words.length; i < len; i++) {
+        copy.push(words.pop());
+    }
+    var count = 0;
+    for (var i = 0; i < copy.length; i++) {
+        count += copy[i].length;
+        if (count > 10) {
+            count = i - 1;
+            if (count <= 1) {
+                count = 2;
+            }
+            break;
+        }
+    }
+    text = "</span>";
+    for (var i = 0; i < copy.length; i++) {
+        text = copy[i] + text;
+        if (i == count) {
+            text = "<span>" + text;
+        }
+        if (i < copy.length - 1) {
+            text = " " + text;
+        }
+    }
+    return text;
 }

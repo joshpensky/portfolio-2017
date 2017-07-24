@@ -36,10 +36,22 @@
         transition: 0.5s ease-out;
         &--hidden {
             opacity: 0;
-            transform: translateY(-30px);
+            transform: scale(0.9) translateY(-30px);
         }
         &--mock {
             position: relative;
+            &--still {
+                .project--mock__title {
+                    &::before, &::after {
+                        animation: none;
+                    }
+                }
+                .project--mock__desc {
+                    &::before, &::after {
+                        animation: none;
+                    }
+                }
+            }
             .project__img {
                 background-image: url('../img/loading.png');
             }
