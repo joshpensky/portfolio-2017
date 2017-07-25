@@ -20,6 +20,8 @@
     }
 }
 
+$load-time: 3s;
+
 .projects-list {
     column-count: 3;
     column-gap: 30px;
@@ -65,23 +67,26 @@
                 border-radius: 5px;
                 overflow: hidden;
                 position: relative;
+                $title-grad: 220;
                 &::before {
                     content: '';
                     position: absolute;
-                    background: linear-gradient(to right, rgb(230, 230, 230), rgba(230, 230, 230, 0));
+                    background: linear-gradient(to right, rgb($title-grad, $title-grad, $title-grad),
+                                rgba($title-grad, $title-grad, $title-grad, 0));
                     left: -30px;
                     width: 30px;
                     height: 100%;
-                    animation: loading 2s ease infinite;
+                    animation: loading $load-time ease infinite;
                 }
                 &::after {
                     content: '';
                     position: absolute;
-                    background: linear-gradient(to left, rgb(230, 230, 230), rgba(230, 230, 230, 0));
+                    background: linear-gradient(to left, rgb($title-grad, $title-grad, $title-grad),
+                                rgba($title-grad, $title-grad, $title-grad, 0));
                     left: -60px;
                     width: 30px;
                     height: 100%;
-                    animation: loading 2s ease infinite;
+                    animation: loading $load-time ease infinite;
                 }
             }
             &__desc {
@@ -93,23 +98,26 @@
                 position: relative;
                 border-radius: 5px;
                 overflow: hidden;
+                $desc-grad: 240;
                 &::before {
                     content: '';
                     position: absolute;
-                    background: linear-gradient(to right, rgb(240, 240, 240), rgba(240, 240, 240, 0));
+                    background: linear-gradient(to right, rgb($desc-grad, $desc-grad, $desc-grad),
+                                rgba($desc-grad, $desc-grad, $desc-grad, 0));
                     left: -30px;
                     width: 30px;
                     height: 100%;
-                    animation: loading 2s 0s ease infinite;
+                    animation: loading $load-time ease infinite;
                 }
                 &::after {
                     content: '';
                     position: absolute;
-                    background: linear-gradient(to left, rgb(240, 240, 240), rgba(240, 240, 240, 0));
+                    background: linear-gradient(to left, rgb($desc-grad, $desc-grad, $desc-grad),
+                                rgba($desc-grad, $desc-grad, $desc-grad, 0));
                     left: -60px;
                     width: 30px;
                     height: 100%;
-                    animation: loading 2s 0s ease infinite;
+                    animation: loading $load-time ease infinite;
                 }
             }
             &__categ {
@@ -206,6 +214,15 @@
 @media(max-width: 700px) {
     .projects-list {
         .project {
+            &--mock {
+                &__title {
+                    height: 24px;
+                    margin-bottom: 7px;
+                }
+                &__desc {
+                    height: 18px;
+                }
+            }
             &__title {
                 margin-left: 20px;
                 margin-bottom: 7px;

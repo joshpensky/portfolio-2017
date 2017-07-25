@@ -60,28 +60,41 @@ function addProjects(projects) {
     showProjects(0);
 }
 
+/**
+ * Sets the projects overflow to hidden.
+ *
+ * @param  {[type]} index [description]
+ * @return {[type]}       [description]
+ */
 function showProjects(index) {
     setTimeout(() => {
         var projects = document.getElementsByClassName('project');
         if (projects.length > index) {
-            projects[index].classList.remove('project--hidden');
+            //projects[index].classList.remove('project--hidden');
             showProjects(index + 1);
         } else {
             document.querySelector('.projects').style.overflow = "hidden";
         }
-    }, 100);
+    }, 0);
 }
 
+/**
+ * Adds the projects to the page.
+ * 
+ * @param  {[type]} index    [description]
+ * @param  {[type]} projects [description]
+ * @return {[type]}          [description]
+ */
 function removeMocks(index, projects) {
     setTimeout(() => {
         var mocks = document.getElementsByClassName('project--mock');
         if (mocks.length > index) {
-            mocks[index].classList.add('project--hidden');
+            //mocks[index].classList.add('project--hidden');
             removeMocks(index + 1, projects);
         } else {
             addProjects(projects);
         }
-    }, 100);
+    }, 0);
 }
 
 /**
@@ -115,7 +128,7 @@ function buildProject(titleText, descText, url, imgUrl, categories) {
         desc = document.createElement("h5"),
         categ = document.createElement("ul");
     container.classList.add("project");
-    container.classList.add("project--hidden");
+    //container.classList.add("project--hidden");
 
     link.href = "projects/" + url + ".html";
     img.classList.add("project__img");

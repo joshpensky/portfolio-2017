@@ -685,21 +685,21 @@ footer .footer__links #github, footer .footer__links #linkedin {
 .projects-list .project--mock__title::before {
   content: '';
   position: absolute;
-  background: linear-gradient(to right, #e6e6e6, rgba(230, 230, 230, 0));
+  background: linear-gradient(to right, gainsboro, rgba(220, 220, 220, 0));
   left: -30px;
   width: 30px;
   height: 100%;
-  animation: loading 2s ease infinite;
+  animation: loading 3s ease infinite;
 }
 
 .projects-list .project--mock__title::after {
   content: '';
   position: absolute;
-  background: linear-gradient(to left, #e6e6e6, rgba(230, 230, 230, 0));
+  background: linear-gradient(to left, gainsboro, rgba(220, 220, 220, 0));
   left: -60px;
   width: 30px;
   height: 100%;
-  animation: loading 2s ease infinite;
+  animation: loading 3s ease infinite;
 }
 
 .projects-list .project--mock__desc {
@@ -720,7 +720,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   left: -30px;
   width: 30px;
   height: 100%;
-  animation: loading 2s 0s ease infinite;
+  animation: loading 3s ease infinite;
 }
 
 .projects-list .project--mock__desc::after {
@@ -730,7 +730,7 @@ footer .footer__links #github, footer .footer__links #linkedin {
   left: -60px;
   width: 30px;
   height: 100%;
-  animation: loading 2s 0s ease infinite;
+  animation: loading 3s ease infinite;
 }
 
 .projects-list .project--mock__categ {
@@ -830,6 +830,13 @@ footer .footer__links #github, footer .footer__links #linkedin {
 }
 
 @media (max-width: 700px) {
+  .projects-list .project--mock__title {
+    height: 24px;
+    margin-bottom: 7px;
+  }
+  .projects-list .project--mock__desc {
+    height: 18px;
+  }
   .projects-list .project__title {
     margin-left: 20px;
     margin-bottom: 7px;
