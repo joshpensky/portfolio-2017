@@ -1,7 +1,35 @@
+<?php
+
+$index = 0;
+$works = json_decode(file_get_contents("./data/projects.json"));
+
+function search($query) {
+    global $index, $works;
+    foreach ($works as $proj) {
+        if($proj->url == $query) {
+            return $proj;
+        }
+        $index += 1;
+    }
+    return null;
+}
+
+$project = search($_GET['project']);
+
+if ($project == null) {
+    header('Location: /404.html');
+}
+
+function widow_fix($text) {
+    return $text;
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>C.A.M.D. Systems | Josh Pensky</title>
+        <title><?php echo $project->title ?> | Josh Pensky</title>
         <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
         <meta content="en-us" http-equiv="Content-Language"/>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
@@ -13,13 +41,13 @@
         <!-- Tags for Facebook and Twitter -->
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.joshuapensky.com/projects/camd-systems" />
-        <meta property="og:title" content="C.A.M.D. Systems | Josh Pensky" />
+        <meta property="og:url" content="https://www.joshuapensky.com/projects/josh-pensky" />
+        <meta property="og:title" content="<?php echo $project->title ?> | Josh Pensky" />
         <meta property="og:description" content="I am Josh Pensky, a Boston-based designer and front-end developer passionate about designing and bulding exceptional user experiences." />
         <meta property="og:image" content="https://www.joshuapensky.com/img/sharing/facebook.png" />
         <meta name="twitter:image" content="https://www.joshuapensky.com/img/sharing/twitter.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="C.A.M.D. Systems | Josh Pensky" />
+        <meta name="twitter:title" content="<?php echo $project->title ?> | Josh Pensky" />
         <meta name="twitter:description" content="I am Josh Pensky, a Boston-based designer and front-end developer passionate about designing and bulding exceptional user experiences." />
         <!-- Favicons -->
         <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
@@ -44,65 +72,60 @@
         </nav>
         <div class="master-container">
             <div class="container">
-                <h1 id="title">C.A.M.D. Systems</h1>
+                <h1 id="title"><?php echo $project->title ?></h1>
                 <div class="main">
                     <div class="info">
                         <div id="info__about">
                             <h4 class="info__subtitle">about</h4>
-                            <p class="info__body">I explored a redesign of advertising for Northeastern
-                                University's College of Arts, Media, and Design (C.A.M.D.) using Swiss
-                                design techniques. Choosing ten of their available majors and using
-                                the C.A.M.D. brand colors, I designed a square card to represent
-                                each of the chosen majors. The final product is a system of cards
-                                connected by the elements carried over from the other cards--an
-                                example being a heading overlaying an image in the first two cards.
-                                Try and find <span>all of them!</span></p>
+                            <p class="info__body"><?php echo widow_fix($project->desc_long); ?></p>
                         </div>
                         <div id="info__tools">
                             <h4 class="info__subtitle">tools</h4>
                             <ul class="info__list">
-                                <li class="info__list__item">Adobe InDesign</li>
-                                <li class="info__list__item">Adobe Photoshop</li>
+                                <?php foreach($project->tools as $tool) {
+                                    echo "<li class='info__list__item'>{$tool}</li>";
+                                } ?>
                             </ul>
                         </div>
                         <div id="info__year">
                             <h4 class="info__subtitle">year</h4>
-                            <p class="info__body">2017</p>
+                            <p class="info__body"><?php echo $project->date->year ?></p>
                         </div>
                     </div>
-                    <div id="viewer" style="background-image: url('../img/projects/camd/cover.png');"></div>
+                    <div id="viewer" style="background-image: url('/<?php echo $project->img[0] ?>');"></div>
                 </div>
                 <div class="slide-container">
                     <div class="slide-container__indicator slide-container__indicator--left slide-container__indicator--hidden"></div>
                     <ul class="slide-list">
                         <div id="selector"></div>
-                        <li class="slide__item slide__item--selected" style="background-image: url('../img/projects/camd/cover.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/graphic design.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/photo.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/architecture.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/animation.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/paint.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/drawing.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/journalism.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/sculpture.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/art history.png');" onclick="selectItem(this);"></li>
-                        <li class="slide__item" style="background-image: url('../img/projects/camd/urban landscape.png');" onclick="selectItem(this);"></li>
+                        <?php
+                            $first = true;
+                            foreach ($project->img as $thumb) {
+                                $class = $first ? ' slide__item--selected' : '';
+                                echo "<li class='slide__item {$class}' style='background-image: url(/{$thumb})' onclick='selectItem(this);'></li>";
+                                $first = false;
+                            }
+                        ?>
                     </ul>
                     <div class="slide-container__indicator slide-container__indicator--right slide-container__indicator--hidden"></div>
                 </div>
                 <div class="directions">
-                    <a href="josh-pensky.html">
-                        <div id="previous">
-                            <h4 class="direction__dir">previous</h4>
-                            <p class="direction__title">josh pensky</p>
-                        </div>
-                    </a>
-                    <a href="mahler-symphony-no9.html">
-                        <div id="next">
-                            <h4 class="direction__dir">next</h4>
-                            <p class="direction__title">Mahler Symphony no.9</p>
-                        </div>
-                    </a>
+                    <?php
+                    function advance($direction, $proj_dir) {
+                        if (isset($proj_dir)) {
+                            return
+                            "<a href='/projects/{$proj_dir->url}'>
+                                <div id='{$direction}'>
+                                    <h4 class='direction__dir'>{$direction}</h4>
+                                    <p class='direction__title'>{$proj_dir->title}</p>
+                                </div>
+                            </a>";
+                        }
+                    }
+
+                    echo advance('previous', $works[$index - 1]);
+                    echo advance('next', $works[$index + 1]);
+                     ?>
                 </div>
             </div>
         </div>

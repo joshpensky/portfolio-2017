@@ -28,7 +28,7 @@ function getFromServer(url, data, callback) {
             callback(http.responseText);
         }
     };
-    http.send("");
+    http.send(data);
 }
 
 function loadPage(dataArr) {
@@ -36,7 +36,7 @@ function loadPage(dataArr) {
     var projects = [];
     for (var i = 0; i < dataArr.length; i++) {
         var item = dataArr[i];
-        projects.push(buildProject(item['title'], item['desc-short'], item['url'],
+        projects.push(buildProject(item['title'], item['desc_short'], item['url'],
             item['cover'], item['categories']));
     }
     setTimeout(() => {
@@ -80,7 +80,7 @@ function showProjects(index) {
 
 /**
  * Adds the projects to the page.
- * 
+ *
  * @param  {[type]} index    [description]
  * @param  {[type]} projects [description]
  * @return {[type]}          [description]
@@ -130,7 +130,7 @@ function buildProject(titleText, descText, url, imgUrl, categories) {
     container.classList.add("project");
     //container.classList.add("project--hidden");
 
-    link.href = "projects/" + url + ".html";
+    link.href = "projects/" + url;
     img.classList.add("project__img");
     img.style.backgroundImage = "url(" + imgUrl + ")";
     link.appendChild(img);

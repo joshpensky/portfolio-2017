@@ -1,22 +1,24 @@
-# Options -MultiViews
-# Options -Indexes
-# RewriteEngine on
+Options -MultiViews
+Options -Indexes
+RewriteEngine on
+
+RewriteRule ^projects/([A-Za-z0-9-_]+)$ project.php?project=$1 [L]
 
 # Disable automatic directory detection
-# DirectorySlash Off
+DirectorySlash Off
 
-#force https+www
+# force https & www
 # RewriteCond %{HTTPS} off [OR]
 # RewriteCond %{HTTP_HOST} !^www\.
 # RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$
 # RewriteRule (.*) https://www.%1/$1 [NE,L,R]
 
 # Remove index
-# RewriteCond %{REQUEST_URI} ^(.*/)index\.html$ [NC]
-# RewriteRule . %1 [R=301,NE,L]
+RewriteCond %{REQUEST_URI} ^(.*/)index\.html$ [NC]
+RewriteRule . %1 [R=301,NE,L]
 
-#Remove .html
-# RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-# RewriteRule ^ /%1 [L,R]
-# RewriteCond %{REQUEST_FILENAME}.html -f
-# RewriteRule ^(.*?)/?$ /$1.html [L]
+# Remove .html
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ /$1.html [L]
