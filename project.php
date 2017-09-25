@@ -36,7 +36,7 @@ function widow_fix($text) {
         <meta name="google" content="notranslate" />
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="author" content="Joshua Pensky" />
-        <link rel="author" href="../humans.txt" />
+        <link rel="author" href="/humans.txt" />
         <meta name="robots" content="index,nofollow" />
         <!-- Tags for Facebook and Twitter -->
         <meta property="og:locale" content="en_US" />
@@ -50,13 +50,13 @@ function widow_fix($text) {
         <meta name="twitter:title" content="<?php echo $project->title ?> | Josh Pensky" />
         <meta name="twitter:description" content="I am Josh Pensky, a Boston-based designer and front-end developer passionate about designing and bulding exceptional user experiences." />
         <!-- Favicons -->
-        <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-        <link rel="stylesheet" type="text/css" href="../fonts/CocogoosePro-Regular.css">
-        <link rel="stylesheet" type="text/css" href="../css/work.css">
-        <script async type="text/javascript" src="../js/nav.js"></script>
-        <script async type="text/javascript" src="../js/slideshow.js"></script>
+        <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+        <link rel="stylesheet" type="text/css" href="/fonts/CocogoosePro-Regular.css">
+        <link rel="stylesheet" type="text/css" href="/css/work.css">
+        <script async type="text/javascript" src="/js/nav.js"></script>
+        <script async type="text/javascript" src="/js/slideshow.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
     </head>
     <body>
