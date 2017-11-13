@@ -5,7 +5,7 @@ Location: Boston, Massachusetts
 
 
 /* SITE */
-Last update: 2017/05/07
-Standards: HTML5, CSS3, JS
+Last update: 11/12/2017
+Standards: HTML, CSS, JS, PHP
 Components: n/a
-Software: Atom, Adobe Illustrator, Adobe Experience Design, iTerm 2
+Software: Atom, Adobe Illustrator, Adobe Experience Design
