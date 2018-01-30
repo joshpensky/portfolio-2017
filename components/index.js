@@ -1,3 +1,4 @@
-import Home from './Home';
+import Nav from './Nav';
+import Root from './Root';
 
-export { Home };
+export { Nav, Root };

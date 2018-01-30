@@ -1,6 +1,5 @@
 import React from 'react';
-import { Home } from '../components';
+import ReactDOM from 'react-dom';
+import { Root } from 'components';
 
-export default () => {
-  return <Home />;
-};
+ReactDOM.render(<Root />, document.querySelector('#root'));
