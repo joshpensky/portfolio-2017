@@ -7,4 +7,4 @@ export const sidePadRg = "30px";
 export const black = "#000";
 
 // FONTS
-export const cocogoose = "'CocogoosePro', sans-serif";
+export const cocogooseFont = "'CocogoosePro', Helvetica, sans-serif";

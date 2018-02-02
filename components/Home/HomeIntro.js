@@ -6,8 +6,7 @@ export default class HomeIntro extends React.Component {
     return (
       <div>
         <div>
-            <H1>Sups</H1>
-            <h1>let's <span>paint</span> the web.<br />together.</h1>
+            <H1>let's <span>paint</span> the web.<br />together.</H1>
             <a href="chat.html"><div>I'm ready!</div></a>
         </div>
         <div>
