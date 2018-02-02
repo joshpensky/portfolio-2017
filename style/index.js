@@ -1,6 +1,7 @@
+import H1 from './H1';
 import Main from './Main';
-import NavBar from './NavBar';
-import NavCont from './NavCont';
-import NavLink from './NavLink';
+import NavBar from './Nav/NavBar';
+import NavCont from './Nav/NavCont';
+import NavLink from './Nav/NavLink';
 
-export { Main, NavBar, NavCont, NavLink };
+export { H1, Main, NavBar, NavCont, NavLink };

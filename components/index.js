@@ -1,4 +1,5 @@
 import Nav from './Nav';
 import Root from './Root';
+import HomeIntro from './Home/HomeIntro';
 
-export { Nav, Root };
+export { HomeIntro, Nav, Root };
