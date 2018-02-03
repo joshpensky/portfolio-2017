@@ -27,8 +27,8 @@ const NavLink = styled(Link)`
       position: absolute;
       left: 0;
       top: 0;
-      width: calc(100%);
-      height: calc(100%);
+      width: 100%
+      height: 100%
       background: ${blue};
       border-radius: 3px;
       z-index: -1;

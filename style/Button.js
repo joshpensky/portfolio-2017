@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import {
   black,
   blue,
@@ -10,7 +11,7 @@ import {
   white
 } from 'style/constants';
 
-const Button = styled.a`
+const Button = styled(Link)`
   font-size: ${props => (props.small ? '18px' : '20px')};
   font-family: ${bodyFont};
   position: relative;
@@ -53,8 +54,8 @@ const Button = styled.a`
   &:active::after,
   &:focus::after {
     transform: translate(
-      ${props => (props.top ? '-' : '')}${btnOffsetActive},
-      ${props => (props.left ? '-' : '')}${btnOffsetActive}
+      ${props => (props.right && '-')}${btnOffsetActive},
+      ${props => (props.bottom && '-')}${btnOffsetActive}
     );
   }
 `;

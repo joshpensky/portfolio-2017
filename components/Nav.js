@@ -11,11 +11,6 @@ const FullNav = styled.nav`
   justify-content: center;
 `;
 
-const NavBar = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const NavCont = styled.div`
   box-sizing: border-box;
   height: ${navHeight};
@@ -27,6 +22,11 @@ const NavCont = styled.div`
   position: relative;
   justify-content: space-between;
   padding: 0 ${sidePadRg};
+`;
+
+const NavBar = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export default class Nav extends React.Component {

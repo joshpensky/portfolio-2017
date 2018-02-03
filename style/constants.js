@@ -2,6 +2,7 @@
 export const maxWidth = '1500px';
 export const navHeight = '55px';
 export const footerHeight = '32px';
+export const textWidth = '500px';
 export const sidePadRg = '30px';
 export const btnRadius = '2px';
 export const btnOffset = '3px';

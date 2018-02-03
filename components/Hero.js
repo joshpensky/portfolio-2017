@@ -6,13 +6,12 @@ import { blue, white } from 'style/constants';
 const HeroCont = styled.div`
   width: 100%;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top: 195px;
   margin-bottom: 60px;
   position: relative;
   overflow: visible;
   p {
     padding-left: 630px;
-    padding-right: 30px;
     max-width: 750px;
   }
 `;
@@ -50,18 +49,39 @@ const Paint = styled.span`
     top: -3%;
     border-radius: 3px;
     z-index: -1;
-    transition: width 0.2s ease-out;
+    transition: width 0.75s cubic-bezier(1, -0.3, 0.45, 1);
     transform: rotate(-3deg);
+  }
+  &.hidden::after {
+    width: 0%;
   }
 `;
 
 export default class Hero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      hidePaint: true,
+      title: this.props.title.split(' ')
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ hidePaint: false });
+    }, 10);
+  }
+
   render() {
-    let title = this.props.title.split(" ");
     return (
       <HeroCont>
-          <HeroH1>{title[0]} <Paint>{title[1]}</Paint></HeroH1>
-          <P>{this.props.desc}</P>
+        <HeroH1>
+          {this.state.title[0]}{' '}
+          <Paint className={this.state.hidePaint && 'hidden'} ref={p => (this.paint = p)}>
+            {this.state.title[1]}
+          </Paint>
+        </HeroH1>
+        <P>{this.props.desc}</P>
       </HeroCont>
     );
   }
