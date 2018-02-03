@@ -1,7 +1,9 @@
+import Button from './Button';
 import H1 from './H1';
+import Logo from './Logo';
 import Main from './Main';
-import NavBar from './Nav/NavBar';
-import NavCont from './Nav/NavCont';
-import NavLink from './Nav/NavLink';
+import MaxWidth from './MaxWidth';
+import NavLink from './NavLink';
+import P from './P';
 
-export { H1, Main, NavBar, NavCont, NavLink };
+export { Button, H1, Logo, Main, MaxWidth, NavLink, P };
