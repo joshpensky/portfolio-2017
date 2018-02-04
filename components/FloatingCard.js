@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, H3, P } from 'style';
-import { blue, bodyFont, gray, textWidth } from 'style/constants';
+import { Button, FloatingImg, H3, P } from 'style';
+import { bodyFont, gray, textWidth } from 'style/constants';
 
 const FloatingCont = styled.div`
   height: 400px;
@@ -11,16 +11,6 @@ const FloatingCont = styled.div`
   &:last-child {
     margin-bottom: 0px;
   }
-`;
-
-const FloatingImg = styled.div`
-  position: absolute;
-  width: calc(100% - ${textWidth});
-  height: inherit;
-  background: ${blue};
-  display: inline-block;
-  border-radius: 15px;
-  ${props => props.left ? 'left' : 'right'}: 0;
 `;
 
 const FloatingText = styled.div.attrs({
@@ -71,11 +61,13 @@ const FloatingText = styled.div.attrs({
 
 export default class FloatingCard extends React.Component {
   render() {
+    let img = this.props.img || 
+    <FloatingImg>
+      <img src={this.props.imgSrc} />
+    </FloatingImg>;
     return (
       <FloatingCont>
-        <FloatingImg left={this.props.left}>
-          <img id="show-cards" /*src={this.props.img}*/ />
-        </FloatingImg>
+        { img }
         <FloatingText left={this.props.left}>
           <H3>{this.props.title}</H3>
           <P>{this.props.desc}</P>

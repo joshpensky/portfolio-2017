@@ -35,7 +35,7 @@ export default class Root extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/projects" component={Projects} />
-              <Route path="/projects/:key" component={Project} />
+              <Route path="/projects/:id" component={Project} />
               <Route exact path="/chat" component={Chat} />
             </MaxWidth>
           </Main>
