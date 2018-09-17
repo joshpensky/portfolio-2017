@@ -110,6 +110,23 @@ nav {
             margin-bottom: 20px;
             padding-right: 30px;
         }
+        &__links {
+            padding: 0;
+            margin-top: -15px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            &__item {
+                margin: 0;
+                margin-top: 15px;
+                padding-right: 30px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                line-height: 20px;
+                color: $black;
+                text-decoration: underline;
+            }
+        }
         &__list {
             clear: both;
             padding: 0;
@@ -371,6 +388,12 @@ nav {
             &__list {
                 &__item {
                     font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+            &__links {
+                &__item {
+                    font-size: 18px;
                     line-height: 18px;
                 }
             }

@@ -34,6 +34,12 @@
       "/img/projects/watchr/friend.png",
       "/img/projects/watchr/show.png",
       "/img/projects/watchr/search.png"
+    ],
+    "links": [
+      {
+        "href": "https://github.com/joshpensky/watchr-prototype",
+        "text": "GitHub"
+      }
     ]
   },
   {
@@ -68,6 +74,12 @@
       "/img/projects/josh-pensky/laptop-fill.png",
       "/img/projects/josh-pensky/homes.png",
       "/img/projects/josh-pensky/others.png"
+    ],
+    "links": [
+      {
+        "href": "https://github.com/joshpensky/portfolio",
+        "text": "GitHub"
+      }
     ]
   },
   {

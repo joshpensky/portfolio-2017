@@ -16,6 +16,13 @@
                         <div id="info__about">
                             <h4 class="info__subtitle">about</h4>
                             <p class="info__body"><%= desc_long %></p>
+                            <% if (typeof(links) !== "undefined") { %>
+                            <div class="info__links">
+                                <% _.forEach(links, function(link) { %>
+                                <a class="info__links__item" href="<%= link.href %>"><%= link.text %></a>
+                                <% }); %>
+                            </div>
+                            <% } %>
                         </div>
                         <div id="info__tools">
                             <h4 class="info__subtitle">tools</h4>
