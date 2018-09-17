@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var gulp = require('gulp');
+var clean = require('gulp-clean');
 var fileinclude = require('gulp-file-include');
 var mergeStream = require('merge-stream');
 var rename = require('gulp-rename');
@@ -9,9 +10,14 @@ var sequence = require('gulp-sequence');
 var sass = require('gulp-sass');
 var template = require('gulp-template');
 
-gulp.task('build', sequence('projects', 'html', 'sass', 'data'));
+gulp.task('build', sequence('projects', 'html', 'sass'));
 
-gulp.task('rebuild', sequence('build', 'copy'))
+gulp.task('clean-dist', function() {
+    return gulp.src('./dist', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('build:all', ['clean-dist'], sequence('build', 'copy'))
 
 gulp.task('html', function() {
   return gulp
@@ -20,7 +26,7 @@ gulp.task('html', function() {
         prefix: '@@',
         basepath: '@file'
     }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass', function() {
@@ -31,11 +37,11 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass:watch', function() {
-    gulp.watch('./scss/**/*.scss', ['sass']);
+    gulp.watch('./src/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('projects', function() {
-    const projects = JSON.parse(fs.readFileSync('./src/data/project-data.json'));
+    const projects = JSON.parse(fs.readFileSync('./src/data/projects.json'));
     var tasks = [];
     for (var i = 0; i < projects.length; i++) {
         var project = projects[i];
@@ -62,12 +68,6 @@ gulp.task('projects', function() {
     }
     return mergeStream(tasks);
 })
-
-gulp.task('data', function() {
-    return gulp
-        .src('./src/data/**/*')
-        .pipe(gulp.dest('./dist/data'))
-});
 
 gulp.task('copy', function() {
     return gulp

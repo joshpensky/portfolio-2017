@@ -6,9 +6,9 @@
         "css": ["projects"],
         "js": []
     })
-    <!--<script async type="text/javascript" src="js/projects.js"></script>-->
-    <!--<script type="text/javascript" src="js/masonry.js"></script>-->
     <body>
+        <!--<script async type="text/javascript" src="js/projects.js"></script>-->
+        <!--<script type="text/javascript" src="js/masonry.js"></script>-->
         @@include('../components/nav.html', { "select": 2 })
         <div class="container">
             @@include('../components/top-paint.html', {
@@ -18,7 +18,7 @@
             })
             <div class="projects">
                 <ul class="projects-list">
-                    @@loop('../components/project-item.html', "../data/project-data.json")
+                    @@loop('../components/project-item.html', "../data/projects.json")
                 </ul>
             </div>
             @@include('../components/chat-banner.html')
