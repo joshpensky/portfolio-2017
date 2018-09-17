@@ -19,7 +19,7 @@
                             <% if (typeof(links) !== "undefined") { %>
                             <div class="info__links">
                                 <% _.forEach(links, function(link) { %>
-                                <a class="info__links__item" href="<%= link.href %>"><%= link.text %></a>
+                                <a class="info__links__item" href="<%= link.href %>" target="_blank" rel="noreferrer noopener"><%= link.text %></a>
                                 <% }); %>
                             </div>
                             <% } %>
