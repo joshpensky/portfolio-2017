@@ -62,8 +62,8 @@ function sendMessage() {
         . $fullname . " is interested in working with you! "
         . "Here's what they said:\r\n\r\n" . wordwrap($message, 70, "\r\n") . "\r\n\r\n"
         . "If you would like to work with them, you can reach them at their email: " . $email
-        . ".\r\n\r\nHave a fantastic day!\r\njoshuapensky.com";
-    mail("hello@joshuapensky.com", strtoupper($fullname) . " wants to work with you!", $msg,
-        'From: New Work <work@joshuapensky.com>');
+        . ".\r\n\r\nHave a fantastic day!\r\njoshpensky.com";
+    mail("joshuapensky@gmail.com", strtoupper($fullname) . " wants to work with you!", $msg,
+        'From: New Work <work@joshpensky.com>');
 }
 ?>
