@@ -1,5 +1,7 @@
-node_modules
-fonts
+.DS_Store
 .well-known
-dist
+node_modules
+
 src/pages/projects/*.html
+fonts
+dist
