@@ -6,7 +6,7 @@
     "build": "gulp build",
     "build:all": "gulp build:all",
     "serve": "http-server ./dist -p 3000",
-    "start": "npm run build && npm run serve"
+    "start": "npm run build:all && npm run serve"
   },
   "repository": {
     "type": "git",
