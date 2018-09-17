@@ -23,7 +23,7 @@
             display: block;
             position: relative;
             color: $black;
-            font-family: 'CocogoosePro', sans-serif;
+            font-family: $cocogoose;
             font-weight: normal;
 
             font-size: 22px;
@@ -36,12 +36,12 @@
             }
             &.required::after {
                 content: ' *';
-                font-family: 'Roboto', sans-serif;
+                font-family: $roboto;
                 font-size: 22px;
                 color: $red;
             }
             &.error {
-                font-family: 'Roboto', sans-serif;
+                font-family: $roboto;
                 font-size: 16px;
                 margin-top: 5px;
                 margin-bottom: 30px;
@@ -55,7 +55,7 @@
             background: $gray-bg;
             padding: 10px 20px;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: $roboto;
             font-size: 20px;
             border-radius: 5px;
             border: 2px solid transparent;
@@ -144,7 +144,7 @@ input {
         .wrapper {
             display: inline-block;
             color: $white;
-            font-family: 'CocogoosePro', sans-serif;
+            font-family: $cocogoose;
             font-size: 20px;
             border-radius: 5px;
             padding: 10px 50px 10px 20px;

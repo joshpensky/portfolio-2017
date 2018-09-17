@@ -44,7 +44,7 @@ nav {
         z-index: 5;
         &__heading {
             color: $black;
-            font-family: 'CocogoosePro', sans-serif;
+            font-family: $cocogoose;
             font-weight: bold;
             &:not(:root:root) { /* SAFARI */
                 letter-spacing: -3px;

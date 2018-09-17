@@ -11,7 +11,7 @@
     h1 {
         padding-left: 30px;
         color: $white;
-        font-family: 'CocogoosePro', sans-serif;
+        font-family: $cocogoose;
         font-weight: bold;
         &:not(:root:root) { /* SAFARI */
             letter-spacing: -3px;
