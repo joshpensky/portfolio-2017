@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    @@include('../../components/head.html', {
+        "title": "<%= title %> | Josh Pensky",
+        "url": "/projects/<%= id %>",
+        "css": ["work"],
+        "js": ["slideshow"]
+    })
+    <body>
+        @@include('../../components/nav.html', { "select": 2 })
+        <div class="master-container">
+            <div class="container">
+                <h1 id="title"><%= title %></h1>
+                <div class="main">
+                    <div class="info">
+                        <div id="info__about">
+                            <h4 class="info__subtitle">about</h4>
+                            <p class="info__body"><%= desc_long %></p>
+                        </div>
+                        <div id="info__tools">
+                            <h4 class="info__subtitle">tools</h4>
+                            <ul class="info__list">
+                                <% _.forEach(tools, function(tool) { %>
+                                <li class="info__list__item"><%- tool %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <div id="info__year">
+                            <h4 class="info__subtitle">year</h4>
+                            <p class="info__body"><%= typeof(year) !== "undefined" ? year : "Unknown" %></p>
+                        </div>
+                    </div>
+                    <div id="viewer" style="background-image: url('<%= images[0] %>');"></div>
+                </div>
+                <div class="slide-container">
+                    <div class="slide-container__indicator slide-container__indicator--left slide-container__indicator--hidden"></div>
+                    <ul class="slide-list">
+                        <div id="selector"></div>
+                        <li class="slide__item slide__item--selected" style="background-image: url('<%= images[0] %>');" onclick="selectItem(this);"></li>
+                        <% _.forEach(images.slice(1), function(image) { %>
+                        <li class="slide__item" style="background-image: url('<%= image %>');" onclick="selectItem(this);"></li>
+                        <% }); %>
+                    </ul>
+                    <div class="slide-container__indicator slide-container__indicator--right slide-container__indicator--hidden"></div>
+                </div>
+                <div class="directions">
+                  <% if (typeof(previous) !== "undefined") { %>
+                    <a href="<%= previous.id %>.html">
+                        <div id="previous">
+                            <h4 class="direction__dir">previous</h4>
+                            <p class="direction__title"><%= previous.title %></p>
+                        </div>
+                    </a>
+                  <% } %>
+                  <% if (typeof(next) !== "undefined") { %>
+                    <a href="<%= next.id %>.html">
+                        <div id="next">
+                            <h4 class="direction__dir">next</h4>
+                            <p class="direction__title"><%= next.title %></p>
+                        </div>
+                    </a>
+                  <% } %>
+                </div>
+            </div>
+        </div>
+        @@include('../../components/footer.html')
+    </body>
+</html>

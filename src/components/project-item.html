@@ -1,0 +1,10 @@
+<li class="project">
+    <a href="projects/@@id.html"><div class="project__img" style="background-image: url('@@cover');"></div></a>
+    <h4 class="project__title">@@title</h4>
+    <h5 class="project__desc">@@desc</h5>
+    <ul class="project__categ">
+        @@for (var i = 0; i < categories.length; i++) {
+            <li class="project__categ__item">`+categories[i]+`</li>
+        }
+    </ul>
+</li>

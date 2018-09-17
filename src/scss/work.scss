@@ -10,7 +10,9 @@ nav {
             color: $white;
             &--filled {
                 color: $blue;
-                background: $white;
+                &::after {
+                    background: $white;
+                }
             }
         }
     }
@@ -19,13 +21,19 @@ nav {
             color: $blue;
             &--filled {
                 color: $white;
-                background: $blue;
+                &::after {
+                    background: $blue;
+                }
             }
         }
     }
 }
 
 .master-container {
+    position: relative;
+    width: 100vw;
+    flex: 1;
+    height: inherit;
     overflow-x: hidden;
 }
 
@@ -315,7 +323,9 @@ nav {
                 color: $blue;
                 &--filled {
                     color: $white;
-                    background: $blue;
+                    &::after {
+                        background: $blue;
+                    }
                 }
             }
         }

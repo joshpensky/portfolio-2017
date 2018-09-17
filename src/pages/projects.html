@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+    @@include('../components/head.html', {
+        "title": "Projects | Josh Pensky",
+        "url": "/projects",
+        "css": ["projects"],
+        "js": []
+    })
+    <!--<script async type="text/javascript" src="js/projects.js"></script>-->
+    <!--<script type="text/javascript" src="js/masonry.js"></script>-->
+    <body>
+        @@include('../components/nav.html', { "select": 2 })
+        <div class="container">
+            @@include('../components/top-paint.html', {
+                "title": "workin' ",
+                "animated": "101",
+                "description": "In the gallery below, you will see some of my favorite pieces that I have created over the years. Please feel free to look around, but do not touch and <span>mind the rope.</span>"
+            })
+            <div class="projects">
+                <ul class="projects-list">
+                    @@loop('../components/project-item.html', "../data/project-data.json")
+                </ul>
+            </div>
+            @@include('../components/chat-banner.html')
+        </div>
+        @@include('../components/footer.html')
+    </body>
+</html>

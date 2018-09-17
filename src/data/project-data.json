@@ -1,0 +1,225 @@
+[
+  {
+    "id": "watchr",
+    "cover": "img/projects/watchr/cover.png",
+    "title": "watchr",
+    "desc": "Binging shows and movies, for the modern, <span>modern world.</span>",
+    "desc_long": "Despite streaming services the likes of Netflix and Hulu dominating the media consumption market over the past several years, they still struggle constantly to connect and further engage their platform's audience beyond just the content they provide. Enter watchr: a solution for binge watchers and casual viewers alike that tracks progress in shows and movies across all services, visualizes users' watch history in a familiar and easily-understandable format, and enables users to give personalized recommendations to friends or even invite others to experience new <span>content alongside them.</span>",
+    "year": 2017,
+    "categories": [
+      "Branding",
+      "Identity",
+      "UI/UX",
+      "Front-End Dev",
+      "Back-End Dev"
+    ],
+    "tools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Balsamiq",
+      "HTML/CSS",
+      "Javascript",
+      "JSON",
+      "PHP"
+    ],
+    "images": [
+      "/img/projects/watchr/cover.png",
+      "/img/projects/watchr/logo-init.png",
+      "/img/projects/watchr/logo-color.png",
+      "/img/projects/watchr/logo-final.png",
+      "/img/projects/watchr/icons.png",
+      "/img/projects/watchr/illus.png",
+      "/img/projects/watchr/onboarding.png",
+      "/img/projects/watchr/watchlist.png",
+      "/img/projects/watchr/friend.png",
+      "/img/projects/watchr/show.png",
+      "/img/projects/watchr/search.png"
+    ]
+  },
+  {
+    "id": "josh-pensky",
+    "cover": "img/projects/josh-pensky/laptop-fill.png",
+    "title": "josh pensky",
+    "desc": "Building an identity for <span>yours truly.</span>",
+    "desc_long": "To me, web design is much more than just arranging elements on a page; the browser is my canvas and I'm bringing it to life. Coming from an illustration background only further emphasizes this point, so I found it fitting to design my site and branding around this idea of <span>\"painting the web.\"</span>",
+    "year": 2017,
+    "categories": [
+      "Branding",
+      "Identity",
+      "UI/UX",
+      "Front-End Dev",
+      "Back-End Dev"
+    ],
+    "tools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Adobe XD",
+      "HTML/CSS",
+      "Javascript",
+      "JSON",
+      "PHP"
+    ],
+    "images": [
+      "/img/projects/josh-pensky/josh.png",
+      "/img/projects/josh-pensky/variations.png",
+      "/img/projects/josh-pensky/iterations.png",
+      "/img/projects/josh-pensky/final logo.png",
+      "/img/projects/josh-pensky/laptop-outline.png",
+      "/img/projects/josh-pensky/laptop-fill.png",
+      "/img/projects/josh-pensky/homes.png",
+      "/img/projects/josh-pensky/others.png"
+    ]
+  },
+  {
+    "id": "camd-systems",
+    "cover": "img/projects/camd/cover.png",
+    "title": "C.A.M.D. Systems",
+    "desc": "Back to basics with Northeastern University's <span>visual art majors.</span>",
+    "desc_long": "I explored a redesign of advertising for Northeastern University's College of Arts, Media, and Design (C.A.M.D.) using Swiss design techniques. Choosing ten of their available majors and using the C.A.M.D. brand colors, I designed a square card to represent each of the chosen majors. The final product is a system of cards connected by the elements carried over from the other cards--an example being a heading overlaying an image in the first two cards. Try and find <span>all of them!</span>",
+    "year": 2017,
+    "categories": [
+      "Print"
+    ],
+    "tools": [
+      "Adobe InDesign",
+      "Adobe Photoshop"
+    ],
+    "images": [
+      "/img/projects/camd/cover.png",
+      "/img/projects/camd/graphic design.png",
+      "/img/projects/camd/photo.png",
+      "/img/projects/camd/architecture.png",
+      "/img/projects/camd/animation.png",
+      "/img/projects/camd/paint.png",
+      "/img/projects/camd/drawing.png",
+      "/img/projects/camd/journalism.png",
+      "/img/projects/camd/sculpture.png",
+      "/img/projects/camd/art history.png",
+      "/img/projects/camd/urban landscape.png"
+    ]
+  },
+  {
+    "id": "mahler-symphony-no9",
+    "cover": "img/projects/mahler/mahler.png",
+    "title": "Mahler Symphony no.9",
+    "desc": "There's a harmony to this piece (and it's <span>not the orchestra).</span>",
+    "desc_long": "After researching Swiss design for several months, it was time to put the concepts to use. For my typography class, I was tasked with creating a poster for an event for the Boston Symphony Orchestra. After creating several designs, I chose this arrangement, as it creates visual interest by incorporating the cellist as an element in the design, placing text behind her to create an <span>illusion of depth.</span>",
+    "year": 2017,
+    "categories": [
+      "Print"
+    ],
+    "tools": [
+      "Adobe InDesign",
+      "Adobe Photoshop"
+    ],
+    "images": [
+      "/img/projects/mahler/mahler.png"
+    ]
+  },
+  {
+    "id": "water-temperature",
+    "cover": "img/projects/water/temperature.png",
+    "title": "Water Temperature",
+    "desc": "I was not trained <span>for this.</span>",
+    "desc_long": "When taking a shower away from home, it's difficult to adjust the controls to the correct water temperature without scolding or freezing myself. After multiple uncomfortable experiences, I wanted to illustrate this to show others my frustration <span>with this process.</span>",
+    "year": 2017,
+    "categories": [
+      "Print",
+      "Illustration"
+    ],
+    "tools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop"
+    ],
+    "images": [
+      "/img/projects/water/temperature.png"
+    ]
+  },
+  {
+    "id": "newbury-st",
+    "cover": "img/projects/newbury-st/newbury.png",
+    "title": "Newbury St.",
+    "desc": "Arguably the greatest street in the <span>city of Boston.</span>",
+    "desc_long": "After spending several months in the great city of Boston, I had come to the conclusion that Newbury Street is one of the best parts of the city. When I was tasked with creating a guidance system in the form of a website, I knew this was the area I was going to help others explore. I decided to focus on three aspects--eating, shopping, and having fun--and illustrated some icons to go <span>along with each.</span>",
+    "year": 2016,
+    "categories": [
+      "Branding",
+      "Identity",
+      "UI/UX",
+      "Front-End Dev"
+    ],
+    "tools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "HTML/CSS",
+      "Javascript"
+    ],
+    "images": [
+      "/img/projects/watchr/cover.png",
+      "/img/projects/newbury-st/newbury.png",
+      "/img/projects/newbury-st/icons.png",
+      "/img/projects/newbury-st/index.png",
+      "/img/projects/newbury-st/options.png",
+      "/img/projects/newbury-st/viewer.png",
+      "/img/projects/newbury-st/treat.png",
+      "/img/projects/newbury-st/end.png"
+    ]
+  },
+  {
+    "id": "the-ills-of-technology",
+    "cover": "img/projects/ills-of-tech/new-years.png",
+    "title": "The Ills of Technology",
+    "desc": "It may make life easier, but at <span>what cost?</span>",
+    "desc_long": "I use technology everyday, be it the phone in my pocket, the watch on my wrist, or the computers I produce my work on. Although, I always appreciate the advancements we have made and the positive impacts it's had on our lives, it's important not to let it consume us. This series of paintings explores that idea, reminding us not to forget the world and the people <span>closest to us.</span>",
+    "year": 2016,
+    "categories": [
+      "Illustration"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "images": [
+      "/img/projects/ills-of-tech/new-years.png",
+      "/img/projects/ills-of-tech/salt.png",
+      "/img/projects/ills-of-tech/party.png",
+      "/img/projects/ills-of-tech/beach.png",
+      "/img/projects/ills-of-tech/drive.png",
+      "/img/projects/ills-of-tech/campfire.png",
+      "/img/projects/ills-of-tech/time-together.png"
+    ]
+  },
+  {
+    "id": "ifuneral",
+    "cover": "img/projects/ifuneral/ifuneral.png",
+    "title": "iFuneral",
+    "desc": "I think it's time to move to the yearly <span>upgrade plan.</span>",
+    "desc_long": "My phone, as my friends and family will agree, is one of the most important devices in my life. However, in this ever-changing industry where a new phone is introduced every few months, a lot of our phones end up collecting dust when we upgrade to the latest generation. After seeing so many phones being thrown to the curb, I decided to illustrate this scene in memoriam for one of my all-time favorite devices, <span>the iPhone 4.</span>",
+    "year": 2015,
+    "categories": [
+      "Illustration"
+    ],
+    "tools": [
+      "Watercolor"
+    ],
+    "images": [
+      "/img/projects/ifuneral/ifuneral.png"
+    ]
+  },
+  {
+    "id": "childs-play",
+    "cover": "img/projects/childs-play/childs-play.png",
+    "title": "Child's Play",
+    "desc": "The Toy Story you <span>didn't see.</span>",
+    "desc_long": "To the average adult eye, the toys in this painting are just that, toys. However, to children they are so much more, as they are able to dream up incredible fantasies and adventures with these Lego pieces as the starring characters. I wanted to capture a slice of that imagination, creating an action scene with just a few of these that I found searching through an <span>old toy chest.</span>",
+    "year": 2015,
+    "categories": [
+      "Illustration"
+    ],
+    "tools": [
+      "Adobe Photoshop"
+    ],
+    "images": [
+      "/img/projects/childs-play/childs-play.png"
+    ]
+  }
+]

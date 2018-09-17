@@ -213,19 +213,19 @@ input {
 @-webkit-keyframes plane {
     0% {
         transform: translate(92px, 0);
-    },
+    }
     10% {
         transform: translate(85px, 0) rotate(-10deg);
-    },
+    }
     20% {
         transform: translate(315px, 0px) rotate(5deg) scale(1.5);
-    },
+    }
     50% {
         transform: translate(315px, 0px) rotate(180deg) scale(1.5);
-    },
+    }
     90% {
         transform: translate(-55px, -40px) rotate(180deg) scale(3);
-    },
+    }
     100% {
         transform: translate(-55px, -40px) rotate(180deg) scale(3);
     }
@@ -234,19 +234,19 @@ input {
 @keyframes plane {
     0% {
         transform: translate(92px, 0);
-    },
+    }
     10% {
         transform: translate(85px, 0) rotate(-10deg);
-    },
+    }
     20% {
         transform: translate(315px, 0px) rotate(5deg) scale(1.5);
-    },
+    }
     50% {
         transform: translate(315px, -25px) rotate(180deg) scale(1.5);
-    },
+    }
     90% {
         transform: translate(-55px, -40px) rotate(180deg) scale(3);
-    },
+    }
     100% {
         transform: translate(-55px, -40px) rotate(180deg) scale(3);
     }
@@ -255,13 +255,13 @@ input {
 @-webkit-keyframes bg-plane {
     0% {
         transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     58% {
         transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     90% {
         transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     100% {
         transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
     }
@@ -270,13 +270,13 @@ input {
 @keyframes bg-plane {
     0% {
         transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     57% {
         transform: translate(130px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     90% {
         transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
-    },
+    }
     100% {
         transform: translate(-105px, calc(-50% + 22px)) rotate(180deg);
     }

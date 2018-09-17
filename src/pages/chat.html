@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    @@include('../components/head.html', {
+        "title": "Chat | Josh Pensky",
+        "url": "/chat",
+        "css": ["chat"],
+        "js": ["chat"]
+    })
+    <body>
+        @@include('../components/nav.html', { "select": 3 })
+        <div class="container">
+            @@include('../components/top-paint.html', {
+                "title": "let's ",
+                "animated": "chat!",
+                "description": "You’ve gotten to know about me. <span>Now let’s hear about you!</span><br />Please fill out the form below so I can learn more about you and your project (or if you just <span>want to say hello!).</span>"
+            })
+            <div class="form--container">
+                <form onsubmit="return false;">
+                    <label class="required" for="fullName">full name</label>
+                    <input type="text" name="fullName" id="fullName" placeholder="Johnny Appleseed" />
+                    <label class="error" for="fullName" id="fullNameErr"></label>
+                    <label class="required" for="email">email</label>
+                    <input type="email" name="email" id="email" placeholder="johnny@appleseed.biz" />
+                    <label class="error" for="email" id="emailErr"></label>
+                    <label for="message">message</label>
+                    <textarea name="message" id="message" placeholder="I would like to work with you!"></textarea>
+                    <div class="send__cont">
+                        <button type="submit" class="send" onclick="return send();">
+                            <div class="wrapper">send</div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @@include('../components/footer.html')
+    </body>
+</html>
