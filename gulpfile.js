@@ -40,7 +40,12 @@ gulp.task('sass:watch', function() {
     gulp.watch('./src/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('projects', function() {
+gulp.task('clean-projects', function() {
+    return gulp.src('./src/pages/projects', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('projects', ['clean-projects'], function() {
     const projects = JSON.parse(fs.readFileSync('./src/data/projects.json'));
     var tasks = [];
     for (var i = 0; i < projects.length; i++) {

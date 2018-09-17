@@ -4,7 +4,9 @@
   "description": "My name is Josh Pensky. I am a designer and front-end developer, who is very passionate about building gorgeous, functionally-intuitive user experiences.",
   "scripts": {
     "build": "gulp build",
-    "build:all": "gulp build:all"
+    "build:all": "gulp build:all",
+    "serve": "http-server ./dist -p 3000",
+    "start": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sequence": "^1.0.0",
     "gulp-template": "^5.0.0",
+    "http-server": "^0.11.1",
     "merge-stream": "^1.0.1"
   }
 }
