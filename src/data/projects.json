@@ -17,8 +17,9 @@
       "Adobe Illustrator",
       "Adobe Photoshop",
       "Balsamiq",
-      "HTML/CSS",
-      "Javascript",
+      "HTML",
+      "CSS/Sass",
+      "JavaScript",
       "JSON",
       "PHP"
     ],
@@ -60,10 +61,12 @@
       "Adobe Illustrator",
       "Adobe Photoshop",
       "Adobe XD",
-      "HTML/CSS",
-      "Javascript",
+      "HTML",
+      "CSS/Sass",
+      "JavaScript",
       "JSON",
-      "PHP"
+      "PHP",
+      "Gulp.js"
     ],
     "images": [
       "/img/projects/josh-pensky/josh.png",
@@ -163,8 +166,9 @@
     "tools": [
       "Adobe Illustrator",
       "Adobe Photoshop",
-      "HTML/CSS",
-      "Javascript"
+      "HTML",
+      "CSS/Sass",
+      "JavaScript"
     ],
     "images": [
       "/img/projects/newbury-st/newbury.png",

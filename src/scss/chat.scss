@@ -61,16 +61,16 @@
             border: 2px solid transparent;
             transition: background 0.2s ease;
             &::-webkit-input-placeholder {
-                color: $gray-txt;
+                color: $gray-placeholder-txt;
             }
             &::-moz-input-placeholder {
-                color: $gray-txt;
+                color: $gray-placeholder-txt;
             }
             &::-ms-input-placeholder {
-                color: $gray-txt;
+                color: $gray-placeholder-txt;
             }
             &::-o-input-placeholder {
-                color: $gray-txt;
+                color: $gray-placeholder-txt;
             }
             &:focus {
                 outline: none;

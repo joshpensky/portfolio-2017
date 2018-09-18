@@ -8,4 +8,4 @@ Location: Boston, Massachusetts
 Last update: 2018/16/09
 Standards: HTML, CSS, JS
 Components: n/a
-Software: Visual Studio Code, Adobe Illustrator, Adobe XD, iTerm 2
+Software: Visual Studio Code, Adobe Illustrator, Adobe XD
