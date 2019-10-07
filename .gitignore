@@ -1,7 +1,7 @@
 .DS_Store
 .well-known
 node_modules
+.vscode
 
 src/pages/projects/*.html
-fonts
 dist
