@@ -10,6 +10,8 @@ var sequence = require('gulp-sequence');
 var sass = require('gulp-sass');
 var template = require('gulp-template');
 
+sass.compiler = require('sass');
+
 gulp.task('build', sequence('projects', 'html', 'sass'));
 
 gulp.task('clean-dist', function() {

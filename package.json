@@ -27,6 +27,8 @@
     "gulp-sequence": "^1.0.0",
     "gulp-template": "^5.0.0",
     "http-server": "^0.11.1",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "natives": "^1.1.6",
+    "sass": "^1.23.0"
   }
 }
