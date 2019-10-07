@@ -1,4 +1,6 @@
-# Josh Pensky
+# Portfolio
+
+_**⛔️ Deprecation Notice:** This version of my portfolio is now officially deprecated. It served as my main site from July 2017 to October 2019. You can check out my new portfolio at [joshpensky.com](https://joshpensky.com)._
 
 My name is Josh Pensky. I am a designer and front-end developer, who is very passionate about building gorgeous, functionally-intuitive user experiences.
 
